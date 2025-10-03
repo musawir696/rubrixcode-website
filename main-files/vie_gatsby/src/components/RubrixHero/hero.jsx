@@ -104,7 +104,7 @@ const RubrixHero = () => {
         </div>
       
       <div className="container">
-        <div className="hero-content">
+        <div className="hero-content" style={{ paddingTop: '120px' }}>
           <h1 className="hero-title fade-in" ref={titleRef}>
             Crafting Digital Excellence
           </h1>
@@ -112,11 +112,16 @@ const RubrixHero = () => {
             We build innovative software solutions that transform ideas into reality. 
             From web applications to mobile apps, we deliver exceptional digital experiences.
           </p>
-          <div className="fade-in" ref={ctaRef}>
+          <div className="fade-in hero-buttons" ref={ctaRef} style={{ 
+            display: 'flex', 
+            gap: '1rem', 
+            alignItems: 'center',
+            flexWrap: 'wrap'
+          }}>
             <a href="#portfolio" className="btn-primary">
               View Our Work
             </a>
-            <a href="#contact" className="btn-secondary" style={{ marginLeft: '1rem' }}>
+            <a href="#contact" className="btn-secondary">
               Get Started
             </a>
           </div>

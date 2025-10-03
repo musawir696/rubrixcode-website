@@ -21,6 +21,10 @@ const scrollToTop = () => {
     "stroke-dashoffset 10ms linear";
   
   const updateProgress = function () {
+    // Check if progressPath still exists before accessing its properties
+    if (!progressPath) {
+      return;
+    }
     let scroll = window.pageYOffset;
     let height = document.documentElement.scrollHeight - window.innerHeight;
     let progress = pathLength - (scroll * pathLength) / height;
@@ -32,6 +36,10 @@ const scrollToTop = () => {
   
   let offset = 150;
   window.addEventListener("scroll", function () {
+    // Check if progressWrap still exists before accessing its properties
+    if (!progressWrap) {
+      return;
+    }
     if (window.pageYOffset > offset) {
       progressWrap.classList.add("active-progress");
     } else {
