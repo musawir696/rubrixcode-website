@@ -23,6 +23,28 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide the progress circle SVG completely */
+.progress-wrap {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.progress-circle {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.svg-content {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+
+
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -366,13 +388,25 @@ p {
 }
 
 /* Logo Styles */
+.logo {
+  transition: all 0.3s ease;
+}
+
 .logo img {
   transition: all 0.3s ease;
 }
 
-.logo:hover img {
+.logo:hover {
   transform: scale(1.05);
-  filter: brightness(0) invert(1) drop-shadow(0 0 10px var(--accent-400));
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 0 10px var(--accent-400));
+}
+
+.logo:hover h2 {
+  color: var(--accent-400);
+  text-shadow: 0 0 10px var(--accent-400);
 }
 
 /* Portfolio Image Hover Effects */

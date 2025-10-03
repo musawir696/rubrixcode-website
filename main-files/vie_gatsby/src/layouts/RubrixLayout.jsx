@@ -2,7 +2,6 @@ import React from "react";
 import { Script } from "gatsby";
 
 import Cursor from "components/cursor";
-import ScrollToTop from "components/scrollToTop";
 import LoadingScreen from "components/Loading-Screen";
 
 import "styles/main.css";
@@ -52,7 +51,6 @@ const RubrixLayout = ({ children }) => {
       <Cursor />
       <LoadingScreen />
       {children}
-      <ScrollToTop />
       
       <Script src="/js/wowInit.js"></Script>
     </>

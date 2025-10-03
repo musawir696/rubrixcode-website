@@ -44,12 +44,11 @@ const RubrixFooter = () => {
           <div>
             <div style={{ marginBottom: '1rem' }}>
               <img 
-                src="/img/Logo2.jpg" 
+                src="/img/rubrixCodeLogo.jpg" 
                 alt="RubrixCode" 
                 style={{ 
                   height: '50px', 
-                  width: 'auto',
-                  filter: 'brightness(0) invert(1)'
+                  width: 'auto'
                 }} 
               />
             </div>

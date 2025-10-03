@@ -25,16 +25,24 @@ const RubrixNavbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="navbar-content">
-          <Link to="/" className="logo">
+          <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <img 
-              src="/img/RubrixcodeLogo.jpg" 
+              src="/img/rubrixCodeLogo.jpg" 
               alt="RubrixCode" 
               style={{ 
                 height: '40px', 
-                width: 'auto',
-                filter: 'brightness(0) invert(1)'
+                width: 'auto'
               }} 
             />
+            <h2 style={{ 
+              margin: 0, 
+              fontSize: '1.5rem', 
+              fontWeight: '600', 
+              color: 'var(--text-primary)',
+              letterSpacing: '0.5px'
+            }}>
+              RubrixCode
+            </h2>
           </Link>
           
           <ul className="nav-links">
