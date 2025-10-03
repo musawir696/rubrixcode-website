@@ -26,7 +26,15 @@ const RubrixNavbar = () => {
       <div className="container">
         <div className="navbar-content">
           <Link to="/" className="logo">
-            RubrixCode
+            <img 
+              src="/img/RubrixcodeLogo.jpg" 
+              alt="RubrixCode" 
+              style={{ 
+                height: '40px', 
+                width: 'auto',
+                filter: 'brightness(0) invert(1)'
+              }} 
+            />
           </Link>
           
           <ul className="nav-links">

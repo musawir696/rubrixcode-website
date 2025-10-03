@@ -43,15 +43,33 @@ const AboutPage = () => {
             <div className="slide-in-right">
               <div style={{
                 height: '400px',
-                background: 'linear-gradient(135deg, var(--accent-400), var(--accent-500))',
                 borderRadius: '20px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '4rem',
-                color: 'var(--bg-900)'
+                overflow: 'hidden',
+                position: 'relative'
               }}>
-                🚀
+                <img 
+                  src="/img/slid/about.jpg"
+                  alt="RubrixCode Team"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'linear-gradient(135deg, rgba(15, 182, 255, 0.3), rgba(13, 165, 230, 0.3))',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '4rem'
+                }}>
+                  🚀
+                </div>
               </div>
             </div>
           </div>
@@ -108,16 +126,20 @@ const AboutPage = () => {
               <div style={{
                 width: '120px',
                 height: '120px',
-                background: 'linear-gradient(135deg, var(--accent-400), var(--accent-500))',
                 borderRadius: '50%',
                 margin: '0 auto 1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '3rem',
-                color: 'var(--bg-900)'
+                overflow: 'hidden',
+                border: '3px solid var(--accent-400)'
               }}>
-                👨‍💻
+                <img 
+                  src="/img/team/1.jpg"
+                  alt="Alex Johnson"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
               </div>
               <h4>Alex Johnson</h4>
               <p style={{ color: 'var(--accent-400)', marginBottom: '1rem' }}>CEO & Founder</p>
@@ -129,16 +151,20 @@ const AboutPage = () => {
               <div style={{
                 width: '120px',
                 height: '120px',
-                background: 'linear-gradient(135deg, var(--accent-400), var(--accent-500))',
                 borderRadius: '50%',
                 margin: '0 auto 1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '3rem',
-                color: 'var(--bg-900)'
+                overflow: 'hidden',
+                border: '3px solid var(--accent-400)'
               }}>
-                👩‍🎨
+                <img 
+                  src="/img/team/2.jpg"
+                  alt="Sarah Chen"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
               </div>
               <h4>Sarah Chen</h4>
               <p style={{ color: 'var(--accent-400)', marginBottom: '1rem' }}>Lead Designer</p>
@@ -150,16 +176,20 @@ const AboutPage = () => {
               <div style={{
                 width: '120px',
                 height: '120px',
-                background: 'linear-gradient(135deg, var(--accent-400), var(--accent-500))',
                 borderRadius: '50%',
                 margin: '0 auto 1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '3rem',
-                color: 'var(--bg-900)'
+                overflow: 'hidden',
+                border: '3px solid var(--accent-400)'
               }}>
-                👨‍🔬
+                <img 
+                  src="/img/team/3.jpg"
+                  alt="Mike Rodriguez"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
               </div>
               <h4>Mike Rodriguez</h4>
               <p style={{ color: 'var(--accent-400)', marginBottom: '1rem' }}>Tech Lead</p>
@@ -171,16 +201,20 @@ const AboutPage = () => {
               <div style={{
                 width: '120px',
                 height: '120px',
-                background: 'linear-gradient(135deg, var(--accent-400), var(--accent-500))',
                 borderRadius: '50%',
                 margin: '0 auto 1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '3rem',
-                color: 'var(--bg-900)'
+                overflow: 'hidden',
+                border: '3px solid var(--accent-400)'
               }}>
-                👩‍💼
+                <img 
+                  src="/img/team/4.jpg"
+                  alt="Emma Wilson"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
               </div>
               <h4>Emma Wilson</h4>
               <p style={{ color: 'var(--accent-400)', marginBottom: '1rem' }}>Project Manager</p>

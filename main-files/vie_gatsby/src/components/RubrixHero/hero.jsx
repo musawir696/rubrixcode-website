@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Spline from '@splinetool/react-spline';
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -13,6 +14,8 @@ const RubrixHero = () => {
   const subtitleRef = useRef(null);
   const ctaRef = useRef(null);
   const splineRef = useRef(null);
+  const [splineLoaded, setSplineLoaded] = useState(false);
+  const [splineError, setSplineError] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -65,14 +68,39 @@ const RubrixHero = () => {
   return (
     <section className="hero" ref={heroRef}>
       <div className="spline-container" ref={splineRef}>
-        {/* Spline 3D scene will be added here */}
+        {/* Spline 3D scene */}
+        {!splineError && (
+          <Spline 
+            scene="https://prod.spline.design/6Wc1X7yf-6Wc1X7yf-6Wc1X7yf/scene.splinecode"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              opacity: splineLoaded ? 0.7 : 0,
+              transition: 'opacity 1s ease-in-out'
+            }}
+            onLoad={() => {
+              console.log('Spline scene loaded successfully');
+              setSplineLoaded(true);
+            }}
+            onError={(error) => {
+              console.error('Spline scene failed to load:', error);
+              setSplineError(true);
+            }}
+          />
+        )}
+        
+        {/* Fallback gradient background */}
         <div style={{
           width: '100%',
           height: '100%',
           background: 'linear-gradient(135deg, rgba(15, 182, 255, 0.1) 0%, rgba(7, 24, 34, 0.8) 100%)',
           position: 'absolute',
           top: 0,
-          left: 0
+          left: 0,
+          zIndex: splineLoaded ? -1 : 1
         }} />
       </div>
       

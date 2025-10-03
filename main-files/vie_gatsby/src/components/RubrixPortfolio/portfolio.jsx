@@ -165,20 +165,55 @@ const RubrixPortfolio = () => {
             >
               <div style={{ 
                 height: '200px', 
-                background: `linear-gradient(45deg, var(--accent-400), var(--accent-500))`,
                 borderRadius: '10px',
                 marginBottom: '1.5rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '3rem',
-                color: 'var(--bg-900)'
+                overflow: 'hidden',
+                position: 'relative'
               }}>
-                {project.category === 'web' && '🌐'}
-                {project.category === 'mobile' && '📱'}
-                {project.category === 'ai' && '🤖'}
-                {project.category === 'iot' && '🔗'}
-                {project.category === 'blockchain' && '⛓️'}
+                <img 
+                  src={`/img/portfolio/${project.id}.jpg`}
+                  alt={project.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'scale(1.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'scale(1)';
+                  }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'linear-gradient(45deg, rgba(15, 182, 255, 0.8), rgba(13, 165, 230, 0.8))',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '3rem',
+                  color: 'var(--bg-900)',
+                  opacity: 0,
+                  transition: 'opacity 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.opacity = '1';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.opacity = '0';
+                }}
+                >
+                  {project.category === 'web' && '🌐'}
+                  {project.category === 'mobile' && '📱'}
+                  {project.category === 'ai' && '🤖'}
+                  {project.category === 'iot' && '🔗'}
+                  {project.category === 'blockchain' && '⛓️'}
+                </div>
               </div>
               
               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>

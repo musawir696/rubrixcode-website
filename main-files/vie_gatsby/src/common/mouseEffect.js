@@ -2,17 +2,13 @@ const mouseEffect = () => {
   function mousecursor() {
     const cursorInner = document.querySelector(".cursor-inner"),
       cursorOuter = document.querySelector(".cursor-outer");
-    let n,
-      i = 0,
-      o = !1;
+    let o = !1;
     window.onmousemove = function (s) {
       o ||
         (cursorOuter.style.transform =
           "translate(" + s.clientX + "px, " + s.clientY + "px)"),
         (cursorInner.style.transform =
-          "translate(" + s.clientX + "px, " + s.clientY + "px)"),
-        (n = s.clientY),
-        (i = s.clientX);
+          "translate(" + s.clientX + "px, " + s.clientY + "px)");
     };
     if (document.querySelector(".cursor-pointer")) {
       document

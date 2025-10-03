@@ -42,13 +42,17 @@ const RubrixFooter = () => {
         <div className="grid grid-4" style={{ marginBottom: '3rem' }}>
           {/* Company Info */}
           <div>
-            <h3 style={{ 
-              color: 'var(--accent-400)', 
-              marginBottom: '1rem',
-              fontSize: '1.5rem'
-            }}>
-              RubrixCode
-            </h3>
+            <div style={{ marginBottom: '1rem' }}>
+              <img 
+                src="/img/Logo2.jpg" 
+                alt="RubrixCode" 
+                style={{ 
+                  height: '50px', 
+                  width: 'auto',
+                  filter: 'brightness(0) invert(1)'
+                }} 
+              />
+            </div>
             <p style={{ 
               color: 'var(--text-secondary)', 
               marginBottom: '1.5rem',
@@ -65,12 +69,11 @@ const RubrixFooter = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    display: 'inline-block',
+                    display: 'flex',
                     width: '40px',
                     height: '40px',
                     background: 'var(--bg-700)',
                     borderRadius: '50%',
-                    display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     textDecoration: 'none',
