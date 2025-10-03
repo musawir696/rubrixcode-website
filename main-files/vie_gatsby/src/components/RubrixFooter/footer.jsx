@@ -41,7 +41,7 @@ const RubrixFooter = () => {
         {/* Main Footer Content */}
         <div className="grid grid-4" style={{ marginBottom: '3rem' }}>
           {/* Company Info */}
-          <div>
+          <div className="footer-company-info">
             <div style={{ marginBottom: '1rem' }}>
               <img 
                 src="/img/rubrixCodeLogo.jpg" 
@@ -60,7 +60,7 @@ const RubrixFooter = () => {
               Crafting digital excellence through innovative software solutions. 
               We transform ideas into reality with cutting-edge technology.
             </p>
-            <div style={{ display: 'flex', gap: '1rem' }}>
+            <div className="footer-social" style={{ display: 'flex', gap: '1rem' }}>
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -97,7 +97,7 @@ const RubrixFooter = () => {
 
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+            <div key={category} className="footer-links">
               <h4 style={{ 
                 color: 'var(--text-primary)', 
                 marginBottom: '1rem',
@@ -137,7 +137,7 @@ const RubrixFooter = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div style={{
+        <div className="footer-bottom" style={{
           borderTop: '1px solid var(--bg-700)',
           paddingTop: '2rem',
           display: 'flex',

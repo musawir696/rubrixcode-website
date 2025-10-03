@@ -536,6 +536,36 @@ p {
   box-shadow: 0 10px 30px rgba(15, 182, 255, 0.3);
 }
 
+/* Footer Responsive Styles */
+@media (max-width: 768px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .footer-company-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+}
+
 /* Responsive Images */
 @media (max-width: 768px) {
   .logo img {
