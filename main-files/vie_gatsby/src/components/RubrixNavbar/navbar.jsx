@@ -62,6 +62,21 @@ const RubrixNavbar = () => {
           </button>
         </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu">
+          <ul>
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link to={link.to} onClick={() => setIsMobileMenuOpen(false)}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
