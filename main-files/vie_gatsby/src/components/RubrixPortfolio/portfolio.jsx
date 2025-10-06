@@ -20,6 +20,10 @@ import MiuraProtocol from "./PortfolioDetails/MiuraProtocol";
 import SustainChain from "./PortfolioDetails/SustainChain";
 import BankRollBears from "./PortfolioDetails/BankRollBears";
 import Lumino from "./PortfolioDetails/Lumino";
+import ShariaLandlord from "./PortfolioDetails/ShariaLandlord";
+import Cryptify from "./PortfolioDetails/Cryptify";
+import ProFuturesTrading from "./PortfolioDetails/ProFuturesTrading";
+import NFTracker from "./PortfolioDetails/NFTracker";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -213,6 +217,42 @@ const RubrixPortfolio = () => {
       category: "web",
       tech: ["React", "JavaScript", "HTML", "CSS", "Node.js", "Figma", "Canva", "Firebase", "MongoDB", "Google API"],
       component: Lumino
+    },
+    {
+      id: 18,
+      title: "Sharia Landlord NFT Collection",
+      description: "Utility-based NFT collection offering capital gains and regular dividends from managed real estate and sharing house businesses with stable investment value.",
+      image: "/img/portfolio/full/2.jpg",
+      category: "nft",
+      tech: ["Polygon", "Solidity", "Python", "OpenSea", "JavaScript", "IPFS", "Metamask", "HTML", "CSS", "Node.js"],
+      component: ShariaLandlord
+    },
+    {
+      id: 19,
+      title: "Cryptify Crypto Landing Page",
+      description: "High-converting lead-generation landing page for crypto industry with professional design, multi-step forms, and optimized data collection.",
+      image: "/img/portfolio/full/3.jpg",
+      category: "web",
+      tech: ["Next.js", "Tailwind CSS", "React Hook Form", "Node.js", "ExcelJS", "React Context API", "Vercel"],
+      component: Cryptify
+    },
+    {
+      id: 20,
+      title: "Pro Futures Trading Platform",
+      description: "Comprehensive platform providing top-tier tools and resources for futures traders with responsive design and SEO optimization.",
+      image: "/img/portfolio/full/4.jpg",
+      category: "web",
+      tech: ["Hostinger Website Builder"],
+      component: ProFuturesTrading
+    },
+    {
+      id: 21,
+      title: "NFTracker Fraud Detection Platform",
+      description: "Innovative tool for real-time NFT fraud detection and blockchain transaction analysis with Auth0 integration and secure login functionality.",
+      image: "/img/portfolio/full/5.jpg",
+      category: "web",
+      tech: ["React.js", "Auth0 (Google Login Integration)", "CSS", "VS Code", "Hostinger"],
+      component: NFTracker
     }
    
   ];
