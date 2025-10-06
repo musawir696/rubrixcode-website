@@ -11,6 +11,7 @@ import DecimalsRebuilt from "./PortfolioDetails/DecimalsRebuilt";
 import Contiamo from "./PortfolioDetails/Contiamo";
 import AegeanTaxi from "./PortfolioDetails/AegeanTaxi";
 import Growphics from "./PortfolioDetails/Growphics";
+import TheWildGuardians from "./PortfolioDetails/TheWildGuardians";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -123,6 +124,15 @@ const RubrixPortfolio = () => {
       category: "web",
       tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Next.js", "Node.js", "Git", "GitHub", "Netlify", "FromSpree"],
       component: Growphics
+    },
+    {
+      id: 9,
+      title: "The Wild Guardians NFT Collection",
+      description: "Captivating NFT art collection on Ethereum blockchain featuring 30 mesmerizing characters with exclusive perks and revenue-sharing opportunities.",
+      image: "/img/portfolio/curs/1.jpg",
+      category: "nft",
+      tech: ["Webflow", "Webflow APIs", "Ethereum", "Solidity", "Wallet Connect", "Metamask", "Metaplex SDK"],
+      component: TheWildGuardians
     }
    
   ];
