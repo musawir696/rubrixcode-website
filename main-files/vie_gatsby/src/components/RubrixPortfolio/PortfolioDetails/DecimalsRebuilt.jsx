@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-const CrossroadsAdventure = () => {
+const DecimalsRebuilt = () => {
   return (
     <div className="portfolio-detail">
       <div className="container">
@@ -9,8 +9,8 @@ const CrossroadsAdventure = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/4.jpg" 
-              alt="Crossroads Adventure Website"
+              src="/img/portfolio/1.jpg" 
+              alt="Decimals Rebuilt NFT Platform"
               style={{
                 width: '100%',
                 height: '400px',
@@ -24,7 +24,7 @@ const CrossroadsAdventure = () => {
           {/* Project Details */}
           <div className="project-content">
             <h2 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>
-              Crossroads Adventure Website
+              Decimals Rebuilt NFT Platform
             </h2>
             
             <p style={{ 
@@ -33,9 +33,10 @@ const CrossroadsAdventure = () => {
               lineHeight: '1.6',
               marginBottom: '2rem'
             }}>
-              Crossroads Adventure is a premier luxury expedition specialist in Pakistan, dedicated to curating bespoke 
-              journeys that connect discerning explorers to the country's most breathtaking landscapes, rich heritage, and 
-              vibrant cultures.
+              Developed a sophisticated NFT platform with a seamless user experience, combining advanced blockchain 
+              features with an intuitive web interface. The platform allows users to mint, purchase, and manage NFTs through 
+              a sleek, dynamic website with key functionalities including dynamic pricing, exclusive presales, and easy access to 
+              token ownership information.
             </p>
 
             <div className="project-achievements" style={{ marginBottom: '2rem' }}>
@@ -47,14 +48,13 @@ const CrossroadsAdventure = () => {
                 paddingLeft: '1.5rem',
                 lineHeight: '1.6'
               }}>
-                <li>Created a responsive website using HTML, CSS, and JavaScript, hosted on GoDaddy for seamless mobile and desktop access.</li>
-                <li>Built a robust backend with Node.js and Express.js for efficient server-side operations.</li>
-                <li>Integrated MongoDB for dynamic content storage and retrieval of trip details, user information, and blogs.</li>
-                <li>Developed an admin panel for managing trips, user content, and blogs, providing full control over the site.</li>
-                <li>Designed a modern, clean aesthetic with intuitive navigation and accessibility.</li>
-                <li>Ensured a mobile-friendly design for better usability across devices.</li>
-                <li>Improved SEO to boost search engine rankings and user engagement.</li>
-                <li>Worked closely with stakeholders to refine the platform, meeting the needs of the adventure-seeking community.</li>
+                <li>Designed and implemented a user-friendly interface to guide users through the NFT minting process, offering intuitive navigation for different NFT categories.</li>
+                <li>Developed a dynamic pricing system on the website, allowing users to easily view and purchase NFTs at varying prices based on category and exclusivity.</li>
+                <li>Integrated whitelist presale functionality, enabling early access for users and ensuring an exclusive experience for early buyers.</li>
+                <li>Provided a seamless, transparent view of ownership details for each token on the website, allowing users to track their investments and explore token-specific information.</li>
+                <li>Developed robust security features, ensuring safe and efficient transactions through a streamlined web-based minting process.</li>
+                <li>Enhanced user engagement by incorporating royalty management, where users could view and participate in royalty distributions directly from the platform.</li>
+                <li>Focused on ensuring responsive design and smooth performance, optimizing the website for an exceptional user experience across all devices.</li>
               </ul>
             </div>
 
@@ -64,7 +64,7 @@ const CrossroadsAdventure = () => {
               </h3>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a 
-                  href="https://crossroadsadventure.earth/" 
+                  href="https://decimalsrebuilt.com/" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
@@ -84,7 +84,7 @@ const CrossroadsAdventure = () => {
                 flexWrap: 'wrap', 
                 gap: '0.5rem' 
               }}>
-                {['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'GoDaddy Hosting'].map(tech => (
+                {['Solidity', 'ERC-721A', 'OpenZeppelin', 'Remix', 'Hardhat', 'Truffle', 'JavaScript', 'Polygon', 'Polygonscan', 'Etherscan', 'Ethers.js', 'Infura', 'Alchemy', 'Web3', 'React.js'].map(tech => (
                   <span
                     key={tech}
                     style={{
@@ -109,4 +109,4 @@ const CrossroadsAdventure = () => {
   );
 };
 
-export default CrossroadsAdventure;
+export default DecimalsRebuilt;

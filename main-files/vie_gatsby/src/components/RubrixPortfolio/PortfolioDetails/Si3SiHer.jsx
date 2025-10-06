@@ -9,7 +9,7 @@ const Si3SiHer = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/si3-siher.jpg" 
+              src="/img/portfolio/5.jpg" 
               alt="Si3 & Si Her Web3 Platform"
               style={{
                 width: '100%',

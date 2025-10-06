@@ -9,7 +9,7 @@ const SwedenRelocators = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/sweden-relocators.jpg" 
+              src="/img/portfolio/2.jpg" 
               alt="Sweden Relocators AB Portal"
               style={{
                 width: '100%',

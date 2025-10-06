@@ -7,6 +7,7 @@ import SwedenRelocators from "./PortfolioDetails/SwedenRelocators";
 import ArliElectrical from "./PortfolioDetails/ArliElectrical";
 import CrossroadsAdventure from "./PortfolioDetails/CrossroadsAdventure";
 import Si3SiHer from "./PortfolioDetails/Si3SiHer";
+import DecimalsRebuilt from "./PortfolioDetails/DecimalsRebuilt";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -52,7 +53,7 @@ const RubrixPortfolio = () => {
       id: 1,
       title: "Sweden Relocators AB Portal",
       description: "A comprehensive relocation and mobility solutions portal for Nordic countries with real-time tracking and multi-language support.",
-      image: "/img/portfolio/sweden-relocators.jpg",
+      image: "/img/portfolio/2.jpg",
       category: "web",
       tech: ["Figma", "React", "Tailwind CSS", "Material UI", "Node.js", "Laravel", "Vite JS"],
       component: SwedenRelocators
@@ -61,7 +62,7 @@ const RubrixPortfolio = () => {
       id: 2,
       title: "Arli Electrical Website",
       description: "A professional website for electrical services with mobile responsiveness and customer engagement features.",
-      image: "/img/portfolio/arli-electrical.jpg",
+      image: "/img/portfolio/3.jpg",
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "GoDaddy Hosting"],
       component: ArliElectrical
@@ -70,7 +71,7 @@ const RubrixPortfolio = () => {
       id: 3,
       title: "Crossroads Adventure Website",
       description: "A premier luxury expedition specialist website for Pakistan's adventure travel, featuring trip management and booking system.",
-      image: "/img/portfolio/crossroads-adventure.jpg",
+      image: "/img/portfolio/4.jpg",
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "GoDaddy Hosting"],
       component: CrossroadsAdventure
@@ -79,10 +80,19 @@ const RubrixPortfolio = () => {
       id: 4,
       title: "Si3 & Si Her Web3 Platform",
       description: "A comprehensive Web3 platform creating accessible pathways for diverse voices in the new economy with decentralized infrastructure.",
-      image: "/img/portfolio/si3-siher.jpg",
+      image: "/img/portfolio/5.jpg",
       category: "web3",
       tech: ["Figma", "HTML", "CSS", "JavaScript", "Wallet Connect", "IPNS", "IPFS", "ENS", "Firebase"],
       component: Si3SiHer
+    },
+    {
+      id: 5,
+      title: "Decimals Rebuilt NFT Platform",
+      description: "A sophisticated NFT platform with seamless user experience, combining advanced blockchain features with intuitive web interface for minting and managing NFTs.",
+      image: "/img/portfolio/1.jpg",
+      category: "nft",
+      tech: ["Solidity", "ERC-721A", "OpenZeppelin", "Hardhat", "JavaScript", "Polygon", "Ethers.js", "Web3", "React.js"],
+      component: DecimalsRebuilt
     }
    
   ];

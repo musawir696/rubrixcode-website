@@ -9,7 +9,7 @@ const ArliElectrical = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/arli-electrical.jpg" 
+              src="/img/portfolio/3.jpg" 
               alt="Arli Electrical Website"
               style={{
                 width: '100%',
