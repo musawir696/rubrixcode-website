@@ -3,32 +3,25 @@ import RubrixNavbar from "components/RubrixNavbar/navbar";
 import RubrixFooter from "components/RubrixFooter/footer";
 import RubrixLayout from "layouts/RubrixLayout";
 
-/* -------------------- HERO SECTION -------------------- */
-export const AboutHero = () => {
-  return (
-    <section className="hero" style={{ minHeight: "60vh", paddingTop: "100px" }}>
-      <div className="container">
-        <div className="text-center">
-          <h1 className="hero-title fade-in">About RubrixCode</h1>
-          <p
-            className="hero-subtitle fade-in"
-            style={{ maxWidth: "700px", margin: "0 auto" }}
-          >
-            We are passionate developers and designers dedicated to creating exceptional
-            digital experiences that drive business growth and innovation.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 /* -------------------- ABOUT SECTIONS -------------------- */
 export const AboutSections = () => {
   return (
     <>
-      {/* Include Hero so it's visible when imported on Home Page */}
-      <AboutHero />
+      {/* Hero Section (merged directly here) */}
+      <section className="hero" style={{ minHeight: "60vh", paddingTop: "100px" }}>
+        <div className="container">
+          <div className="text-center">
+            <h1 className="hero-title fade-in">About RubrixCode</h1>
+            <p
+              className="hero-subtitle fade-in"
+              style={{ maxWidth: "700px", margin: "0 auto" }}
+            >
+              We are passionate developers and designers dedicated to creating exceptional
+              digital experiences that drive business growth and innovation.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* What We Do */}
       <section className="section">
