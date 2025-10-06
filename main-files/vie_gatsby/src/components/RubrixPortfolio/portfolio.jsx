@@ -9,6 +9,7 @@ import CrossroadsAdventure from "./PortfolioDetails/CrossroadsAdventure";
 import Si3SiHer from "./PortfolioDetails/Si3SiHer";
 import DecimalsRebuilt from "./PortfolioDetails/DecimalsRebuilt";
 import Contiamo from "./PortfolioDetails/Contiamo";
+import AegeanTaxi from "./PortfolioDetails/AegeanTaxi";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -103,6 +104,15 @@ const RubrixPortfolio = () => {
       category: "web",
       tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Next.js", "Canva", "GitHub", "Git", "Webpack", "Node.js"],
       component: Contiamo
+    },
+    {
+      id: 7,
+      title: "Aegean Taxi Transportation Website",
+      description: "Premium transportation service website offering seamless travel solutions across Greece with responsive design and mobile-first approach.",
+      image: "/img/portfolio/7.jpg",
+      category: "web",
+      tech: ["Figma", "HTML", "Vanilla CSS", "JavaScript", "Tailwind CSS", "Next.js", "React"],
+      component: AegeanTaxi
     }
    
   ];
