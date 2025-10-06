@@ -17,6 +17,7 @@ import Brainwave from "./PortfolioDetails/Brainwave";
 import Zluf from "./PortfolioDetails/Zluf";
 import HoyaKerry from "./PortfolioDetails/HoyaKerry";
 import MiuraProtocol from "./PortfolioDetails/MiuraProtocol";
+import SustainChain from "./PortfolioDetails/SustainChain";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -183,6 +184,15 @@ const RubrixPortfolio = () => {
       category: "defi",
       tech: ["Figma", "HTML", "CSS", "JavaScript", "Solana", "Solflare", "Wallet Connect", "Blender", "Canva", "Adobe Photoshop", "Next.js", "React", "Firebase", "Metaplex SDK"],
       component: MiuraProtocol
+    },
+    {
+      id: 15,
+      title: "SustainChain Token Platform",
+      description: "Pioneering membership benefits platform leveraging blockchain technology to support real-world construction projects with exclusive perks and no sales tax.",
+      image: "/img/portfolio/freelancer/2.jpg",
+      category: "blockchain",
+      tech: ["HTML", "CSS", "JavaScript", "Web3", "Ethereum", "Wallet Connect", "Git", "GitHub", "Firebase", "Metaplex SDK"],
+      component: SustainChain
     }
    
   ];
