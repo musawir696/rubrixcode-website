@@ -582,6 +582,62 @@ p {
   }
 }
 
+/* Portfolio Detail Styles */
+.portfolio-detail {
+  padding: 2rem 0;
+}
+
+.project-image img {
+  transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.02);
+}
+
+.project-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.project-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.project-achievements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-achievements li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.project-achievements li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-400);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.tech-stack span {
+  transition: all 0.3s ease;
+}
+
+.tech-stack span:hover {
+  background: var(--accent-400);
+  color: var(--bg-900);
+  transform: translateY(-2px);
+}
+
 /* Form Styles */
 .form-group {
   margin-bottom: 1.5rem;

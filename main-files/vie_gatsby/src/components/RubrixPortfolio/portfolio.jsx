@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Import portfolio detail components
+import SwedenRelocators from "./PortfolioDetails/SwedenRelocators";
+import ArliElectrical from "./PortfolioDetails/ArliElectrical";
+
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -9,7 +13,7 @@ if (typeof window !== "undefined") {
 const RubrixPortfolio = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
-  const [filter, setFilter] = useState('all');
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -39,77 +43,56 @@ const RubrixPortfolio = () => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [filter]);
+  }, []);
 
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce solution with real-time inventory management and seamless payment integration.",
-      image: "/img/portfolio/1.jpg",
+      title: "Sweden Relocators AB Portal",
+      description: "A comprehensive relocation and mobility solutions portal for Nordic countries with real-time tracking and multi-language support.",
+      image: "/img/portfolio/sweden-relocators.jpg",
       category: "web",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      link: "#"
+      tech: ["Figma", "React", "Tailwind CSS", "Material UI", "Node.js", "Laravel", "Vite JS"],
+      component: SwedenRelocators
     },
     {
       id: 2,
-      title: "Mobile Banking App",
-      description: "Secure mobile banking application with biometric authentication and real-time transaction monitoring.",
-      image: "/img/portfolio/2.jpg",
-      category: "mobile",
-      tech: ["React Native", "Firebase", "AWS"],
-      link: "#"
-    },
-    {
-      id: 3,
-      title: "SaaS Dashboard",
-      description: "Comprehensive analytics dashboard for SaaS businesses with real-time data visualization.",
-      image: "/img/portfolio/3.jpg",
+      title: "Arli Electrical Website",
+      description: "A professional website for electrical services with mobile responsiveness and customer engagement features.",
+      image: "/img/portfolio/arli-electrical.jpg",
       category: "web",
-      tech: ["Vue.js", "D3.js", "Python", "PostgreSQL"],
-      link: "#"
-    },
-    {
-      id: 4,
-      title: "AI Chatbot Platform",
-      description: "Intelligent chatbot platform powered by machine learning for customer service automation.",
-      image: "/img/portfolio/4.jpg",
-      category: "ai",
-      tech: ["Python", "TensorFlow", "React", "Docker"],
-      link: "#"
-    },
-    {
-      id: 5,
-      title: "IoT Monitoring System",
-      description: "Real-time IoT device monitoring system with predictive analytics and alert management.",
-      image: "/img/portfolio/5.jpg",
-      category: "iot",
-      tech: ["Node.js", "MQTT", "InfluxDB", "Grafana"],
-      link: "#"
-    },
-    {
-      id: 6,
-      title: "Blockchain Wallet",
-      description: "Secure multi-currency blockchain wallet with DeFi integration and staking capabilities.",
-      image: "/img/portfolio/6.jpg",
-      category: "blockchain",
-      tech: ["Web3.js", "Solidity", "React", "Ethereum"],
-      link: "#"
+      tech: ["HTML", "CSS", "JavaScript", "GoDaddy Hosting"],
+      component: ArliElectrical
     }
+   
   ];
 
-  const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'web', name: 'Web Development' },
-    { id: 'mobile', name: 'Mobile Apps' },
-    { id: 'ai', name: 'AI/ML' },
-    { id: 'iot', name: 'IoT' },
-    { id: 'blockchain', name: 'Blockchain' }
-  ];
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === filter);
+  // If a project is selected, show the detail component
+  if (selectedProject) {
+    const ProjectComponent = selectedProject.component;
+    return (
+      <section className="section" ref={sectionRef} id="portfolio">
+        <div className="container">
+          <div style={{ marginBottom: '2rem' }}>
+            <button 
+              onClick={() => setSelectedProject(null)}
+              className="btn-secondary"
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '0.5rem',
+                marginBottom: '2rem'
+              }}
+            >
+              ← Back to Portfolio
+            </button>
+          </div>
+          <ProjectComponent />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="section" ref={sectionRef} id="portfolio">
@@ -121,31 +104,10 @@ const RubrixPortfolio = () => {
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="text-center" style={{ marginBottom: '3rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-            {categories.map(category => (
-              <button
-                key={category.id}
-                onClick={() => setFilter(category.id)}
-                className={`btn-secondary ${filter === category.id ? 'active' : ''}`}
-                style={{
-                  background: filter === category.id ? 'var(--accent-400)' : 'transparent',
-                  color: filter === category.id ? 'var(--bg-900)' : 'var(--accent-400)',
-                  border: `2px solid var(--accent-400)`,
-                  padding: '0.5rem 1.5rem',
-                  fontSize: '0.9rem'
-                }}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* Portfolio Grid */}
         <div className="grid grid-3">
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <div 
               key={project.id}
               className="card fade-in"
@@ -208,11 +170,7 @@ const RubrixPortfolio = () => {
                   e.target.style.opacity = '0';
                 }}
                 >
-                  {project.category === 'web' && '🌐'}
-                  {project.category === 'mobile' && '📱'}
-                  {project.category === 'ai' && '🤖'}
-                  {project.category === 'iot' && '🔗'}
-                  {project.category === 'blockchain' && '⛓️'}
+                  🌐
                 </div>
               </div>
               
@@ -252,18 +210,20 @@ const RubrixPortfolio = () => {
                 </div>
               </div>
               
-              <a 
-                href={project.link}
+              <button 
+                onClick={() => setSelectedProject(project)}
                 className="btn-primary"
                 style={{ 
                   width: '100%', 
                   textAlign: 'center',
                   fontSize: '0.9rem',
-                  padding: '0.75rem'
+                  padding: '0.75rem',
+                  border: 'none',
+                  cursor: 'pointer'
                 }}
               >
-                View Project
-              </a>
+                View Details
+              </button>
             </div>
           ))}
         </div>
