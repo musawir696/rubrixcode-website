@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SwedenRelocators from "./PortfolioDetails/SwedenRelocators";
 import ArliElectrical from "./PortfolioDetails/ArliElectrical";
 import CrossroadsAdventure from "./PortfolioDetails/CrossroadsAdventure";
+import Si3SiHer from "./PortfolioDetails/Si3SiHer";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -73,6 +74,15 @@ const RubrixPortfolio = () => {
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "GoDaddy Hosting"],
       component: CrossroadsAdventure
+    },
+    {
+      id: 4,
+      title: "Si3 & Si Her Web3 Platform",
+      description: "A comprehensive Web3 platform creating accessible pathways for diverse voices in the new economy with decentralized infrastructure.",
+      image: "/img/portfolio/si3-siher.jpg",
+      category: "web3",
+      tech: ["Figma", "HTML", "CSS", "JavaScript", "Wallet Connect", "IPNS", "IPFS", "ENS", "Firebase"],
+      component: Si3SiHer
     }
    
   ];
