@@ -6,7 +6,7 @@ import RubrixLayout from "layouts/RubrixLayout";
 export const AboutSections = () => (
 	<>
 		{/* 🔹 Inline About Hero Section  */}
-		<section className="hero" style={{ minHeight: '60vh', paddingTop: '100px' }}>
+		<section className="hero" style={{ minHeight: '50vh', paddingTop: '60px' }}>
 			<div className="container">
 				<div className="text-center">
 					<h1 className="hero-title fade-in">About RubrixCode</h1>

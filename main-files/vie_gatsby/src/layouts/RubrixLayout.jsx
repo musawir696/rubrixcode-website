@@ -9,12 +9,6 @@ import "styles/rubrixcode.css";
 
 const RubrixLayout = ({ children }) => {
   React.useEffect(() => {
-    // Defer-load preloader CSS to avoid CSS chunk order warnings in dev
-    const preloaderLink = document.createElement('link');
-    preloaderLink.rel = 'stylesheet';
-    preloaderLink.href = '/styles/preloader.css';
-    requestAnimationFrame(() => document.head.appendChild(preloaderLink));
-
     // Set RubrixCode theme
     window.theme = "rubrix";
     
