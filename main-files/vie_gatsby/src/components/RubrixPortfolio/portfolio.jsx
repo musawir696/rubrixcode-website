@@ -10,6 +10,7 @@ import Si3SiHer from "./PortfolioDetails/Si3SiHer";
 import DecimalsRebuilt from "./PortfolioDetails/DecimalsRebuilt";
 import Contiamo from "./PortfolioDetails/Contiamo";
 import AegeanTaxi from "./PortfolioDetails/AegeanTaxi";
+import Growphics from "./PortfolioDetails/Growphics";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -113,6 +114,15 @@ const RubrixPortfolio = () => {
       category: "web",
       tech: ["Figma", "HTML", "Vanilla CSS", "JavaScript", "Tailwind CSS", "Next.js", "React"],
       component: AegeanTaxi
+    },
+    {
+      id: 8,
+      title: "Growphics Professional Graphics Website",
+      description: "High-quality professional graphics website specializing in logos, social media content, and complete brand overhauls with enhanced artistic styling.",
+      image: "/img/portfolio/cr/1.jpg",
+      category: "web",
+      tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Next.js", "Node.js", "Git", "GitHub", "Netlify", "FromSpree"],
+      component: Growphics
     }
    
   ];
