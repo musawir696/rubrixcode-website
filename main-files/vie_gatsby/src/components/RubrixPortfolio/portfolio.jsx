@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Import portfolio detail components
 import SwedenRelocators from "./PortfolioDetails/SwedenRelocators";
 import ArliElectrical from "./PortfolioDetails/ArliElectrical";
+import CrossroadsAdventure from "./PortfolioDetails/CrossroadsAdventure";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -63,6 +64,15 @@ const RubrixPortfolio = () => {
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "GoDaddy Hosting"],
       component: ArliElectrical
+    },
+    {
+      id: 3,
+      title: "Crossroads Adventure Website",
+      description: "A premier luxury expedition specialist website for Pakistan's adventure travel, featuring trip management and booking system.",
+      image: "/img/portfolio/crossroads-adventure.jpg",
+      category: "web",
+      tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "GoDaddy Hosting"],
+      component: CrossroadsAdventure
     }
    
   ];
