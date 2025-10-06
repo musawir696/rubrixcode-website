@@ -14,6 +14,7 @@ import Growphics from "./PortfolioDetails/Growphics";
 import TheWildGuardians from "./PortfolioDetails/TheWildGuardians";
 import Perplexa from "./PortfolioDetails/Perplexa";
 import Brainwave from "./PortfolioDetails/Brainwave";
+import Zluf from "./PortfolioDetails/Zluf";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -153,6 +154,15 @@ const RubrixPortfolio = () => {
       category: "web",
       tech: ["HTML", "Tailwind CSS", "React", "GSAP"],
       component: Brainwave
+    },
+    {
+      id: 12,
+      title: "Z.L.U.F. — Double Hearts NFT Project",
+      description: "AI and human emotion exploration using Double Hearts NFTs, with e‑commerce merchandise and Polygon ERC‑721 smart contracts.",
+      image: "/img/portfolio/curs/4.jpg",
+      category: "nft",
+      tech: ["Solidity", "Smart Contracts", "Web3.js", "HTML", "CSS", "JavaScript", "IPFS", "Metamask", "Polygon", "ERC-721", "WalletConnect", "Firebase"],
+      component: Zluf
     }
    
   ];
@@ -223,7 +233,7 @@ const RubrixPortfolio = () => {
                 position: 'relative'
               }}>
                 <img 
-                  src={`/img/portfolio/${project.id}.jpg`}
+                  src={project.image ? project.image : `/img/portfolio/${project.id}.jpg`}
                   alt={project.title}
                   style={{
                     width: '100%',
