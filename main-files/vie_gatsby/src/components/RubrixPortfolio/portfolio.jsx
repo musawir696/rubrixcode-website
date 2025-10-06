@@ -18,6 +18,8 @@ import Zluf from "./PortfolioDetails/Zluf";
 import HoyaKerry from "./PortfolioDetails/HoyaKerry";
 import MiuraProtocol from "./PortfolioDetails/MiuraProtocol";
 import SustainChain from "./PortfolioDetails/SustainChain";
+import BankRollBears from "./PortfolioDetails/BankRollBears";
+import Lumino from "./PortfolioDetails/Lumino";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -193,6 +195,24 @@ const RubrixPortfolio = () => {
       category: "blockchain",
       tech: ["HTML", "CSS", "JavaScript", "Web3", "Ethereum", "Wallet Connect", "Git", "GitHub", "Firebase", "Metaplex SDK"],
       component: SustainChain
+    },
+    {
+      id: 16,
+      title: "The Bankroll Bear Society",
+      description: "NFT collection of 5,000 unique bears with real-world utilities, staking, giveaways, token usage, and environmental impact goals.",
+      image: "/img/portfolio/full/1.jpg",
+      category: "nft",
+      tech: ["HTML", "CSS", "JavaScript", "Solidity", "Ethereum", "Web3", "Ebisus Bay", "Firebase", "Metaplex SDK"],
+      component: BankRollBears
+    },
+    {
+      id: 17,
+      title: "Lumino Digital Agency Website",
+      description: "Digital agency site delivering creative, tech-savvy brand experiences with interactive content and full responsiveness.",
+      image: "/img/portfolio/project2/1.jpg",
+      category: "web",
+      tech: ["React", "JavaScript", "HTML", "CSS", "Node.js", "Figma", "Canva", "Firebase", "MongoDB", "Google API"],
+      component: Lumino
     }
    
   ];
