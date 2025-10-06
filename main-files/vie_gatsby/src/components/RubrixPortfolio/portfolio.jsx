@@ -64,6 +64,25 @@ const RubrixPortfolio = () => {
     return () => ctx.revert();
   }, []);
 
+  // Re-initialize card refs and visibility when returning from a detail view
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (selectedProject === null) {
+      // Ensure new grid items are visible and animated after re-render
+      const id = setTimeout(() => {
+        const cards = cardsRef.current.filter(Boolean);
+        cards.forEach((el) => el.classList && el.classList.add("visible"));
+        if (cards.length) {
+          gsap.fromTo(cards,
+            { opacity: 0, y: 40, scale: 0.95 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.07, ease: "power2.out" }
+          );
+        }
+      }, 0);
+      return () => clearTimeout(id);
+    }
+  }, [selectedProject]);
+
   const projects = [
     {
       id: 1,
@@ -266,7 +285,17 @@ const RubrixPortfolio = () => {
         <div className="container">
           <div style={{ marginBottom: '2rem' }}>
             <button 
-              onClick={() => setSelectedProject(null)}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedProject(null);
+                // Scroll back to the portfolio grid after state resets
+                setTimeout(() => {
+                  if (sectionRef.current) {
+                    sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, 0);
+              }}
+              type="button"
               className="btn-secondary"
               style={{ 
                 display: 'flex', 
@@ -283,6 +312,9 @@ const RubrixPortfolio = () => {
       </section>
     );
   }
+
+  // Reset refs before rendering grid so new elements are tracked
+  cardsRef.current = [];
 
   return (
     <section className="section" ref={sectionRef} id="portfolio">
@@ -301,7 +333,7 @@ const RubrixPortfolio = () => {
             <div 
               key={project.id}
               className="card fade-in"
-              ref={el => cardsRef.current[index] = el}
+              ref={el => { cardsRef.current[index] = el; }}
               style={{ 
                 background: 'linear-gradient(135deg, var(--bg-800) 0%, var(--bg-700) 100%)',
                 border: '1px solid var(--bg-600)',
@@ -309,11 +341,12 @@ const RubrixPortfolio = () => {
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
-                gsap.to(e.target, { scale: 1.05, duration: 0.3 });
+                gsap.to(e.currentTarget, { scale: 1.05, duration: 0.3 });
               }}
               onMouseLeave={(e) => {
-                gsap.to(e.target, { scale: 1, duration: 0.3 });
+                gsap.to(e.currentTarget, { scale: 1, duration: 0.3 });
               }}
+              onClick={() => setSelectedProject(project)}
             >
               <div style={{ 
                 height: '200px', 
@@ -332,10 +365,10 @@ const RubrixPortfolio = () => {
                     transition: 'transform 0.3s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.transform = 'scale(1.1)';
+                    e.currentTarget.style.transform = 'scale(1.1)';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.transform = 'scale(1)';
+                    e.currentTarget.style.transform = 'scale(1)';
                   }}
                 />
                 <div style={{
@@ -354,10 +387,10 @@ const RubrixPortfolio = () => {
                   transition: 'opacity 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.opacity = '1';
+                  e.currentTarget.style.opacity = '1';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.opacity = '0';
+                  e.currentTarget.style.opacity = '0';
                 }}
                 >
                   🌐
