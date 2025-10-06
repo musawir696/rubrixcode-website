@@ -12,6 +12,8 @@ import Contiamo from "./PortfolioDetails/Contiamo";
 import AegeanTaxi from "./PortfolioDetails/AegeanTaxi";
 import Growphics from "./PortfolioDetails/Growphics";
 import TheWildGuardians from "./PortfolioDetails/TheWildGuardians";
+import Perplexa from "./PortfolioDetails/Perplexa";
+import Brainwave from "./PortfolioDetails/Brainwave";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -133,6 +135,24 @@ const RubrixPortfolio = () => {
       category: "nft",
       tech: ["Webflow", "Webflow APIs", "Ethereum", "Solidity", "Wallet Connect", "Metamask", "Metaplex SDK"],
       component: TheWildGuardians
+    },
+    {
+      id: 10,
+      title: "Perplexa Digital Agency Website",
+      description: "Leading digital marketing agency website offering business growth, marketing advice, and finance consulting services with comprehensive React development.",
+      image: "/img/portfolio/curs/2.jpg",
+      category: "web",
+      tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "Figma", "Adobe XD", "Adobe Photoshop", "Illustrator", "Firebase", "Google APIs"],
+      component: Perplexa
+    },
+    {
+      id: 11,
+      title: "Brainwave AI Company Website",
+      description: "AI-based company website offering cutting-edge tools and solutions with dynamic animations, hover effects, and parallax features using GSAP.",
+      image: "/img/portfolio/curs/3.jpg",
+      category: "web",
+      tech: ["HTML", "Tailwind CSS", "React", "GSAP"],
+      component: Brainwave
     }
    
   ];
