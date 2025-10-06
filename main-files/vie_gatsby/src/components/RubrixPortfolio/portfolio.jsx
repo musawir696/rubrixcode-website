@@ -15,6 +15,8 @@ import TheWildGuardians from "./PortfolioDetails/TheWildGuardians";
 import Perplexa from "./PortfolioDetails/Perplexa";
 import Brainwave from "./PortfolioDetails/Brainwave";
 import Zluf from "./PortfolioDetails/Zluf";
+import HoyaKerry from "./PortfolioDetails/HoyaKerry";
+import MiuraProtocol from "./PortfolioDetails/MiuraProtocol";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -163,6 +165,24 @@ const RubrixPortfolio = () => {
       category: "nft",
       tech: ["Solidity", "Smart Contracts", "Web3.js", "HTML", "CSS", "JavaScript", "IPFS", "Metamask", "Polygon", "ERC-721", "WalletConnect", "Firebase"],
       component: Zluf
+    },
+    {
+      id: 13,
+      title: "Hoya Kerry Activewear Website",
+      description: "Environmentally-conscious fitness and wellbeing lifestyle brand with e-commerce platform, NFT collection, and sustainable activewear products.",
+      image: "/img/portfolio/curs/5.jpg",
+      category: "web",
+      tech: ["Solidity", "ERC-1155", "Ethereum", "IPFS", "Python", "JavaScript", "HTML", "CSS", "OpenSea API"],
+      component: HoyaKerry
+    },
+    {
+      id: 14,
+      title: "Miura Protocol DeFi Platform",
+      description: "Decentralized non-custodial liquidity market protocol for borrowing assets using NFTs as collateral with Solana blockchain integration.",
+      image: "/img/portfolio/freelancer/1.jpg",
+      category: "defi",
+      tech: ["Figma", "HTML", "CSS", "JavaScript", "Solana", "Solflare", "Wallet Connect", "Blender", "Canva", "Adobe Photoshop", "Next.js", "React", "Firebase", "Metaplex SDK"],
+      component: MiuraProtocol
     }
    
   ];
