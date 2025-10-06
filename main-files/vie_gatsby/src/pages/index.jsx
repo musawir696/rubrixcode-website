@@ -1,7 +1,7 @@
 import React from "react";
 import RubrixNavbar from "components/RubrixNavbar/navbar";
 import RubrixHero from "components/RubrixHero/hero";
-import RubrixAbout from "components/RubrixAbout/about";
+import { AboutHero, AboutSections } from "./about";
 import RubrixPortfolio from "components/RubrixPortfolio/portfolio";
 import RubrixContact from "components/RubrixContact/contact";
 import RubrixFooter from "components/RubrixFooter/footer";
@@ -12,7 +12,8 @@ const HomePage = () => {
     <RubrixLayout>
       <RubrixNavbar />
       <RubrixHero />
-      <RubrixAbout />
+      <AboutHero />
+      <AboutSections />
       <RubrixPortfolio />
       <RubrixContact />
       <RubrixFooter />

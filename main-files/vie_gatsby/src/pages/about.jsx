@@ -3,41 +3,78 @@ import RubrixNavbar from "components/RubrixNavbar/navbar";
 import RubrixFooter from "components/RubrixFooter/footer";
 import RubrixLayout from "layouts/RubrixLayout";
 
-const AboutPage = () => {
+export const AboutHero = () => {
   return (
-    <RubrixLayout>
-      <RubrixNavbar />
-      
-      {/* Hero Section */}
-      <section className="hero" style={{ minHeight: '60vh', paddingTop: '100px' }}>
+    <section className="hero" style={{ minHeight: '60vh', paddingTop: '100px' }}>
+      <div className="container">
+        <div className="text-center">
+          <h1 className="hero-title fade-in">About RubrixCode</h1>
+          <p className="hero-subtitle fade-in" style={{ maxWidth: '700px', margin: '0 auto' }}>
+            We are passionate developers and designers dedicated to creating exceptional 
+            digital experiences that drive business growth and innovation.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const AboutSections = () => {
+  return (
+    <>
+      {/* What We Do */}
+      <section className="section">
         <div className="container">
-          <div className="text-center">
-            <h1 className="hero-title fade-in">About RubrixCode</h1>
-            <p className="hero-subtitle fade-in" style={{ maxWidth: '700px', margin: '0 auto' }}>
-              We are passionate developers and designers dedicated to creating exceptional 
-              digital experiences that drive business growth and innovation.
+          <div className="text-center" style={{ marginBottom: '4rem' }}>
+            <h2>What We Do</h2>
+            <p>
+              We design, build, and scale modern digital products end‑to‑end — from discovery
+              and UX to production‑grade engineering and ongoing growth.
             </p>
+          </div>
+
+          <div className="grid grid-3">
+            <div className="card fade-in">
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🧩</div>
+              <h3>Product Strategy</h3>
+              <p>
+                Discovery workshops, roadmaps, and validation to align business goals with
+                user needs and technical feasibility.
+              </p>
+            </div>
+            <div className="card fade-in">
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🛠️</div>
+              <h3>Design & Engineering</h3>
+              <p>
+                UX/UI design, web and mobile development, CMS/e‑commerce, and platform
+                integrations delivered with quality.
+              </p>
+            </div>
+            <div className="card fade-in">
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🚀</div>
+              <h3>Scale & Growth</h3>
+              <p>
+                Cloud architecture, performance, DevOps, analytics, and continuous improvement
+                to keep shipping value.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Team/Company Short Story */}
       <section className="section">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
             <div className="slide-in-left">
-              <h2>Our Story</h2>
+              <h2>Team/Company Short Story</h2>
               <p>
-                Founded in 2020, RubrixCode emerged from a simple belief: that great software 
-                should not only solve problems but also inspire and delight users. What started 
-                as a small team of passionate developers has grown into a full-service software 
-                development company.
+                Started in 2020, RubrixCode grew from a small group of builders into a
+                multidisciplinary team delivering delightful, business‑ready software.
               </p>
               <p>
-                We've had the privilege of working with startups, enterprises, and everything 
-                in between, helping them navigate the complex world of digital transformation. 
-                Our approach combines technical expertise with creative thinking to deliver 
-                solutions that exceed expectations.
+                We partner with startups and enterprises to turn ideas into products, modernize
+                platforms, and create experiences that people love to use every day.
               </p>
             </div>
             <div className="slide-in-right">
@@ -76,42 +113,46 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Mission & Vision */}
       <section className="section" style={{ background: 'var(--bg-800)' }}>
         <div className="container">
           <div className="text-center" style={{ marginBottom: '4rem' }}>
-            <h2>Our Values</h2>
-            <p>These principles guide everything we do and shape how we work with our clients.</p>
+            <h2>Mission & Vision</h2>
+            <p>Why we exist today — and where we’re heading next.</p>
           </div>
 
-          <div className="grid grid-3">
+          <div className="grid grid-2">
             <div className="card fade-in">
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎯</div>
-              <h3>Excellence</h3>
+              <h3>Our Mission</h3>
               <p>
-                We strive for excellence in every project, paying attention to detail and 
-                ensuring the highest quality standards in our deliverables.
+                Empower teams to ship impactful digital products faster — with craftsmanship,
+                clarity, and measurable outcomes.
               </p>
             </div>
             <div className="card fade-in">
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🤝</div>
-              <h3>Collaboration</h3>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌍</div>
+              <h3>Our Vision</h3>
               <p>
-                We believe in the power of collaboration, working closely with our clients 
-                to understand their vision and bring it to life.
-              </p>
-            </div>
-            <div className="card fade-in">
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💡</div>
-              <h3>Innovation</h3>
-              <p>
-                We embrace new technologies and innovative approaches to solve complex 
-                problems and create cutting-edge solutions.
+                A world where exceptional software is accessible to every organization and
+                loved by every user.
               </p>
             </div>
           </div>
         </div>
       </section>
+    </>
+  );
+};
+
+const AboutPage = () => {
+  return (
+    <RubrixLayout>
+      <RubrixNavbar />
+      
+      {/* Hero Section */}
+      <AboutHero />
+      <AboutSections />
 
       {/* Team */}
       <section className="section">
@@ -235,8 +276,8 @@ export const Head = () => {
   return (
     <>
       <title>About Us - RubrixCode</title>
-      <meta name="description" content="Learn about RubrixCode's story, values, and team. We are passionate developers and designers dedicated to creating exceptional digital experiences." />
-      <meta name="keywords" content="about rubrixcode, software development team, company story, digital transformation" />
+      <meta name="description" content="Discover what we do, our short story, and our mission & vision at RubrixCode — a team of designers and engineers crafting exceptional digital products." />
+      <meta name="keywords" content="rubrixcode about, what we do, company story, mission, vision, product development, design and engineering" />
     </>
   );
 };
