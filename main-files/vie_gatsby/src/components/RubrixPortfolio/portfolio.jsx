@@ -8,6 +8,7 @@ import ArliElectrical from "./PortfolioDetails/ArliElectrical";
 import CrossroadsAdventure from "./PortfolioDetails/CrossroadsAdventure";
 import Si3SiHer from "./PortfolioDetails/Si3SiHer";
 import DecimalsRebuilt from "./PortfolioDetails/DecimalsRebuilt";
+import Contiamo from "./PortfolioDetails/Contiamo";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -93,6 +94,15 @@ const RubrixPortfolio = () => {
       category: "nft",
       tech: ["Solidity", "ERC-721A", "OpenZeppelin", "Hardhat", "JavaScript", "Polygon", "Ethers.js", "Web3", "React.js"],
       component: DecimalsRebuilt
+    },
+    {
+      id: 6,
+      title: "Contiamo Data Analytics & AI Website",
+      description: "Enhanced key sections of Contiamo's website to improve user experience and performance, focusing on data analytics and AI solutions.",
+      image: "/img/portfolio/6.jpg",
+      category: "web",
+      tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Next.js", "Canva", "GitHub", "Git", "Webpack", "Node.js"],
+      component: Contiamo
     }
    
   ];
