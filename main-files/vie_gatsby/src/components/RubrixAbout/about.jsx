@@ -162,24 +162,24 @@ const RubrixAbout = () => {
 
   const services = [
     {
-      title: "Web Development",
-      description: "Modern, responsive web applications built with cutting-edge technologies and best practices.",
-      icon: "🌐"
+      title: "Web3 & Blockchain",
+      description: "NFT platforms, DeFi protocols, and smart contracts on Ethereum, Solana & Polygon. We've minted millions in NFT sales.",
+      icon: "⛓️"
     },
     {
-      title: "Mobile Apps",
-      description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
-      icon: "📱"
+      title: "Full-Stack Development",
+      description: "React, Next.js, Node.js, Laravel. From MVP to scale, we build fast and ship faster. Production-ready code, always.",
+      icon: "⚡"
     },
     {
-      title: "UI/UX Design",
-      description: "Beautiful, intuitive interfaces designed with user experience at the forefront.",
+      title: "Premium UI/UX",
+      description: "Figma to pixel-perfect code. We design interfaces that users love and competitors envy. Award-worthy aesthetics.",
       icon: "🎨"
     },
     {
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and deployment solutions for modern applications.",
-      icon: "☁️"
+      title: "AI Integration",
+      description: "ChatGPT APIs, machine learning models, and intelligent automation. Make your product smarter than the competition.",
+      icon: "🤖"
     }
   ];
 
@@ -187,28 +187,30 @@ const RubrixAbout = () => {
     <section className="section" ref={sectionRef}>
       <div className="container">
         <div className="text-center" style={{ marginBottom: '4rem' }}>
-          <h2 className="fade-in">What We Do</h2>
-          <p className="fade-in" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            We are a team of passionate developers and designers dedicated to creating 
-            exceptional digital experiences that drive business growth.
+          <h2 className="fade-in">What We Actually Do</h2>
+          <p className="fade-in" style={{ maxWidth: '700px', margin: '0 auto', fontSize: '1.2rem', lineHeight: '1.8' }}>
+            We don't just "build apps" — we architect <strong style={{ color: 'var(--accent-400)' }}>revenue-generating platforms</strong>, 
+            launch <strong style={{ color: 'var(--accent-400)' }}>viral NFT collections</strong>, and create 
+            <strong style={{ color: 'var(--accent-400)' }}> user experiences that convert</strong>. 
+            21 shipped projects. Zero vaporware.
           </p>
         </div>
 
         <div className="grid grid-2" style={{ marginBottom: '4rem' }}>
           <div className="slide-in-left">
-            <h3>Our Mission</h3>
+            <h3>Why Choose Us?</h3>
             <p>
-              To empower businesses with innovative software solutions that not only meet 
-              their current needs but also scale with their future growth. We believe in 
-              the power of technology to transform ideas into reality.
+              <strong style={{ color: 'var(--accent-400)' }}>Speed meets quality.</strong> We've built NFT platforms 
+              that sold out in 48 hours, e-commerce sites processing $100K+ monthly, and Web3 apps 
+              with 10K+ active users. <strong>Your deadline is our obsession.</strong>
             </p>
           </div>
           <div className="slide-in-right">
-            <h3>Our Vision</h3>
+            <h3>Our Secret Sauce</h3>
             <p>
-              To be the leading software development company that bridges the gap between 
-              cutting-edge technology and practical business solutions, creating a world 
-              where every great idea can become a digital reality.
+              We're <strong style={{ color: 'var(--accent-400)' }}>not another dev shop</strong>. We're product thinkers 
+              who code. We challenge your assumptions, optimize your UX, and ship features 
+              that actually move metrics. <strong>Results > activity.</strong>
             </p>
           </div>
         </div>

@@ -11,18 +11,18 @@ const PagesHeader = ({ title, subtitle }) => {
     
     if (path.includes('about')) {
       return {
-        title: 'About RubrixCode',
-        subtitle: 'A passionate team of developers and designers dedicated to creating innovative digital solutions that transform ideas into reality.'
+        title: 'We Ship Products That Matter',
+        subtitle: 'Not your average dev shop. We\'re product builders who happen to code really, really well. From Web3 to AI, we\'ve done it all.'
       };
     } else if (path.includes('portfolio')) {
       return {
-        title: 'Our Portfolio',
-        subtitle: 'Explore our recent projects and see how we\'ve helped businesses achieve their digital goals with innovative software solutions.'
+        title: '21 Products. Zero Flops.',
+        subtitle: 'NFT collections that sold millions. SaaS platforms serving thousands. E-commerce sites doing 6-figures monthly. See what we\'ve built.'
       };
     } else if (path.includes('contact')) {
       return {
-        title: 'Get In Touch',
-        subtitle: 'Ready to start your next project? Let\'s discuss how we can help bring your ideas to life.'
+        title: 'Ready to Ship Something Great?',
+        subtitle: 'Let\'s talk. No sales pitch, no fluff — just honest conversation about your project and how we can make it legendary.'
       };
     }
     

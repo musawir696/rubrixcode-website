@@ -32,36 +32,37 @@ export const AboutSections = () => (
 		<section className="section">
 			<div className="container">
 				<div className="text-center" style={{ marginBottom: '4rem' }}>
-					<h2>What We Do</h2>
-					<p>
-						We design, build, and scale modern digital products end-to-end — from discovery
-						and UX to production-grade engineering and ongoing growth.
+					<h2>We Build Products That Win</h2>
+					<p style={{ fontSize: '1.15rem', lineHeight: '1.8', maxWidth: '800px', margin: '0 auto' }}>
+						From <strong style={{ color: 'var(--accent-400)' }}>blockchain platforms</strong> handling millions in transactions 
+						to <strong style={{ color: 'var(--accent-400)' }}>AI-powered SaaS</strong> used by thousands — 
+						we don't do mediocre. Every line of code ships with purpose.
 					</p>
 				</div>
 
 				<div className="grid grid-3">
 					<div className="card fade-in">
-						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🧩</div>
-						<h3>Product Strategy</h3>
+						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚡</div>
+						<h3>Rapid Execution</h3>
 						<p>
-							Discovery workshops, roadmaps, and validation to align business goals with
-							user needs and technical feasibility.
+							MVP in 4 weeks. Full product in 12. We work in sprints, ship weekly, 
+							and iterate based on real user data. Not endless meetings.
 						</p>
 					</div>
 					<div className="card fade-in">
-						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🛠️</div>
-						<h3>Design & Engineering</h3>
+						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💎</div>
+						<h3>Premium Craft</h3>
 						<p>
-							UX/UI design, web and mobile development, CMS/e-commerce, and platform
-							integrations delivered with quality.
+							Every pixel matters. Every interaction delights. We don't ship "good enough" — 
+							we ship experiences that make users say "wow, this is beautiful."
 						</p>
 					</div>
 					<div className="card fade-in">
-						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🚀</div>
-						<h3>Scale & Growth</h3>
+						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📈</div>
+						<h3>Growth-Focused</h3>
 						<p>
-							Cloud architecture, performance, DevOps, analytics, and continuous improvement
-							to keep shipping value.
+							We optimize for metrics that matter: conversions, retention, revenue. 
+							Beautiful code is useless if it doesn't move the business forward.
 						</p>
 					</div>
 				</div>
@@ -73,14 +74,15 @@ export const AboutSections = () => (
 			<div className="container">
 				<div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
 					<div className="slide-in-left">
-						<h2>Team/Company Short Story</h2>
+						<h2>The RubrixCode Story</h2>
 						<p>
-							Started in 2020, RubrixCode grew from a small group of builders into a
-							multidisciplinary team delivering delightful, business-ready software.
+							Born in 2020 during the pandemic, we started building Web3 projects when NFTs 
+							were still "weird internet monkey pictures." <strong style={{ color: 'var(--accent-400)' }}>We saw the future early.</strong>
 						</p>
 						<p>
-							We partner with startups and enterprises to turn ideas into products, modernize
-							platforms, and create experiences that people love to use every day.
+							Today, we've shipped everything from <strong style={{ color: 'var(--accent-400)' }}>AI landing pages</strong> to 
+							<strong style={{ color: 'var(--accent-400)' }}> $5M NFT collections</strong>. Our clients range from solo founders 
+							to international enterprises. What unites them? They all wanted something <strong>exceptional</strong>.
 						</p>
 					</div>
 					<div className="slide-in-right">
@@ -128,25 +130,27 @@ export const AboutSections = () => (
 		<section className="section" style={{ background: 'var(--bg-800)' }}>
 			<div className="container">
 				<div className="text-center" style={{ marginBottom: '4rem' }}>
-					<h2>Mission & Vision</h2>
-					<p>Why we exist today — and where we’re heading next.</p>
+					<h2>What Drives Us</h2>
+					<p style={{ fontSize: '1.1rem' }}>Beyond the code, beyond the pixels — this is what we're really building.</p>
 				</div>
 
 				<div className="grid grid-2">
 					<div className="card fade-in">
-						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎯</div>
+						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔥</div>
 						<h3>Our Mission</h3>
 						<p>
-							Empower teams to ship impactful digital products faster — with craftsmanship,
-							clarity, and measurable outcomes.
+							<strong style={{ color: 'var(--accent-400)' }}>Make cutting-edge tech accessible.</strong> No jargon, 
+							no gatekeeping. Whether you're a solo founder with $10K or an enterprise with millions, 
+							you deserve world-class digital products. We're here to build them.
 						</p>
 					</div>
 					<div className="card fade-in">
-						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌍</div>
+						<div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🚀</div>
 						<h3>Our Vision</h3>
 						<p>
-							A world where exceptional software is accessible to every organization and
-							loved by every user.
+							<strong style={{ color: 'var(--accent-400)' }}>Every founder should have a technical co-founder.</strong> We act 
+							as yours — bringing Silicon Valley-level expertise without the equity dilution. 
+							Your success is our reputation.
 						</p>
 					</div>
 				</div>

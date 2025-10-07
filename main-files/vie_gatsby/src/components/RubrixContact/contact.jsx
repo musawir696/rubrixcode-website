@@ -234,9 +234,11 @@ const RubrixContact = () => {
     <section className="section" ref={sectionRef} id="contact">
       <div className="container">
         <div className="text-center" style={{ marginBottom: '4rem' }}>
-          <h2 className="fade-in">Get In Touch</h2>
-          <p className="fade-in">
-            Ready to start your next project? Let's discuss how we can help bring your ideas to life.
+          <h2 className="fade-in">Let's Build Something Epic</h2>
+          <p className="fade-in" style={{ fontSize: '1.15rem', lineHeight: '1.8', maxWidth: '700px', margin: '0 auto' }}>
+            Got a bold idea? Need a technical co-founder? Want to ship faster than your competitors? 
+            <strong style={{ color: 'var(--accent-400)' }}> We respond within 24 hours.</strong> No sales calls. 
+            Just real talk about your project.
           </p>
         </div>
 
@@ -245,7 +247,7 @@ const RubrixContact = () => {
           <div className="fade-in" ref={formRef}>
             <div className="card" style={{ padding: '3rem' }}>
               <h3 style={{ marginBottom: '2rem', color: 'var(--accent-400)' }}>
-                Send us a message
+                Tell Us About Your Project
               </h3>
               
               <form onSubmit={handleSubmit}>
@@ -306,14 +308,14 @@ const RubrixContact = () => {
           <div className="fade-in">
             <div className="card" style={{ padding: '3rem' }}>
               <h3 style={{ marginBottom: '2rem', color: 'var(--accent-400)' }}>
-                Contact Information
+                Reach Us Directly
               </h3>
               
               <div style={{ marginBottom: '2rem' }}>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-                  We're always excited to hear about new projects and opportunities. 
-                  Whether you have a clear vision or just an idea, we'd love to discuss 
-                  how we can help you achieve your goals.
+                  Skip the form if you prefer. <strong style={{ color: 'var(--accent-400)' }}>Email or call us directly.</strong> We're 
+                  real people who actually answer. No bots, no outsourced support — just our team, 
+                  ready to turn your vision into reality.
                 </p>
               </div>
 
@@ -358,24 +360,26 @@ const RubrixContact = () => {
               <div style={{ 
                 marginTop: '2rem', 
                 padding: '1.5rem',
-                background: 'var(--bg-600)',
+                background: 'linear-gradient(135deg, rgba(15, 182, 255, 0.1), rgba(13, 165, 230, 0.05))',
                 borderRadius: '10px',
-                border: '1px solid var(--bg-500)'
+                border: '1px solid rgba(15, 182, 255, 0.3)'
               }}>
                 <h4 style={{ 
                   color: 'var(--accent-400)', 
                   marginBottom: '1rem',
-                  fontSize: '1rem'
+                  fontSize: '1.1rem',
+                  fontWeight: '700'
                 }}>
-                  Response Time
+                  ⚡ Lightning-Fast Response
                 </h4>
                 <p style={{ 
                   color: 'var(--text-secondary)', 
-                  fontSize: '0.9rem',
-                  margin: '0'
+                  fontSize: '0.95rem',
+                  margin: '0',
+                  lineHeight: '1.7'
                 }}>
-                  We typically respond to all inquiries within 24 hours. 
-                  For urgent matters, please call us directly.
+                  <strong style={{ color: 'var(--text-primary)' }}>We reply in 24 hours or less.</strong> Serious about your project? 
+                  Call us for same-day consultation. We're builders, not sales people.
                 </p>
               </div>
             </div>

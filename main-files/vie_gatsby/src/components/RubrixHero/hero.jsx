@@ -149,21 +149,21 @@ const RubrixHero = () => {
           <div className="col-lg-6 valign">
             <div className="cont md-mb50">
               <div className="sub-title mb-5">
-                <h6>Software Development Agency</h6>
+                <h6>Elite Software Development Studio</h6>
               </div>
               <h1 className="mb-10 fw-600 hero-title" ref={titleRef}>
-                Crafting Digital Excellence
+                We Turn Bold Ideas Into <br/>Powerful Digital Products
               </h1>
               <p ref={subtitleRef}>
-                We build innovative software solutions that transform ideas into reality. 
-                From web applications to mobile apps, we deliver exceptional digital experiences.
+                From Web3 platforms to AI-powered apps, we've shipped 50+ high-impact projects 
+                for startups and enterprises worldwide. Your vision deserves world-class execution.
               </p>
               <div ref={ctaRef} style={{ marginTop: '30px', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a href="#portfolio" className="butn bord curve">
-                  <span>View Our Work</span>
+                  <span>See Our Work</span>
                 </a>
                 <a href="#contact" className="butn bord curve">
-                  <span>Get Started</span>
+                  <span>Start Your Project</span>
                 </a>
               </div>
             </div>
