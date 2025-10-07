@@ -143,71 +143,40 @@ const RubrixHero = () => {
   }, []);
 
   return (
-    <section className="hero" ref={heroRef}>
-        <div className="spline-container">
-          {/* Fallback gradient background - always visible */}
-          <div style={{
-            width: '100%',
-            height: '100%',
-            background: 'linear-gradient(135deg, rgba(15, 182, 255, 0.1) 0%, rgba(7, 24, 34, 0.8) 100%)',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: 1
-          }} />
-          
-          {/* Spline 3D scene - temporarily disabled due to invalid URL */}
-          {/* 
-          {!splineError && (
-            <Spline
-              scene="https://prod.spline.design/6Wc1X7yf-6Wc1X7yf-6Wc1X7yf/scene.splinecode"
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                opacity: splineLoaded ? 0.7 : 0,
-                transition: 'opacity 1s ease-in-out'
-              }}
-              onLoad={() => {
-                console.log('Spline scene loaded successfully');
-                setSplineLoaded(true);
-              }}
-              onError={(error) => {
-                console.error('Spline scene failed to load:', error);
-                setSplineError(true);
-              }}
-            />
-          )}
-          */}
-        </div>
-      
+    <header ref={heroRef} id="hero" className="slider-st valign position-re">
       <div className="container">
-        <div className="hero-content" style={{ paddingTop: '120px' }}>
-          <h1 className="hero-title fade-in" ref={titleRef}>
-            Crafting Digital Excellence
-          </h1>
-          <p className="hero-subtitle fade-in" ref={subtitleRef}>
-            We build innovative software solutions that transform ideas into reality. 
-            From web applications to mobile apps, we deliver exceptional digital experiences.
-          </p>
-          <div className="fade-in hero-buttons" ref={ctaRef} style={{ 
-            display: 'flex', 
-            gap: '1rem', 
-            alignItems: 'center',
-            flexWrap: 'wrap'
-          }}>
-            <a href="#portfolio" className="btn-primary">
-              View Our Work
-            </a>
-            <a href="#contact" className="btn-secondary">
-              Get Started
-            </a>
+        <div className="row">
+          <div className="col-lg-6 valign">
+            <div className="cont md-mb50">
+              <div className="sub-title mb-5">
+                <h6>Software Development Agency</h6>
+              </div>
+              <h1 className="mb-10 fw-600 hero-title" ref={titleRef}>
+                Crafting Digital Excellence
+              </h1>
+              <p ref={subtitleRef}>
+                We build innovative software solutions that transform ideas into reality. 
+                From web applications to mobile apps, we deliver exceptional digital experiences.
+              </p>
+              <div ref={ctaRef} style={{ marginTop: '30px', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a href="#portfolio" className="butn bord curve">
+                  <span>View Our Work</span>
+                </a>
+                <a href="#contact" className="butn bord curve">
+                  <span>Get Started</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="img">
+              <img src="/img/slid/001.jpg" alt="RubrixCode" />
+            </div>
           </div>
         </div>
       </div>
-    </section>
+      <div className="line bottom left"></div>
+    </header>
   );
 };
 

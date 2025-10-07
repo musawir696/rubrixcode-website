@@ -373,41 +373,39 @@ p {
   transform: translateX(0);
 }
 
-/* Hero Section - Vyro.ai Inspired */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+/* Hero Section - Uses template .slider-st but add vyro.ai enhancements */
+.rubrix-theme .slider-st {
   position: relative;
-  background: var(--bg-900);
   overflow: hidden;
 }
 
 /* Animated gradient background blobs - vyro.ai style */
-.hero::before {
+.rubrix-theme .slider-st::before {
   content: '';
   position: absolute;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(15, 182, 255, 0.3) 0%, rgba(15, 182, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(15, 182, 255, 0.2) 0%, rgba(15, 182, 255, 0) 70%);
   border-radius: 50%;
   top: -200px;
   right: -200px;
   animation: float 20s ease-in-out infinite;
   filter: blur(60px);
+  z-index: 0;
 }
 
-.hero::after {
+.rubrix-theme .slider-st::after {
   content: '';
   position: absolute;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(13, 165, 230, 0.25) 0%, rgba(13, 165, 230, 0) 70%);
+  background: radial-gradient(circle, rgba(13, 165, 230, 0.15) 0%, rgba(13, 165, 230, 0) 70%);
   border-radius: 50%;
   bottom: -150px;
   left: -150px;
   animation: float 15s ease-in-out infinite reverse;
   filter: blur(80px);
+  z-index: 0;
 }
 
 @keyframes float {
@@ -422,26 +420,22 @@ p {
   }
 }
 
-.hero-content {
+/* Ensure content is above blobs */
+.rubrix-theme .slider-st .container {
   position: relative;
   z-index: 2;
 }
 
-/* Hero buttons alignment */
-.hero-buttons {
-  display: flex !important;
-  gap: 1rem !important;
-  align-items: center !important;
-  flex-wrap: wrap !important;
+/* Style the subtitle */
+.rubrix-theme .slider-st .sub-title h6 {
+  color: var(--accent-400) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 
-.hero-buttons .btn-primary,
-.hero-buttons .btn-secondary {
-  margin: 0 !important;
-  flex-shrink: 0;
-}
-
-.hero-title {
+/* Hero title gradient */
+.rubrix-theme .slider-st .hero-title {
   background: linear-gradient(
     135deg, 
     #ffffff 0%, 
@@ -454,13 +448,35 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1.5rem;
   animation: shimmer-text 8s ease-in-out infinite;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
 }
 
+/* Hero image with subtle effects */
+.rubrix-theme .slider-st .img img {
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero buttons */
+.rubrix-theme .slider-st .butn {
+  background: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-500) 100%) !important;
+  border-color: var(--accent-400) !important;
+  color: var(--bg-900) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(15, 182, 255, 0.3);
+}
+
+.rubrix-theme .slider-st .butn:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 35px rgba(15, 182, 255, 0.4) !important;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero title shimmer animation */
 @keyframes shimmer-text {
   0%, 100% {
     background-position: 0% 50%;
@@ -470,214 +486,8 @@ p {
   }
 }
 
-.hero-subtitle {
-  font-size: 1.35rem;
-  color: var(--text-secondary);
-  margin-bottom: 2.5rem;
-  max-width: 650px;
-  line-height: 1.7;
-  font-weight: 400;
-}
-
-/* Navigation - Vyro.ai Glassmorphism Style */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 1.25rem 0;
-  background: rgba(7, 24, 34, 0.8);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-
-.navbar.scrolled {
-  background: rgba(7, 24, 34, 0.95);
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(15, 182, 255, 0.3);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-}
-
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-400);
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  padding: 0.6rem 1.2rem;
-  border-radius: 10px;
-}
-
-.nav-links a:hover {
-  color: var(--text-primary);
-  background: rgba(15, 182, 255, 0.08);
-  transform: translateY(-2px);
-}
-
-/* Modern pill-style active indicator */
-.nav-links a::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--accent-400), var(--accent-500));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.nav-links a:hover::before {
-  opacity: 1;
-}
-
-/* Subtle underline effect */
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-400), transparent);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-  opacity: 0;
-}
-
-.nav-links a:hover::after {
-  width: 60%;
-  opacity: 1;
-}
-
-/* Mobile Menu */
-.mobile-menu-toggle {
-  display: none;
-  background: rgba(15, 182, 255, 0.1);
-  border: 1px solid rgba(15, 182, 255, 0.3);
-  border-radius: 8px;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu-toggle:hover {
-  background: rgba(15, 182, 255, 0.2);
-  border-color: var(--accent-400);
-  color: var(--accent-400);
-}
-
-/* Mobile Menu Dropdown */
-.mobile-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(8, 21, 29, 0.98);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(15, 182, 255, 0.3);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  padding: 1rem 0;
-  display: none;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.mobile-menu li {
-  padding: 0 2rem;
-}
-
-.mobile-menu a {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu a:hover {
-  color: var(--accent-400);
-  background: rgba(15, 182, 255, 0.1);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  
-  .mobile-menu-toggle {
-    display: block;
-  }
-  
-  .mobile-menu {
-    display: block;
-  }
-  
-  .container {
-    padding: 0 1rem;
-  }
-  
-  .section {
-    padding: 3rem 0;
-  }
-  
-  .grid {
-    gap: 1.5rem;
-  }
-  
-  .hero {
-    text-align: center;
-  }
-  
-  .navbar {
-    padding: 0.75rem 0;
-  }
-  
-  .navbar.scrolled {
-    padding: 0.5rem 0;
-  }
-}
+/* Original template navbar - keep default design */
+/* Only add subtle enhancements that don't break original design */
 
 /* Loading Animation */
 @keyframes pulse {
@@ -704,26 +514,38 @@ p {
   opacity: 0.8;
 }
 
-/* Logo Styles */
-.logo {
-  transition: all 0.3s ease;
+/* Logo with text styling - works with template design */
+.logo-rubrix {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
 }
 
-.logo img {
-  transition: all 0.3s ease;
+.logo-rubrix img {
+  height: 50px !important;
+  width: auto !important;
 }
 
-.logo:hover {
-  transform: scale(1.05);
-}
-
-.logo:hover img {
-  filter: drop-shadow(0 0 10px var(--accent-400));
-}
-
-.logo:hover h2 {
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--accent-400);
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.logo-rubrix:hover .logo-text {
   text-shadow: 0 0 10px var(--accent-400);
+}
+
+@media (max-width: 768px) {
+  .logo-rubrix img {
+    height: 40px !important;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+  }
 }
 
 /* Portfolio Image Hover Effects */
@@ -899,4 +721,257 @@ p {
 textarea.form-control {
   min-height: 120px;
   resize: vertical;
+}
+
+/* ============================================
+   TEMPLATE COMPONENT OVERRIDES - VYRO.AI STYLE
+   ============================================ */
+
+/* Ensure template components use vyro.ai colors */
+.rubrix-theme .color-font,
+.rubrix-theme .fw-700.color-font {
+  color: var(--accent-400) !important;
+}
+
+/* Template services section */
+.rubrix-theme .services .item {
+  background: rgba(8, 21, 29, 0.6) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.rubrix-theme .services .item:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: rgba(15, 182, 255, 0.5) !important;
+  box-shadow: 0 20px 60px rgba(15, 182, 255, 0.2) !important;
+}
+
+.rubrix-theme .services .item .icon {
+  color: var(--accent-400) !important;
+}
+
+.rubrix-theme .services .item h6,
+.rubrix-theme .services .item h5 {
+  color: var(--text-primary) !important;
+}
+
+.rubrix-theme .services .item p {
+  color: var(--text-secondary) !important;
+}
+
+/* Template numbers/stats section */
+.rubrix-theme .numbers .item {
+  background: transparent !important;
+}
+
+.rubrix-theme .numbers .item h3,
+.rubrix-theme .numbers .item .num {
+  color: var(--accent-400) !important;
+}
+
+.rubrix-theme .numbers .item p {
+  color: var(--text-secondary) !important;
+}
+
+/* Template team section */
+.rubrix-theme .team .item {
+  background: rgba(8, 21, 29, 0.6) !important;
+  backdrop-filter: blur(20px);
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.rubrix-theme .team .item:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: rgba(15, 182, 255, 0.5) !important;
+}
+
+.rubrix-theme .team .item .info h5 {
+  color: var(--text-primary) !important;
+}
+
+.rubrix-theme .team .item .info span {
+  color: var(--accent-400) !important;
+}
+
+/* Template clients section */
+.rubrix-theme .clients .item {
+  background: rgba(8, 21, 29, 0.3) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.rubrix-theme .clients .item:hover {
+  background: rgba(15, 182, 255, 0.1) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Template call to action */
+.rubrix-theme .call-action {
+  background: linear-gradient(135deg, var(--bg-800) 0%, var(--bg-700) 100%) !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(15, 182, 255, 0.3) !important;
+}
+
+.rubrix-theme .call-action h2,
+.rubrix-theme .call-action h3 {
+  color: var(--text-primary) !important;
+}
+
+.rubrix-theme .call-action p {
+  color: var(--text-secondary) !important;
+}
+
+.rubrix-theme .call-action .butn {
+  background: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-500) 100%) !important;
+  border-radius: 12px !important;
+  color: var(--bg-900) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.rubrix-theme .call-action .butn:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 35px rgba(15, 182, 255, 0.4) !important;
+}
+
+/* Template footer */
+.rubrix-theme .footer {
+  background: var(--bg-800) !important;
+  border-top: 1px solid var(--bg-700) !important;
+}
+
+.rubrix-theme .footer h6,
+.rubrix-theme .footer h5 {
+  color: var(--text-primary) !important;
+}
+
+.rubrix-theme .footer p,
+.rubrix-theme .footer a {
+  color: var(--text-secondary) !important;
+}
+
+.rubrix-theme .footer a:hover {
+  color: var(--accent-400) !important;
+}
+
+.rubrix-theme .footer .social a {
+  background: var(--bg-700) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rubrix-theme .footer .social a:hover {
+  background: var(--accent-400) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Template testimonials */
+.rubrix-theme .testimonials .item {
+  background: rgba(8, 21, 29, 0.6) !important;
+  backdrop-filter: blur(20px);
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.rubrix-theme .testimonials .item .info h6 {
+  color: var(--text-primary) !important;
+}
+
+.rubrix-theme .testimonials .item .info span {
+  color: var(--accent-400) !important;
+}
+
+.rubrix-theme .testimonials .item p {
+  color: var(--text-secondary) !important;
+}
+
+/* Template skills circle */
+.rubrix-theme .skills-circle .skills-box {
+  background: rgba(8, 21, 29, 0.6) !important;
+  backdrop-filter: blur(20px);
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Template contact form */
+.rubrix-theme .contact-form input,
+.rubrix-theme .contact-form textarea {
+  background: var(--bg-800) !important;
+  border: 1px solid var(--bg-700) !important;
+  border-radius: 10px !important;
+  color: var(--text-primary) !important;
+}
+
+.rubrix-theme .contact-form input:focus,
+.rubrix-theme .contact-form textarea:focus {
+  border-color: var(--accent-400) !important;
+  box-shadow: 0 0 0 3px rgba(15, 182, 255, 0.1) !important;
+}
+
+.rubrix-theme .contact-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-500) 100%) !important;
+  border-radius: 12px !important;
+  color: var(--bg-900) !important;
+  border: none !important;
+}
+
+.rubrix-theme .contact-form button[type="submit"]:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 35px rgba(15, 182, 255, 0.4) !important;
+}
+
+/* Pages header styling */
+.rubrix-theme .pages-header {
+  background: var(--bg-900) !important;
+}
+
+.rubrix-theme .pages-header .circle-color .gradient-circle {
+  background: radial-gradient(circle, rgba(15, 182, 255, 0.3) 0%, rgba(15, 182, 255, 0) 70%) !important;
+}
+
+/* Ensure all headings use proper colors */
+.rubrix-theme h1,
+.rubrix-theme h2,
+.rubrix-theme h3,
+.rubrix-theme h4,
+.rubrix-theme h5,
+.rubrix-theme h6 {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure template buttons get vyro.ai styling */
+.rubrix-theme .butn,
+.rubrix-theme .buton {
+  background: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-500) 100%) !important;
+  border-radius: 12px !important;
+  color: var(--bg-900) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 15px rgba(15, 182, 255, 0.3) !important;
+}
+
+.rubrix-theme .butn:hover,
+.rubrix-theme .buton:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 35px rgba(15, 182, 255, 0.4) !important;
+}
+
+/* Minimal navbar enhancements - keep template design */
+/* Subtle hover effects for nav links */
+.rubrix-theme .navbar .nav-link:hover {
+  color: var(--accent-400) !important;
+}
+
+/* Style dropdown menus with vyro.ai colors */
+.rubrix-theme .navbar .dropdown-menu {
+  background: rgba(7, 24, 34, 0.98) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(15, 182, 255, 0.2) !important;
+}
+
+.rubrix-theme .navbar .dropdown-item:hover {
+  background: rgba(15, 182, 255, 0.1) !important;
+  color: var(--accent-400) !important;
 }

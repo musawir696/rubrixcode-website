@@ -1,22 +1,62 @@
 import React from "react";
-import RubrixNavbar from "components/RubrixNavbar/navbar";
+import Navbar from "components/Navbar/navbar";
 import RubrixHero from "components/RubrixHero/hero";
-import { AboutSections, AboutTeam } from "./about";
+import RubrixAbout from "components/RubrixAbout/about";
 import RubrixPortfolio from "components/RubrixPortfolio/portfolio";
 import RubrixContact from "components/RubrixContact/contact";
-import RubrixFooter from "components/RubrixFooter/footer";
-import RubrixLayout from "layouts/RubrixLayout";
+import Footer from "components/Footer/footer";
+import DarkTheme from "layouts/Dark";
 
 const HomePage = () => {
+  const navbarRef = React.useRef(null);
+  const logoRef = React.useRef(null);
+
+  React.useEffect(() => {
+    var navbar = navbarRef.current;
+
+    if (window.pageYOffset > 300) {
+      navbar.classList.add("nav-scroll");
+    } else {
+      navbar.classList.remove("nav-scroll");
+    }
+    
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        navbar.classList.add("nav-scroll");
+      } else {
+        navbar.classList.remove("nav-scroll");
+      }
+    });
+  }, [navbarRef]);
+
   return (
-    <RubrixLayout>
-      <RubrixNavbar />
+    <DarkTheme>
+      <Navbar nr={navbarRef} lr={logoRef} />
       <RubrixHero />
-      <AboutSections />
-      <RubrixPortfolio />
-      <RubrixContact />
-      <RubrixFooter />
-    </RubrixLayout>
+      <div className="main-content" id="main-content">
+        {/* About Section */}
+        <div id="about">
+          <RubrixAbout />
+          
+        </div>
+
+        {/* Portfolio Section */}
+        <div id="portfolio">
+          <RubrixPortfolio />
+         
+        </div>
+
+        
+
+        {/* Contact Section */}
+        <div id="contact">
+          <RubrixContact />
+        </div>
+
+       
+        <Footer />
+      </div>
+    </DarkTheme>
   );
 };
 

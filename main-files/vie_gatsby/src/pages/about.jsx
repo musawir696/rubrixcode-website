@@ -1,7 +1,14 @@
 import React from "react";
-import RubrixNavbar from "components/RubrixNavbar/navbar";
-import RubrixFooter from "components/RubrixFooter/footer";
-import RubrixLayout from "layouts/RubrixLayout";
+import Navbar from "components/Navbar/navbar";
+import PagesHeader from "components/Pages-header";
+import Services from "components/Services/services";
+import VideoWithTestimonials from "components/Video-with-testimonials/video-with-testimonials";
+import SkillsCircle from "components/Skills-circle/skills-circle";
+import Team from "components/Team/team";
+import Clients from "components/Clients/clients";
+import CallToAction from "components/Call-to-action/call-to-action";
+import Footer from "components/Footer/footer";
+import DarkTheme from "layouts/Dark";
 
 export const AboutSections = () => (
 	<>
@@ -152,12 +159,42 @@ export const AboutSections = () => (
 export const AboutTeam = () => null;
 
 const AboutPage = () => {
+  const navbarRef = React.useRef(null);
+  const logoRef = React.useRef(null);
+
+  React.useEffect(() => {
+    var navbar = navbarRef.current;
+
+    if (window.pageYOffset > 300) {
+      navbar.classList.add("nav-scroll");
+    } else {
+      navbar.classList.remove("nav-scroll");
+    }
+    
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        navbar.classList.add("nav-scroll");
+      } else {
+        navbar.classList.remove("nav-scroll");
+      }
+    });
+  }, [navbarRef]);
+
   return (
-    <RubrixLayout>
-      <RubrixNavbar />
-      <AboutSections />
-      <RubrixFooter />
-    </RubrixLayout>
+    <DarkTheme>
+      <Navbar nr={navbarRef} lr={logoRef} />
+      <PagesHeader />
+      <div className="main-content">
+        <AboutSections />
+        <Services style="4item" />
+        <VideoWithTestimonials />
+        <SkillsCircle from="aboutPage" />
+        <Team />
+        <Clients theme="dark" />
+        <CallToAction />
+        <Footer />
+      </div>
+    </DarkTheme>
   );
 };
 
