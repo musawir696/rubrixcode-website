@@ -20,21 +20,172 @@ const RubrixContact = () => {
     if (typeof window === "undefined") return;
 
     const ctx = gsap.context(() => {
-      // Animate form elements
-      gsap.fromTo(formRef.current,
-        { opacity: 0, y: 50, scale: 0.95 },
+      // Animate heading
+      const heading = sectionRef.current.querySelector('h2');
+      const subtitle = sectionRef.current.querySelectorAll('p')[0];
+      
+      gsap.fromTo(heading,
+        { 
+          opacity: 0, 
+          y: -40,
+          scale: 0.9
+        },
         {
           opacity: 1,
           y: 0,
           scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: heading,
+            start: "top 85%"
+          }
+        }
+      );
+
+      gsap.fromTo(subtitle,
+        { 
+          opacity: 0, 
+          y: 20
+        },
+        {
+          opacity: 1,
+          y: 0,
           duration: 0.8,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: sectionRef.current,
+            trigger: subtitle,
+            start: "top 85%"
+          }
+        }
+      );
+
+      // Animate form with stagger effect on inputs
+      gsap.fromTo(formRef.current,
+        { 
+          opacity: 0, 
+          x: -60,
+          rotationY: -10
+        },
+        {
+          opacity: 1,
+          x: 0,
+          rotationY: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 75%"
+          }
+        }
+      );
+
+      // Stagger animate form inputs
+      const formInputs = formRef.current.querySelectorAll('.form-group');
+      gsap.fromTo(formInputs,
+        { 
+          opacity: 0, 
+          x: -30
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: formRef.current,
             start: "top 70%"
           }
         }
       );
+
+      // Animate contact info card
+      const contactCard = sectionRef.current.querySelectorAll('.card')[1];
+      if (contactCard) {
+        gsap.fromTo(contactCard,
+          { 
+            opacity: 0, 
+            x: 60,
+            rotationY: 10
+          },
+          {
+            opacity: 1,
+            x: 0,
+            rotationY: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: contactCard,
+              start: "top 75%"
+            }
+          }
+        );
+
+        // Animate contact info items
+        const contactItems = contactCard.querySelectorAll('div[style*="display: flex"]');
+        gsap.fromTo(contactItems,
+          { 
+            opacity: 0, 
+            x: 20
+          },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.5,
+            stagger: 0.15,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: contactCard,
+              start: "top 70%"
+            }
+          }
+        );
+      }
+
+      // Add hover effect to form inputs
+      const inputs = formRef.current.querySelectorAll('.form-control');
+      inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+          gsap.to(input, {
+            scale: 1.02,
+            boxShadow: '0 0 0 3px rgba(15, 182, 255, 0.2)',
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        input.addEventListener('blur', () => {
+          gsap.to(input, {
+            scale: 1,
+            boxShadow: '0 0 0 3px rgba(15, 182, 255, 0.1)',
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+      });
+
+      // Add hover effect to submit button
+      const submitBtn = formRef.current.querySelector('.btn-primary');
+      if (submitBtn) {
+        submitBtn.addEventListener('mouseenter', () => {
+          gsap.to(submitBtn, {
+            scale: 1.03,
+            y: -3,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        submitBtn.addEventListener('mouseleave', () => {
+          gsap.to(submitBtn, {
+            scale: 1,
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+      }
 
     }, sectionRef);
 

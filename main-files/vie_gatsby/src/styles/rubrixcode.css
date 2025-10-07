@@ -14,13 +14,47 @@
   --text-muted: #7a8a9a;
 }
 
-/* Global Styles */
+/* Global Styles - Vyro.ai Inspired */
 body {
   background-color: var(--bg-900);
   color: var(--text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Dotted grid pattern background - vyro.ai style */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(15, 182, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+/* Subtle gradient overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 50% 20%,
+    rgba(15, 182, 255, 0.05) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Hide the progress circle SVG completely */
@@ -89,43 +123,92 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* Buttons */
+/* Buttons - Vyro.ai Modern Style */
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-400), var(--accent-500));
+  background: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-500) 100%);
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
   color: var(--bg-900);
   font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(15, 182, 255, 0.3);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(15, 182, 255, 0.4);
+  color: var(--bg-900);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Glassmorphic secondary button */
+.btn-secondary {
+  background: rgba(15, 182, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(15, 182, 255, 0.5);
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  color: var(--accent-400);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(15, 182, 255, 0.3);
-  color: var(--bg-900);
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-400);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
-.btn-secondary {
-  background: transparent;
-  border: 2px solid var(--accent-400);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  color: var(--accent-400);
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
+.btn-secondary:hover::before {
+  opacity: 1;
 }
 
 .btn-secondary:hover {
   background: var(--accent-400);
+  border-color: var(--accent-400);
   color: var(--bg-900);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(15, 182, 255, 0.3);
+}
+
+.btn-secondary:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* Container */
@@ -138,10 +221,14 @@ p {
 /* Section Spacing */
 .section {
   padding: 5rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .section-sm {
   padding: 3rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Grid */
@@ -176,36 +263,78 @@ p {
   }
 }
 
-/* Cards */
+/* Cards - Glassmorphism vyro.ai style */
 .card {
-  background: var(--bg-800);
-  border-radius: 20px;
-  padding: 2rem;
-  border: 1px solid var(--bg-700);
-  transition: all 0.3s ease;
+  background: rgba(8, 21, 29, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-400);
-  box-shadow: 0 20px 40px rgba(15, 182, 255, 0.1);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(15, 182, 255, 0.5);
+  box-shadow: 0 20px 60px rgba(15, 182, 255, 0.2);
+  background: rgba(8, 21, 29, 0.8);
 }
 
+/* Gradient border glow effect */
 .card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-400), var(--accent-300));
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--accent-400) 50%, 
+    transparent 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
 .card:hover::before {
+  opacity: 1;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Shimmer animation for card hover */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Inner glow effect on hover */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, 
+    rgba(15, 182, 255, 0) 0%, 
+    rgba(15, 182, 255, 0.3) 50%, 
+    rgba(15, 182, 255, 0) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
   opacity: 1;
 }
 
@@ -243,13 +372,53 @@ p {
   transform: translateX(0);
 }
 
-/* Hero Section */
+/* Hero Section - Vyro.ai Inspired */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  background: radial-gradient(ellipse at center, var(--bg-800) 0%, var(--bg-900) 100%);
+  background: var(--bg-900);
+  overflow: hidden;
+}
+
+/* Animated gradient background blobs - vyro.ai style */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(15, 182, 255, 0.3) 0%, rgba(15, 182, 255, 0) 70%);
+  border-radius: 50%;
+  top: -200px;
+  right: -200px;
+  animation: float 20s ease-in-out infinite;
+  filter: blur(60px);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(13, 165, 230, 0.25) 0%, rgba(13, 165, 230, 0) 70%);
+  border-radius: 50%;
+  bottom: -150px;
+  left: -150px;
+  animation: float 15s ease-in-out infinite reverse;
+  filter: blur(80px);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-50px, 50px) scale(0.9);
+  }
 }
 
 .hero-content {
@@ -272,40 +441,64 @@ p {
 }
 
 .hero-title {
-  background: linear-gradient(135deg, var(--text-primary), var(--accent-400));
+  background: linear-gradient(
+    135deg, 
+    #ffffff 0%, 
+    #e0f2fe 25%,
+    var(--accent-400) 50%,
+    var(--accent-300) 75%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 1.5rem;
+  animation: shimmer-text 8s ease-in-out infinite;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+@keyframes shimmer-text {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
-  max-width: 600px;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
-/* Navigation */
+/* Navigation - Vyro.ai Glassmorphism Style */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1rem 0;
-  background: rgba(8, 21, 29, 0.95);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(15, 182, 255, 0.2);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 1.25rem 0;
+  background: rgba(7, 24, 34, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled {
-  background: rgba(8, 21, 29, 0.98);
-  padding: 0.5rem 0;
+  background: rgba(7, 24, 34, 0.95);
+  padding: 0.75rem 0;
   border-bottom: 1px solid rgba(15, 182, 255, 0.3);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-content {
@@ -330,35 +523,58 @@ p {
 }
 
 .nav-links a {
-  color: var(--text-primary);
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
 }
 
 .nav-links a:hover {
-  color: var(--accent-400);
-  background: rgba(15, 182, 255, 0.1);
-  transform: translateY(-1px);
+  color: var(--text-primary);
+  background: rgba(15, 182, 255, 0.08);
+  transform: translateY(-2px);
 }
 
+/* Modern pill-style active indicator */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-500));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover::before {
+  opacity: 1;
+}
+
+/* Subtle underline effect */
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: 50%;
   width: 0;
   height: 2px;
-  background: var(--accent-400);
+  background: linear-gradient(90deg, transparent, var(--accent-400), transparent);
   transition: all 0.3s ease;
   transform: translateX(-50%);
+  opacity: 0;
 }
 
 .nav-links a:hover::after {
-  width: 80%;
+  width: 60%;
+  opacity: 1;
 }
 
 /* Mobile Menu */

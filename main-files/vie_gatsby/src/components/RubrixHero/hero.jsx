@@ -18,43 +18,123 @@ const RubrixHero = () => {
     if (typeof window === "undefined") return;
 
     const ctx = gsap.context(() => {
-      // Hero entrance animation
-      const tl = gsap.timeline();
+      // Enhanced hero entrance animation with split text effect
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       
+      // Title animation with scale and rotation
       tl.fromTo(titleRef.current, 
-        { opacity: 0, y: 100, scale: 0.8 },
-        { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out" }
+        { 
+          opacity: 0, 
+          y: 100, 
+          scale: 0.8,
+          rotationX: -15
+        },
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          rotationX: 0,
+          duration: 1.4,
+          ease: "power4.out"
+        }
       )
+      // Subtitle with blur effect
       .fromTo(subtitleRef.current,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-        "-=0.6"
+        { 
+          opacity: 0, 
+          y: 50,
+          filter: "blur(10px)"
+        },
+        { 
+          opacity: 1, 
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.2, 
+          ease: "power3.out" 
+        },
+        "-=0.8"
       )
+      // CTA buttons with bounce
       .fromTo(ctaRef.current,
-        { opacity: 0, y: 30, scale: 0.9 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.7)" },
-        "-=0.4"
+        { 
+          opacity: 0, 
+          y: 40, 
+          scale: 0.85 
+        },
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1, 
+          duration: 1,
+          ease: "back.out(2)" 
+        },
+        "-=0.6"
       );
 
-      // Parallax effect for hero background
-      gsap.to(heroRef.current, {
-        yPercent: -50,
+      // Smooth parallax scroll effect
+      gsap.to(heroRef.current.querySelector('.spline-container'), {
+        yPercent: 30,
         ease: "none",
         scrollTrigger: {
           trigger: heroRef.current,
-          start: "top bottom",
+          start: "top top",
           end: "bottom top",
-          scrub: true
+          scrub: 1.5,
+          invalidateOnRefresh: true
         }
       });
 
-      // Floating animation for CTA button
+      // Floating animation for CTA buttons with slight rotation
       gsap.to(ctaRef.current, {
-        y: -10,
-        duration: 2,
-        ease: "power2.inOut",
+        y: -15,
+        rotation: 1,
+        duration: 2.5,
+        ease: "sine.inOut",
         yoyo: true,
         repeat: -1
+      });
+
+      // Add magnetic effect to buttons
+      const buttons = ctaRef.current.querySelectorAll('.btn-primary, .btn-secondary');
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+          gsap.to(button, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+        
+        button.addEventListener('mouseleave', () => {
+          gsap.to(button, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        // Magnetic follow effect
+        button.addEventListener('mousemove', (e) => {
+          const rect = button.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          
+          gsap.to(button, {
+            x: x * 0.3,
+            y: y * 0.3,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        button.addEventListener('mouseleave', () => {
+          gsap.to(button, {
+            x: 0,
+            y: 0,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.3)"
+          });
+        });
       });
 
     }, heroRef);

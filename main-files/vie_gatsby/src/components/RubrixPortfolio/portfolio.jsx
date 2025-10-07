@@ -38,24 +38,187 @@ const RubrixPortfolio = () => {
     if (typeof window === "undefined") return;
 
     const ctx = gsap.context(() => {
-      // Animate portfolio cards
-      cardsRef.current.forEach((card, index) => {
-        if (card) {
-          gsap.fromTo(card,
-            { opacity: 0, y: 60, scale: 0.8 },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.8,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
-              }
+      // Animate section heading
+      const heading = sectionRef.current.querySelector('h2');
+      const subtitle = sectionRef.current.querySelector('p');
+      
+      if (heading) {
+        gsap.fromTo(heading,
+          { 
+            opacity: 0, 
+            y: -40,
+            scale: 0.9
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: heading,
+              start: "top 85%"
             }
-          );
+          }
+        );
+      }
+
+      if (subtitle) {
+        gsap.fromTo(subtitle,
+          { 
+            opacity: 0, 
+            y: 20
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: subtitle,
+              start: "top 85%"
+            }
+          }
+        );
+      }
+
+      // Enhanced stagger animation for portfolio cards with 3D effect
+      const validCards = cardsRef.current.filter(Boolean);
+      
+      gsap.fromTo(validCards,
+        { 
+          opacity: 0, 
+          y: 100,
+          scale: 0.85,
+          rotationX: 20,
+          z: -100
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotationX: 0,
+          z: 0,
+          duration: 1,
+          stagger: {
+            amount: 0.8,
+            from: "start",
+            ease: "power2.out"
+          },
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current.querySelector('.grid'),
+            start: "top 70%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+
+      // Add parallax effect to portfolio images
+      validCards.forEach((card) => {
+        const img = card.querySelector('img');
+        if (img) {
+          gsap.to(img, {
+            yPercent: -15,
+            ease: "none",
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.5
+            }
+          });
+        }
+      });
+
+      // Add advanced hover animations
+      validCards.forEach((card, index) => {
+        // Magnetic effect
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          
+          gsap.to(card, {
+            rotationY: x / 40,
+            rotationX: -y / 40,
+            transformPerspective: 1000,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            rotationY: 0,
+            rotationX: 0,
+            duration: 0.8,
+            ease: "elastic.out(1, 0.3)"
+          });
+        });
+
+        // Hover effect on image
+        const img = card.querySelector('img');
+        if (img) {
+          card.addEventListener('mouseenter', () => {
+            gsap.to(img, {
+              scale: 1.1,
+              duration: 0.6,
+              ease: "power2.out"
+            });
+          });
+
+          card.addEventListener('mouseleave', () => {
+            gsap.to(img, {
+              scale: 1,
+              duration: 0.6,
+              ease: "power2.out"
+            });
+          });
+        }
+
+        // Animate tech tags on hover
+        const techTags = card.querySelectorAll('span[style*="background: var(--bg-600)"]');
+        card.addEventListener('mouseenter', () => {
+          gsap.to(techTags, {
+            y: -5,
+            stagger: 0.05,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(techTags, {
+            y: 0,
+            stagger: 0.05,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        // Button animation
+        const button = card.querySelector('.btn-primary');
+        if (button) {
+          button.addEventListener('mouseenter', (e) => {
+            e.stopPropagation();
+            gsap.to(button, {
+              scale: 1.05,
+              boxShadow: '0 15px 40px rgba(15, 182, 255, 0.4)',
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          });
+
+          button.addEventListener('mouseleave', (e) => {
+            e.stopPropagation();
+            gsap.to(button, {
+              scale: 1,
+              boxShadow: '0 4px 15px rgba(15, 182, 255, 0.3)',
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          });
         }
       });
 

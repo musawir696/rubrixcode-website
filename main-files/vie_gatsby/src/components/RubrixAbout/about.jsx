@@ -14,41 +14,146 @@ const RubrixAbout = () => {
     if (typeof window === "undefined") return;
 
     const ctx = gsap.context(() => {
-      // Animate cards on scroll
-      cardsRef.current.forEach((card, index) => {
-        gsap.fromTo(card,
-          { opacity: 0, y: 50, scale: 0.9 },
+      // Animate heading with split effect
+      const heading = sectionRef.current.querySelector('h2');
+      const subtitle = sectionRef.current.querySelector('p');
+      
+      gsap.fromTo(heading,
+        { 
+          opacity: 0, 
+          y: -30,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: heading,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+
+      gsap.fromTo(subtitle,
+        { 
+          opacity: 0, 
+          y: 20
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: subtitle,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+
+      // Animate mission and vision with parallax
+      const missionVision = sectionRef.current.querySelectorAll('.slide-in-left, .slide-in-right');
+      missionVision.forEach((elem, index) => {
+        const direction = index === 0 ? -50 : 50;
+        gsap.fromTo(elem,
+          { 
+            opacity: 0, 
+            x: direction,
+            rotationY: index === 0 ? -5 : 5
+          },
           {
             opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
+            x: 0,
+            rotationY: 0,
+            duration: 1,
+            ease: "power3.out",
             scrollTrigger: {
-              trigger: card,
+              trigger: elem,
               start: "top 80%",
               end: "bottom 20%",
-              toggleActions: "play none none reverse"
+              toggleActions: "play none none none"
             }
           }
         );
       });
 
-      // Stagger animation for cards
+      // Enhanced stagger animation for service cards with 3D effect
       gsap.fromTo(cardsRef.current,
-        { opacity: 0, y: 50 },
+        { 
+          opacity: 0, 
+          y: 80,
+          scale: 0.85,
+          rotationX: 15
+        },
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          stagger: 0.2,
-          ease: "power2.out",
+          scale: 1,
+          rotationX: 0,
+          duration: 0.8,
+          stagger: {
+            amount: 0.6,
+            from: "start",
+            ease: "power2.out"
+          },
+          ease: "back.out(1.2)",
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%"
+            trigger: sectionRef.current.querySelector('.grid-4'),
+            start: "top 75%",
+            toggleActions: "play none none none"
           }
         }
       );
+
+      // Add hover animations for cards
+      cardsRef.current.forEach((card) => {
+        if (!card) return;
+
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, {
+            y: -12,
+            scale: 1.03,
+            duration: 0.4,
+            ease: "power2.out"
+          });
+
+          // Animate icon
+          const icon = card.querySelector('div[style*="fontSize"]');
+          if (icon) {
+            gsap.to(icon, {
+              scale: 1.2,
+              rotation: 360,
+              duration: 0.5,
+              ease: "back.out(1.7)"
+            });
+          }
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            y: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out"
+          });
+
+          // Reset icon
+          const icon = card.querySelector('div[style*="fontSize"]');
+          if (icon) {
+            gsap.to(icon, {
+              scale: 1,
+              rotation: 0,
+              duration: 0.5,
+              ease: "power2.out"
+            });
+          }
+        });
+      });
 
     }, sectionRef);
 
