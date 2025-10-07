@@ -483,9 +483,11 @@ const RubrixPortfolio = () => {
     <section className="section" ref={sectionRef} id="portfolio">
       <div className="container">
         <div className="text-center" style={{ marginBottom: '3rem' }}>
-          <h2 className="fade-in">Our Portfolio</h2>
-          <p className="fade-in">
-            Explore our recent projects and see how we've helped businesses achieve their digital goals.
+          <h2 className="fade-in">Real Projects. Real Results.</h2>
+          <p className="fade-in" style={{ fontSize: '1.15rem', lineHeight: '1.8', maxWidth: '750px', margin: '0 auto' }}>
+            <strong style={{ color: 'var(--accent-400)' }}>21 live products.</strong> From Sweden to Greece, 
+            NFT platforms to SaaS apps, blockchain to AI. Each one solving real problems 
+            for real businesses. <strong>Click any project to see the full story.</strong>
           </p>
         </div>
 

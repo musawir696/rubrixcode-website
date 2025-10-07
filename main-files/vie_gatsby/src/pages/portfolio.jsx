@@ -34,12 +34,12 @@ const PortfolioPage = () => {
       <Navbar nr={navbarRef} lr={logoRef} />
       <PagesHeader />
       <div className="main-content">
-        <RubrixPortfolio />
+      <RubrixPortfolio />
 
         <Numbers />
         <CallToAction />
         <Footer />
-      </div>
+          </div>
     </DarkTheme>
   );
 };
