@@ -8,7 +8,7 @@ const ProFuturesTrading = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/full/4.jpg" 
+              src="/img/portfolio/ProFutures.jpg" 
               alt="Pro Futures Trading Platform"
               style={{
                 width: '100%',

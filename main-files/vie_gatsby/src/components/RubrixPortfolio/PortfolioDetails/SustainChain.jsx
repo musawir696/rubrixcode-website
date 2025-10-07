@@ -8,7 +8,7 @@ const SustainChain = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/freelancer/2.jpg" 
+              src="/img/portfolio/SustainChain.jpg" 
               alt="SustainChain Token Platform"
               style={{
                 width: '100%',

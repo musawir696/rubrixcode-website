@@ -8,7 +8,7 @@ const Perplexa = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/curs/2.jpg" 
+              src="/img/portfolio/Perplexa.jpg" 
               alt="Perplexa Digital Agency Website"
               style={{
                 width: '100%',

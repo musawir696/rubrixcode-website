@@ -8,7 +8,7 @@ const SwedenRelocators = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/2.jpg" 
+              src="/img/portfolio/SR.jpg" 
               alt="Sweden Relocators AB Portal"
               style={{
                 width: '100%',

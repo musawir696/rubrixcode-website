@@ -8,7 +8,7 @@ const Cryptify = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/full/3.jpg" 
+              src="/img/portfolio/Cryptify.jpg" 
               alt="Cryptify Crypto Landing Page"
               style={{
                 width: '100%',

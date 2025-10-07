@@ -8,7 +8,7 @@ const Contiamo = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/6.jpg" 
+              src="/img/portfolio/Contiamo.jpg" 
               alt="Contiamo Data Analytics & AI Website"
               style={{
                 width: '100%',

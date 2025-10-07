@@ -8,7 +8,7 @@ const BankRollBears = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/full/1.jpg" 
+              src="/img/portfolio/BankRoll.jpg" 
               alt="Bankroll Bear Society NFT Collection"
               style={{
                 width: '100%',

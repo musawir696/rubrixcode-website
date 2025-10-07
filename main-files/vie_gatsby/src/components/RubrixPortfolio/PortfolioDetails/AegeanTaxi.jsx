@@ -8,7 +8,7 @@ const AegeanTaxi = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/7.jpg" 
+              src="/img/portfolio/Aegean.jpg" 
               alt="Aegean Taxi Transportation Website"
               style={{
                 width: '100%',

@@ -8,7 +8,7 @@ const HoyaKerry = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/curs/5.jpg" 
+              src="/img/portfolio/Hoyakerry.jpg" 
               alt="Hoya Kerry Activewear Website"
               style={{
                 width: '100%',

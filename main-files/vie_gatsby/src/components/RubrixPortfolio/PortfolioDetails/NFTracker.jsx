@@ -8,7 +8,7 @@ const NFTracker = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/full/5.jpg" 
+              src="/img/portfolio/NFTracker.jpg" 
               alt="NFTracker Fraud Detection Platform"
               style={{
                 width: '100%',

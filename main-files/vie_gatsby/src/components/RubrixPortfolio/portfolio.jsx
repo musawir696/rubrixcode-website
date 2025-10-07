@@ -88,7 +88,7 @@ const RubrixPortfolio = () => {
       id: 1,
       title: "Sweden Relocators AB Portal",
       description: "A comprehensive relocation and mobility solutions portal for Nordic countries with real-time tracking and multi-language support.",
-      image: "/img/portfolio/2.jpg",
+      image: "/img/portfolio/SR.jpg",
       category: "web",
       tech: ["Figma", "React", "Tailwind CSS", "Material UI", "Node.js", "Laravel", "Vite JS"],
       component: SwedenRelocators
@@ -97,7 +97,7 @@ const RubrixPortfolio = () => {
       id: 2,
       title: "Arli Electrical Website",
       description: "A professional website for electrical services with mobile responsiveness and customer engagement features.",
-      image: "/img/portfolio/3.jpg",
+      image: "/img/portfolio/Arli.jpg",
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "GoDaddy Hosting"],
       component: ArliElectrical
@@ -106,7 +106,7 @@ const RubrixPortfolio = () => {
       id: 3,
       title: "Crossroads Adventure Website",
       description: "A premier luxury expedition specialist website for Pakistan's adventure travel, featuring trip management and booking system.",
-      image: "/img/portfolio/4.jpg",
+      image: "/img/portfolio/crossroad.jpg",
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "GoDaddy Hosting"],
       component: CrossroadsAdventure
@@ -115,7 +115,7 @@ const RubrixPortfolio = () => {
       id: 4,
       title: "Si3 & Si Her Web3 Platform",
       description: "A comprehensive Web3 platform creating accessible pathways for diverse voices in the new economy with decentralized infrastructure.",
-      image: "/img/portfolio/5.jpg",
+      image: "/img/portfolio/sis.jpg",
       category: "web3",
       tech: ["Figma", "HTML", "CSS", "JavaScript", "Wallet Connect", "IPNS", "IPFS", "ENS", "Firebase"],
       component: Si3SiHer
@@ -124,7 +124,7 @@ const RubrixPortfolio = () => {
       id: 5,
       title: "Decimals Rebuilt NFT Platform",
       description: "A sophisticated NFT platform with seamless user experience, combining advanced blockchain features with intuitive web interface for minting and managing NFTs.",
-      image: "/img/portfolio/1.jpg",
+      image: "/img/portfolio/Decimal.jpg",
       category: "nft",
       tech: ["Solidity", "ERC-721A", "OpenZeppelin", "Hardhat", "JavaScript", "Polygon", "Ethers.js", "Web3", "React.js"],
       component: DecimalsRebuilt
@@ -133,7 +133,7 @@ const RubrixPortfolio = () => {
       id: 6,
       title: "Contiamo Data Analytics & AI Website",
       description: "Enhanced key sections of Contiamo's website to improve user experience and performance, focusing on data analytics and AI solutions.",
-      image: "/img/portfolio/6.jpg",
+      image: "/img/portfolio/Contiamo.jpg",
       category: "web",
       tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Next.js", "Canva", "GitHub", "Git", "Webpack", "Node.js"],
       component: Contiamo
@@ -142,7 +142,7 @@ const RubrixPortfolio = () => {
       id: 7,
       title: "Aegean Taxi Transportation Website",
       description: "Premium transportation service website offering seamless travel solutions across Greece with responsive design and mobile-first approach.",
-      image: "/img/portfolio/7.jpg",
+      image: "/img/portfolio/Aegean.jpg",
       category: "web",
       tech: ["Figma", "HTML", "Vanilla CSS", "JavaScript", "Tailwind CSS", "Next.js", "React"],
       component: AegeanTaxi
@@ -151,7 +151,7 @@ const RubrixPortfolio = () => {
       id: 8,
       title: "Growphics Professional Graphics Website",
       description: "High-quality professional graphics website specializing in logos, social media content, and complete brand overhauls with enhanced artistic styling.",
-      image: "/img/portfolio/cr/1.jpg",
+      image: "/img/portfolio/Growphics.jpg",
       category: "web",
       tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Next.js", "Node.js", "Git", "GitHub", "Netlify", "FromSpree"],
       component: Growphics
@@ -160,7 +160,7 @@ const RubrixPortfolio = () => {
       id: 9,
       title: "The Wild Guardians NFT Collection",
       description: "Captivating NFT art collection on Ethereum blockchain featuring 30 mesmerizing characters with exclusive perks and revenue-sharing opportunities.",
-      image: "/img/portfolio/curs/1.jpg",
+      image: "/img/portfolio/WildGuardians.jpg",
       category: "nft",
       tech: ["Webflow", "Webflow APIs", "Ethereum", "Solidity", "Wallet Connect", "Metamask", "Metaplex SDK"],
       component: TheWildGuardians
@@ -169,7 +169,7 @@ const RubrixPortfolio = () => {
       id: 10,
       title: "Perplexa Digital Agency Website",
       description: "Leading digital marketing agency website offering business growth, marketing advice, and finance consulting services with comprehensive React development.",
-      image: "/img/portfolio/curs/2.jpg",
+      image: "/img/portfolio/Perplexa.jpg",
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "Figma", "Adobe XD", "Adobe Photoshop", "Illustrator", "Firebase", "Google APIs"],
       component: Perplexa
@@ -178,7 +178,7 @@ const RubrixPortfolio = () => {
       id: 11,
       title: "Brainwave AI Company Website",
       description: "AI-based company website offering cutting-edge tools and solutions with dynamic animations, hover effects, and parallax features using GSAP.",
-      image: "/img/portfolio/curs/3.jpg",
+      image: "/img/portfolio/Brainwave.jpg",
       category: "web",
       tech: ["HTML", "Tailwind CSS", "React", "GSAP"],
       component: Brainwave
@@ -187,7 +187,7 @@ const RubrixPortfolio = () => {
       id: 12,
       title: "Z.L.U.F. — Double Hearts NFT Project",
       description: "AI and human emotion exploration using Double Hearts NFTs, with e‑commerce merchandise and Polygon ERC‑721 smart contracts.",
-      image: "/img/portfolio/curs/4.jpg",
+      image: "/img/portfolio/Zulf.jpg",
       category: "nft",
       tech: ["Solidity", "Smart Contracts", "Web3.js", "HTML", "CSS", "JavaScript", "IPFS", "Metamask", "Polygon", "ERC-721", "WalletConnect", "Firebase"],
       component: Zluf
@@ -196,7 +196,7 @@ const RubrixPortfolio = () => {
       id: 13,
       title: "Hoya Kerry Activewear Website",
       description: "Environmentally-conscious fitness and wellbeing lifestyle brand with e-commerce platform, NFT collection, and sustainable activewear products.",
-      image: "/img/portfolio/curs/5.jpg",
+      image: "/img/portfolio/Hoyakerry.jpg",
       category: "web",
       tech: ["Solidity", "ERC-1155", "Ethereum", "IPFS", "Python", "JavaScript", "HTML", "CSS", "OpenSea API"],
       component: HoyaKerry
@@ -205,7 +205,7 @@ const RubrixPortfolio = () => {
       id: 14,
       title: "Miura Protocol DeFi Platform",
       description: "Decentralized non-custodial liquidity market protocol for borrowing assets using NFTs as collateral with Solana blockchain integration.",
-      image: "/img/portfolio/freelancer/1.jpg",
+      image: "/img/portfolio/Miura.jpg",
       category: "defi",
       tech: ["Figma", "HTML", "CSS", "JavaScript", "Solana", "Solflare", "Wallet Connect", "Blender", "Canva", "Adobe Photoshop", "Next.js", "React", "Firebase", "Metaplex SDK"],
       component: MiuraProtocol
@@ -214,7 +214,7 @@ const RubrixPortfolio = () => {
       id: 15,
       title: "SustainChain Token Platform",
       description: "Pioneering membership benefits platform leveraging blockchain technology to support real-world construction projects with exclusive perks and no sales tax.",
-      image: "/img/portfolio/freelancer/2.jpg",
+      image: "/img/portfolio/SustainChain.jpg",
       category: "blockchain",
       tech: ["HTML", "CSS", "JavaScript", "Web3", "Ethereum", "Wallet Connect", "Git", "GitHub", "Firebase", "Metaplex SDK"],
       component: SustainChain
@@ -223,7 +223,7 @@ const RubrixPortfolio = () => {
       id: 16,
       title: "The Bankroll Bear Society",
       description: "NFT collection of 5,000 unique bears with real-world utilities, staking, giveaways, token usage, and environmental impact goals.",
-      image: "/img/portfolio/full/1.jpg",
+      image: "/img/portfolio/BankRoll.jpg",
       category: "nft",
       tech: ["HTML", "CSS", "JavaScript", "Solidity", "Ethereum", "Web3", "Ebisus Bay", "Firebase", "Metaplex SDK"],
       component: BankRollBears
@@ -232,7 +232,7 @@ const RubrixPortfolio = () => {
       id: 17,
       title: "Lumino Digital Agency Website",
       description: "Digital agency site delivering creative, tech-savvy brand experiences with interactive content and full responsiveness.",
-      image: "/img/portfolio/project2/1.jpg",
+      image: "/img/portfolio/Lumino.jpg",
       category: "web",
       tech: ["React", "JavaScript", "HTML", "CSS", "Node.js", "Figma", "Canva", "Firebase", "MongoDB", "Google API"],
       component: Lumino
@@ -241,7 +241,7 @@ const RubrixPortfolio = () => {
       id: 18,
       title: "Sharia Landlord NFT Collection",
       description: "Utility-based NFT collection offering capital gains and regular dividends from managed real estate and sharing house businesses with stable investment value.",
-      image: "/img/portfolio/full/2.jpg",
+      image: "/img/portfolio/Sharia.jpg",
       category: "nft",
       tech: ["Polygon", "Solidity", "Python", "OpenSea", "JavaScript", "IPFS", "Metamask", "HTML", "CSS", "Node.js"],
       component: ShariaLandlord
@@ -250,7 +250,7 @@ const RubrixPortfolio = () => {
       id: 19,
       title: "Cryptify Crypto Landing Page",
       description: "High-converting lead-generation landing page for crypto industry with professional design, multi-step forms, and optimized data collection.",
-      image: "/img/portfolio/full/3.jpg",
+      image: "/img/portfolio/Cryptify.jpg",
       category: "web",
       tech: ["Next.js", "Tailwind CSS", "React Hook Form", "Node.js", "ExcelJS", "React Context API", "Vercel"],
       component: Cryptify
@@ -259,7 +259,7 @@ const RubrixPortfolio = () => {
       id: 20,
       title: "Pro Futures Trading Platform",
       description: "Comprehensive platform providing top-tier tools and resources for futures traders with responsive design and SEO optimization.",
-      image: "/img/portfolio/full/4.jpg",
+      image: "/img/portfolio/ProFutures.jpg",
       category: "web",
       tech: ["Hostinger Website Builder"],
       component: ProFuturesTrading
@@ -268,7 +268,7 @@ const RubrixPortfolio = () => {
       id: 21,
       title: "NFTracker Fraud Detection Platform",
       description: "Innovative tool for real-time NFT fraud detection and blockchain transaction analysis with Auth0 integration and secure login functionality.",
-      image: "/img/portfolio/full/5.jpg",
+      image: "/img/portfolio/NFTracker.jpg",
       category: "web",
       tech: ["React.js", "Auth0 (Google Login Integration)", "CSS", "VS Code", "Hostinger"],
       component: NFTracker

@@ -8,7 +8,7 @@ const Brainwave = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/curs/3.jpg" 
+              src="/img/portfolio/Brainwave.jpg" 
               alt="Brainwave AI Company Website"
               style={{
                 width: '100%',

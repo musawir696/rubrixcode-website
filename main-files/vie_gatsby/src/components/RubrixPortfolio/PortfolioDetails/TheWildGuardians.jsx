@@ -8,7 +8,7 @@ const TheWildGuardians = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/curs/1.jpg" 
+              src="/img/portfolio/WildGuardians.jpg" 
               alt="The Wild Guardians NFT Collection"
               style={{
                 width: '100%',

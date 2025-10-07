@@ -8,7 +8,7 @@ const MiuraProtocol = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/freelancer/1.jpg" 
+              src="/img/portfolio/Miura.jpg" 
               alt="Miura Protocol DeFi Platform"
               style={{
                 width: '100%',

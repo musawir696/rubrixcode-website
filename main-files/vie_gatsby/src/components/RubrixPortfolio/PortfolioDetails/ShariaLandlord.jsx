@@ -8,7 +8,7 @@ const ShariaLandlord = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/full/2.jpg" 
+              src="/img/portfolio/Sharia.jpg" 
               alt="Sharia Landlord NFT Collection"
               style={{
                 width: '100%',

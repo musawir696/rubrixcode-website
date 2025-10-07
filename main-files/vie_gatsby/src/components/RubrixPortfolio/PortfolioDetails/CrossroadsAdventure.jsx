@@ -8,7 +8,7 @@ const CrossroadsAdventure = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/4.jpg" 
+              src="/img/portfolio/crossroad.jpg" 
               alt="Crossroads Adventure Website"
               style={{
                 width: '100%',

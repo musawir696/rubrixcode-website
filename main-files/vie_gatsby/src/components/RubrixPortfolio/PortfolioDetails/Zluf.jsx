@@ -8,7 +8,7 @@ const Zluf = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/curs/4.jpg" 
+              src="/img/portfolio/Zulf.jpg" 
               alt="Z.L.U.F. Double Hearts NFT Project"
               style={{
                 width: '100%',

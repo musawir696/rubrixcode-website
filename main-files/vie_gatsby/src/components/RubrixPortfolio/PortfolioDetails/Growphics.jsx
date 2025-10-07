@@ -8,7 +8,7 @@ const Growphics = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/cr/1.jpg" 
+              src="/img/portfolio/Growphics.jpg" 
               alt="Growphics Professional Graphics Website"
               style={{
                 width: '100%',

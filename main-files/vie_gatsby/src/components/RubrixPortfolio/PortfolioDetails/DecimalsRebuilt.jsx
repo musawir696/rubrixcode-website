@@ -8,7 +8,7 @@ const DecimalsRebuilt = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/1.jpg" 
+              src="/img/portfolio/Decimal.jpg" 
               alt="Decimals Rebuilt NFT Platform"
               style={{
                 width: '100%',

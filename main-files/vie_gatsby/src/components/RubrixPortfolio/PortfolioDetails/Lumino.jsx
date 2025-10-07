@@ -8,7 +8,7 @@ const Lumino = () => {
           {/* Project Image */}
           <div className="project-image">
             <img 
-              src="/img/portfolio/project2/1.jpg" 
+              src="/img/portfolio/Lumino.jpg" 
               alt="Lumino Digital Agency Website"
               style={{
                 width: '100%',
