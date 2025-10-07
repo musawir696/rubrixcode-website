@@ -1,9 +1,10 @@
 import React from "react";
 import Navbar from "components/Navbar/navbar";
 import RubrixHero from "components/RubrixHero/hero";
-import RubrixAbout from "components/RubrixAbout/about";
-import RubrixPortfolio from "components/RubrixPortfolio/portfolio";
-import RubrixContact from "components/RubrixContact/contact";
+import { AboutSections } from "./about";
+import RubrixPortfolio from "./portfolio";
+import RubrixContact from "./contact";
+import CallToAction from "components/Call-to-action/call-to-action";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
 
@@ -34,26 +35,13 @@ const HomePage = () => {
       <Navbar nr={navbarRef} lr={logoRef} />
       <RubrixHero />
       <div className="main-content" id="main-content">
-        {/* About Section */}
-        <div id="about">
-          <RubrixAbout />
-          
-        </div>
-
-        {/* Portfolio Section */}
-        <div id="portfolio">
-          <RubrixPortfolio />
-         
-        </div>
-
-        
-
-        {/* Contact Section */}
-        <div id="contact">
-          <RubrixContact />
-        </div>
-
-       
+        {/* About Page Content */}
+        <AboutSections />
+        {/* Portfolio Page Content */}
+        <RubrixPortfolio />
+        {/* Contact Page Content */}
+        <RubrixContact />
+        <CallToAction />
         <Footer />
       </div>
     </DarkTheme>
