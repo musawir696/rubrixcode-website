@@ -146,19 +146,17 @@ const RubrixHero = () => {
     <header ref={heroRef} id="hero" className="slider-st valign position-re">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 valign">
-            <div className="cont md-mb50">
-              <div className="sub-title mb-5">
-                <h6>Elite Software Development Studio</h6>
-              </div>
-              <h1 className="mb-10 fw-600 hero-title" ref={titleRef}>
-                We Turn Bold Ideas Into <br/>Powerful Digital Products
+          <div className="col-lg-12 valign">
+            <div className="cont md-mb50 text-center" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 15px' }}>
+              
+              <h1 className="mb-10 hero-title" ref={titleRef} style={{ padding: '0', margin: '0 0 20px 0' }}>
+                We Turn <span style={{ color: 'rgb(120, 110, 204)' }}>Bold Ideas</span> Into <br/>Powerful Digital Products
               </h1>
               <p ref={subtitleRef}>
                 From Web3 platforms to AI-powered apps, we've shipped 50+ high-impact projects 
                 for startups and enterprises worldwide. Your vision deserves world-class execution.
               </p>
-              <div ref={ctaRef} style={{ marginTop: '30px', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div ref={ctaRef} style={{ marginTop: '30px', display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <a href="#portfolio" className="butn bord curve">
                   <span>See Our Work</span>
                 </a>
@@ -166,11 +164,6 @@ const RubrixHero = () => {
                   <span>Start Your Project</span>
                 </a>
               </div>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="img">
-              <img src="/img/slid/001.jpg" alt="RubrixCode" />
             </div>
           </div>
         </div>

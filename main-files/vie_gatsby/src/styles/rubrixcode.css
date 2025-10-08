@@ -345,18 +345,46 @@ p {
   font-weight: 600;
 }
 
-/* Hero title - subtle gradient, template-friendly */
+/* Hero title - white text with purple highlight */
 .rubrix-theme .slider-st .hero-title {
-  background: linear-gradient(
-    120deg, 
-    #ffffff 0%, 
-    var(--accent-400) 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer-text 10s ease-in-out infinite;
+  --framer-font-family: inherit;
+  --framer-font-style: normal;
+  --framer-font-weight: 1500;
+  --framer-text-color: #fff;
+  --framer-font-size: 56px;
+  --framer-font-size-scale: 1;
+  --framer-letter-spacing: -1px;
+  --framer-text-transform: none;
+  --framer-text-decoration: none;
+  --framer-line-height: 1.2em;
+  --framer-text-alignment: center;
+  
+  font-family: var(--framer-font-family);
+  font-style: var(--framer-font-style, normal);
+  font-weight: var(--framer-font-weight, 400);
+  color: var(--framer-text-color, #fff);
+  font-size: calc(var(--framer-font-size, 16px) * var(--framer-font-size-scale, 1));
+  letter-spacing: var(--framer-letter-spacing, 0);
+  text-transform: var(--framer-text-transform, none);
+  text-decoration: var(--framer-text-decoration, none);
+  line-height: var(--framer-line-height, 1.2em);
+  text-align: var(--framer-text-alignment, start);
+}
+
+.rubrix-theme .slider-st .hero-title span {
+  color: rgb(120, 110, 204);
+}
+
+@media (max-width: 991px) {
+  .rubrix-theme .slider-st .hero-title {
+    --framer-font-size: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  .rubrix-theme .slider-st .hero-title {
+    --framer-font-size: 32px;
+  }
 }
 
 /* Hero image - template style */
@@ -435,13 +463,13 @@ p {
 .logo-text {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--accent-400);
+  color: #fff;
   letter-spacing: 0.3px;
   transition: all 0.3s ease;
 }
 
 .logo-rubrix:hover .logo-text {
-  text-shadow: 0 0 10px var(--accent-400);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -863,8 +891,28 @@ textarea.form-control {
 
 /* Minimal navbar enhancements - keep template design */
 /* Subtle hover effects for nav links */
+.rubrix-theme .navbar .nav-link {
+  position: relative;
+}
+
+.rubrix-theme .navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
 .rubrix-theme .navbar .nav-link:hover {
-  color: var(--accent-400) !important;
+  color: #fff !important;
+}
+
+.rubrix-theme .navbar .nav-link:hover::after {
+  width: 80%;
 }
 
 /* Style dropdown menus with vyro.ai colors */
