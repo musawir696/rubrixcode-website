@@ -349,9 +349,9 @@ p {
 .rubrix-theme .slider-st .hero-title {
   --framer-font-family: inherit;
   --framer-font-style: normal;
-  --framer-font-weight: 1500;
+  --framer-font-weight: 700;
   --framer-text-color: #fff;
-  --framer-font-size: 56px;
+  --framer-font-size: 72px;
   --framer-font-size-scale: 1;
   --framer-letter-spacing: -1px;
   --framer-text-transform: none;
@@ -363,7 +363,7 @@ p {
   font-style: var(--framer-font-style, normal);
   font-weight: var(--framer-font-weight, 400);
   color: var(--framer-text-color, #fff);
-  font-size: calc(var(--framer-font-size, 16px) * var(--framer-font-size-scale, 1));
+  font-size: calc(var(--framer-font-size, 16px) * var(--framer-font-size-scale, 1)) !important;
   letter-spacing: var(--framer-letter-spacing, 0);
   text-transform: var(--framer-text-transform, none);
   text-decoration: var(--framer-text-decoration, none);
@@ -377,13 +377,30 @@ p {
 
 @media (max-width: 991px) {
   .rubrix-theme .slider-st .hero-title {
-    --framer-font-size: 42px;
+    --framer-font-size: 52px;
   }
 }
 
 @media (max-width: 767px) {
   .rubrix-theme .slider-st .hero-title {
-    --framer-font-size: 32px;
+    --framer-font-size: 38px;
+  }
+}
+
+/* Hero title custom indentation for second line */
+.rubrix-theme .slider-st .hero-title div:nth-child(2) {
+  padding-left: 150px;
+}
+
+@media (max-width: 991px) {
+  .rubrix-theme .slider-st .hero-title div:nth-child(2) {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .rubrix-theme .slider-st .hero-title div:nth-child(2) {
+    padding-left: 50px;
   }
 }
 
@@ -396,13 +413,21 @@ p {
 /* Hero buttons - keep template style, subtle enhancement */
 .rubrix-theme .slider-st .butn.bord {
   border-color: var(--accent-400) !important;
-  color: var(--accent-400) !important;
+  color: #ffffff !important;
+}
+
+.rubrix-theme .slider-st .butn.bord span {
+  color: #ffffff !important;
 }
 
 .rubrix-theme .slider-st .butn.bord:hover {
   background: var(--accent-400) !important;
   color: #000 !important;
   border-color: var(--accent-400) !important;
+}
+
+.rubrix-theme .slider-st .butn.bord:hover span {
+  color: #000 !important;
 }
 
 .hero-content {
@@ -890,6 +915,59 @@ textarea.form-control {
 }
 
 /* Minimal navbar enhancements - keep template design */
+/* Center navbar content */
+.navbar .navbar-nav.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* RubrixNavbar centered styling */
+.navbar .navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navbar .navbar-content .logo {
+  position: absolute;
+  left: 15px;
+}
+
+.navbar .navbar-content .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .navbar-content .nav-links li a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-content .nav-links li a:hover {
+  color: var(--accent-400);
+}
+
+@media (max-width: 991px) {
+  .navbar .navbar-content {
+    justify-content: space-between;
+  }
+  
+  .navbar .navbar-content .logo {
+    position: relative;
+    left: 0;
+  }
+  
+  .navbar .navbar-content .nav-links {
+    display: none;
+  }
+}
+
 /* Subtle hover effects for nav links */
 .rubrix-theme .navbar .nav-link {
   position: relative;
