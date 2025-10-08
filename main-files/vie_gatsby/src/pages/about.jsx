@@ -46,7 +46,7 @@ export const AboutSections = () => (
 					<h2 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: '700', marginBottom: '20px' }}>
 						Why <span style={{ color: 'rgb(120, 110, 204)' }}>Choose Us</span>
 					</h2>
-					<p style={{ fontSize: '18px', lineHeight: '1.8', maxWidth: '700px', margin: '0 auto', color: 'var(--text-secondary)' }}>
+					<p style={{ fontSize: '18px', lineHeight: '1.8', maxWidth: '700px', margin: '0 auto', color: '#ffffff' }}>
 						We deliver world-class execution that moves your business forward.
 					</p>
 				</div>
@@ -55,7 +55,7 @@ export const AboutSections = () => (
 					<div className="card fade-in" style={{ padding: '2.5rem', textAlign: 'center' }}>
 						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>⚡</div>
 						<h3 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '15px' }}>Rapid Execution</h3>
-						<p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
+						<p style={{ fontSize: '16px', lineHeight: '1.8', color: '#ffffff' }}>
 							MVP in 4 weeks. Full product in 12. We work in sprints, ship weekly, 
 							and iterate based on real user data. Not endless meetings.
 						</p>
@@ -63,7 +63,7 @@ export const AboutSections = () => (
 					<div className="card fade-in" style={{ padding: '2.5rem', textAlign: 'center' }}>
 						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>💎</div>
 						<h3 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '15px' }}>Premium Craft</h3>
-						<p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
+						<p style={{ fontSize: '16px', lineHeight: '1.8', color: '#ffffff' }}>
 							Every pixel matters. Every interaction delights. We don't ship "good enough" — 
 							we ship experiences that make users say "wow, this is beautiful."
 						</p>
@@ -71,7 +71,7 @@ export const AboutSections = () => (
 					<div className="card fade-in" style={{ padding: '2.5rem', textAlign: 'center' }}>
 						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>📈</div>
 						<h3 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '15px' }}>Growth-Focused</h3>
-						<p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
+						<p style={{ fontSize: '16px', lineHeight: '1.8', color: '#ffffff' }}>
 							We optimize for metrics that matter: conversions, retention, revenue. 
 							Beautiful code is useless if it doesn't move the business forward.
 						</p>
@@ -146,7 +146,7 @@ export const AboutSections = () => (
 					<h2 style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: '700', marginBottom: '20px' }}>
 						What <span style={{ color: 'rgb(120, 110, 204)' }}>Drives</span> Us
 					</h2>
-					<p style={{ fontSize: '18px', lineHeight: '1.8', maxWidth: '700px', margin: '0 auto', color: 'var(--text-secondary)' }}>
+					<p style={{ fontSize: '18px', lineHeight: '1.8', maxWidth: '700px', margin: '0 auto', color: '#ffffff' }}>
 						Beyond the code, beyond the pixels — this is what we're really building.
 					</p>
 				</div>
@@ -155,7 +155,7 @@ export const AboutSections = () => (
 					<div className="card fade-in" style={{ padding: '3rem' }}>
 						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>🔥</div>
 						<h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '15px' }}>Our Mission</h3>
-						<p style={{ fontSize: '17px', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
+						<p style={{ fontSize: '17px', lineHeight: '1.8', color: '#ffffff' }}>
 							<strong style={{ color: 'rgb(120, 110, 204)', fontWeight: '600' }}>Make cutting-edge tech accessible.</strong> No jargon, 
 							no gatekeeping. Whether you're a solo founder with $10K or an enterprise with millions, 
 							you deserve world-class digital products. We're here to build them.
@@ -164,7 +164,7 @@ export const AboutSections = () => (
 					<div className="card fade-in" style={{ padding: '3rem' }}>
 						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>🚀</div>
 						<h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '15px' }}>Our Vision</h3>
-						<p style={{ fontSize: '17px', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
+						<p style={{ fontSize: '17px', lineHeight: '1.8', color: '#ffffff' }}>
 							<strong style={{ color: 'rgb(120, 110, 204)', fontWeight: '600' }}>Every founder should have a technical co-founder.</strong> We act 
 							as yours — bringing Silicon Valley-level expertise without the equity dilution. 
 							Your success is our reputation.
