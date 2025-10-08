@@ -4,6 +4,11 @@ import RubrixPortfolio from "components/RubrixPortfolio/portfolio";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
 
+// Component version for use in main page (without navbar and footer)
+export const RubrixPortfolioSection = () => {
+  return <RubrixPortfolio />;
+};
+
 const PortfolioPage = () => {
   const navbarRef = React.useRef(null);
   const logoRef = React.useRef(null);

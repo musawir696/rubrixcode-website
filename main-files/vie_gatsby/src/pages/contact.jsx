@@ -4,6 +4,11 @@ import ContactForm from "components/Contact-form/contact-form";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
 
+// Component version for use in main page (without navbar and footer)
+export const RubrixContactSection = () => {
+  return <ContactForm />;
+};
+
 const ContactPage = () => {
   const navbarRef = React.useRef(null);
   const logoRef = React.useRef(null);

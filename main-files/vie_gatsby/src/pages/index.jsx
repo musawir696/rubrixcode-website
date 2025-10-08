@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "components/Navbar/navbar";
 import RubrixHero from "components/RubrixHero/hero";
 import { AboutSections } from "./about";
-import RubrixPortfolio from "./portfolio";
-import RubrixContact from "./contact";
+import { RubrixPortfolioSection } from "./portfolio";
+import { RubrixContactSection } from "./contact";
 import CallToAction from "components/Call-to-action/call-to-action";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
@@ -38,9 +38,9 @@ const HomePage = () => {
         {/* About Page Content */}
         <AboutSections />
         {/* Portfolio Page Content */}
-        <RubrixPortfolio />
+        <RubrixPortfolioSection />
         {/* Contact Page Content */}
-        <RubrixContact />
+        <RubrixContactSection />
         <CallToAction />
         <Footer />
       </div>

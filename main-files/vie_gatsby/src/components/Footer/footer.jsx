@@ -3,121 +3,288 @@ import { Link } from 'gatsby'
 import appData from "data/app.json";
 
 const Footer = ({ hideBGCOLOR }) => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className={`${!hideBGCOLOR ? "sub-bg" : ""}`}>
+    <footer style={{ 
+      background: '#000000', 
+      padding: '60px 0 40px 0',
+      color: '#ffffff'
+    }}>
       <div className="container">
-        <div className="row">
-          <div className="col-lg-4">
-            <div className="item md-mb50">
-              <div className="title">
-                <h5>Contact Us</h5>
+        <div className="row" style={{ alignItems: 'flex-start' }}>
+          {/* Logo and Tagline */}
+          <div className="col-lg-3 col-md-6">
+            <div className="footer-logo" style={{ marginBottom: '30px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <img 
+                  src="/img/rubrixCodeLogo.jpg" 
+                  alt="RubrixCode" 
+                  style={{ 
+                    height: '50px', 
+                    width: 'auto',
+                    marginRight: '15px'
+                  }} 
+                />
+                <div>
+                  <h4 style={{ 
+                    color: '#ffffff', 
+                    margin: '0', 
+                    fontSize: '16px',
+                    fontWeight: '400'
+                  }}>
+                    RubrixCode
+                  </h4>
+                </div>
               </div>
-              <ul>
-                <li>
-                  <span className="icon pe-7s-map-marker"></span>
-                  <div className="cont">
-                    <h6>Officeal Address</h6>
-                    <p>504 White St . Dawsonville, GA 30534 , New York</p>
+              <div style={{ 
+                color: '#ffffff', 
+                fontSize: '16px',
+                lineHeight: '1.6',
+                fontStyle: 'italic'
+              }}>
+            
+              </div>
+              </div>
                   </div>
+
+          {/* Company Links */}
+          <div className="col-lg-2 col-md-6">
+            <div style={{ marginBottom: '30px' }}>
+              <h5 style={{ 
+                color: '#ffffff', 
+                fontSize: '18px',
+                fontWeight: '600',
+                marginBottom: '20px'
+              }}>
+                Company
+              </h5>
+              <ul style={{ listStyle: 'none', padding: '0', margin: '0' }}>
+                <li style={{ marginBottom: '12px' }}>
+                  <Link to="/" style={{ 
+                    color: '#ffffff', 
+                    textDecoration: 'none',
+                    fontSize: '16px',
+                    transition: 'color 0.3s ease'
+                  }}>
+                    Home
+                  </Link>
                 </li>
-                <li>
-                  <span className="icon pe-7s-mail"></span>
-                  <div className="cont">
-                    <h6>Email Us</h6>
-                    <p>support@gmail.com</p>
-                  </div>
+                <li style={{ marginBottom: '12px' }}>
+                  <Link to="/about" style={{ 
+                    color: '#ffffff', 
+                    textDecoration: 'none',
+                    fontSize: '16px',
+                    transition: 'color 0.3s ease'
+                  }}>
+                    About
+                  </Link>
                 </li>
-                <li>
-                  <span className="icon pe-7s-call"></span>
-                  <div className="cont">
-                    <h6>Call Us</h6>
-                    <p>+87986451666</p>
-                  </div>
+                <li style={{ marginBottom: '12px' }}>
+                  <Link to="/portfolio" style={{ 
+                    color: '#ffffff', 
+                    textDecoration: 'none',
+                    fontSize: '16px',
+                    transition: 'color 0.3s ease'
+                  }}>
+                    Portfolio
+                  </Link>
+                </li>
+                <li style={{ marginBottom: '12px' }}>
+                  <Link to="/contact" style={{ 
+                    color: '#ffffff', 
+                    textDecoration: 'none',
+                    fontSize: '16px',
+                    transition: 'color 0.3s ease'
+                  }}>
+                    Contact Us
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="col-lg-4">
-            <div className="item md-mb50">
-              <div className="title">
-                <h5>Recent News</h5>
+
+          {/* Contact Information */}
+          <div className="col-lg-3 col-md-6">
+            <div style={{ marginBottom: '30px' }}>
+              <h5 style={{ 
+                color: '#ffffff', 
+                fontSize: '18px',
+                fontWeight: '600',
+                marginBottom: '20px'
+              }}>
+                Reach us out
+              </h5>
+              <div style={{ marginBottom: '15px' }}>
+                <div style={{ 
+                  fontWeight: '600',
+                  color: '#ffffff',
+                  marginBottom: '5px',
+                  fontSize: '14px'
+                }}>
+                  For General Queries
+                </div>
+                <div style={{ 
+                  color: '#ffffff',
+                  fontSize: '16px'
+                }}>
+                  hello@rubrixcode.com
+                </div>
               </div>
-              <ul>
-                <li>
-                  <div className="img">
-                    <Link to="/blog-details/blog-details-dark">
-                      <img src="/img/blog/1.jpg" alt="" />
-                    </Link>
+              <div style={{ marginBottom: '15px' }}>
+                <div style={{ 
+                  fontWeight: '600',
+                  color: '#ffffff',
+                  marginBottom: '5px',
+                  fontSize: '14px'
+                }}>
+                  For Job Related Queries
+              </div>
+                <div style={{ 
+                  color: '#ffffff',
+                  fontSize: '16px'
+                }}>
+                  careers@rubrixcode.com
                   </div>
-                  <div className="sm-post">
-                    <Link to="/blog-details/blog-details-dark">
-                      <p>
-                        The Start-Up Ultimate Guide to Make Your WordPress
-                        Journal.
-                      </p>
-                    </Link>
-                    <Link to="/blog/blog-dark">
-                      <span className="date">14 sep 2022</span>
-                    </Link>
                   </div>
-                </li>
-                <li>
-                  <div className="img">
-                    <Link to="/blog-details/blog-details-dark">
-                      <img src="/img/blog/2.jpg" alt="" />
-                    </Link>
+              <div>
+                <div style={{ 
+                  fontWeight: '600',
+                  color: '#ffffff',
+                  marginBottom: '5px',
+                  fontSize: '14px'
+                }}>
+                  For Support
                   </div>
-                  <div className="sm-post">
-                    <Link to="/blog-details/blog-details-dark">
-                      <p>
-                        The Start-Up Ultimate Guide to Make Your WordPress
-                        Journal.
-                      </p>
-                    </Link>
-                    <Link to="/blog/blog-dark">
-                      <span className="date">14 sep 2022</span>
-                    </Link>
+                <div style={{ 
+                  color: '#ffffff',
+                  fontSize: '16px'
+                }}>
+                  support@rubrixcode.com
                   </div>
-                </li>
-                <li>
-                  <div className="subscribe">
-                    <input type="text" placeholder="Type Your Email" />
-                    <span className="subs pe-7s-paper-plane"></span>
                   </div>
-                </li>
-              </ul>
             </div>
           </div>
-          <div className="col-lg-4">
-            <div className="item">
-              <div className="logo">
-                <img src={appData.lightLogo} alt="" />
+
+          {/* Social Media */}
+          <div className="col-lg-2 col-md-6">
+            <div style={{ marginBottom: '30px' }}>
+              <h5 style={{ 
+                color: '#ffffff', 
+                fontSize: '18px',
+                fontWeight: '600',
+                marginBottom: '5px'
+              }}>
+                Follow us on
+              </h5>
+              <div style={{ 
+                color: '#ffffff',
+                fontSize: '16px',
+                marginBottom: '20px'
+              }}>
+                Social Media
               </div>
-              <div className="social">
-                <a href="#0">
-                  <i className="fab fa-facebook-f"></i>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                <a href="#" style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  border: '1px solid #ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <i className="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#0">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#0">
+               
+                <a href="#" style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  border: '1px solid #ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease'
+                }}>
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="#0">
-                  <i className="fab fa-youtube"></i>
-                </a>
-              </div>
-              <div className="copy-right">
-                <p>
-                  © 2022, Vie Template. Made with passion by
-                  <Link to="https://themeforest.net/user/themescamp/portfolio" target="_blank">
-                    ThemesCamp
-                  </Link>
-                  .
-                </p>
+                
+                
               </div>
             </div>
           </div>
+
+          {/* Back To Home Button */}
+          <div className="col-lg-2 col-md-6">
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'flex-end',
+              alignItems: 'flex-start'
+            }}>
+              <button 
+                onClick={scrollToTop}
+                style={{
+                  background: 'transparent',
+                  border: '1px solid #ffffff',
+                  borderRadius: '20px',
+                  padding: '10px 12px',
+                  color: '#ffffff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '6px',
+                  transition: 'all 0.3s ease',
+                  minWidth: '55px'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#ffffff';
+                  e.target.style.color = '#000000';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = 'transparent';
+                  e.target.style.color = '#ffffff';
+                }}
+              >
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '14px'
+                }}>
+                  <i className="fas fa-home"></i>
+                </div>
+                <div style={{ fontSize: '10px', textAlign: 'center' }}>
+                  <div>Back To</div>
+                  <div>Home</div>
+                </div>
+              </button>
+              </div>
+            </div>
+          </div>
+
+        {/* Copyright */}
+        <div style={{ 
+          borderTop: '1px solid #333',
+          paddingTop: '30px',
+          marginTop: '40px',
+          textAlign: 'center'
+        }}>
+          <p style={{ 
+            color: '#ffffff',
+            margin: '0',
+            fontSize: '14px'
+          }}>
+            © 2024, RubrixCode. Made with passion for digital excellence.
+          </p>
         </div>
       </div>
     </footer>
