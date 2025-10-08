@@ -43,24 +43,24 @@ const Navbar = ({ lr, nr, theme }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a href="#hero" className="nav-link">
+              <Link to="/" className="nav-link">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link">
+              <Link to="/about" className="nav-link">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#portfolio" className="nav-link">
+              <Link to="/portfolio" className="nav-link">
                 Portfolio
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link">
+              <Link to="/contact" className="nav-link">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

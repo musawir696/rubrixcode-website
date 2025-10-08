@@ -1,9 +1,6 @@
 import React from "react";
 import Navbar from "components/Navbar/navbar";
-import PagesHeader from "components/Pages-header";
 import RubrixPortfolio from "components/RubrixPortfolio/portfolio";
-import Numbers from "components/Numbers/numbers";
-import CallToAction from "components/Call-to-action/call-to-action";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
 
@@ -32,12 +29,8 @@ const PortfolioPage = () => {
   return (
     <DarkTheme>
       <Navbar nr={navbarRef} lr={logoRef} />
-      <PagesHeader />
       <div className="main-content">
       <RubrixPortfolio />
-
-        <Numbers />
-        <CallToAction />
         <Footer />
           </div>
     </DarkTheme>
