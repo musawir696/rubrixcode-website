@@ -229,63 +229,46 @@ const Footer = ({ hideBGCOLOR }) => {
               justifyContent: 'flex-end',
               alignItems: 'flex-start'
             }}>
-              <button 
-                onClick={scrollToTop}
-                style={{
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <button 
+                  onClick={scrollToTop}
+                  style={{
                   background: 'transparent',
                   border: '1px solid #ffffff',
                   borderRadius: '20px',
-                  padding: '10px 12px',
+                  padding: '25px 0px',
                   color: '#ffffff',
                   cursor: 'pointer',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '6px',
                   transition: 'all 0.3s ease',
-                  minWidth: '55px'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.background = '#ffffff';
-                  e.target.style.color = '#000000';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.background = 'transparent';
-                  e.target.style.color = '#ffffff';
-                }}
-              >
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '14px'
-                }}>
-                  <i className="fas fa-home"></i>
-                </div>
-                <div style={{ fontSize: '10px', textAlign: 'center' }}>
+                  minWidth: '55px',
+                  marginBottom: '10px' 
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = '#ffffff';
+                    e.target.style.color = '#000000';
+                    e.target.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'transparent';
+                    e.target.style.color = '#ffffff';
+                    e.target.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.2)';
+                  }}
+                >
+                  <i className="fas fa-home" style={{ fontSize: '16px' }}></i>
+                </button>
+                <div style={{ fontSize: '13px', textAlign: 'center', color: '#ffffff' }}>
                   <div>Back To</div>
                   <div>Home</div>
                 </div>
-              </button>
+              </div>
               </div>
             </div>
           </div>
 
-        {/* Copyright */}
-        <div style={{ 
-          borderTop: '1px solid #333',
-          paddingTop: '30px',
-          marginTop: '40px',
-          textAlign: 'center'
-        }}>
-          <p style={{ 
-            color: '#ffffff',
-            margin: '0',
-            fontSize: '14px'
-          }}>
-            © 2024, RubrixCode. Made with passion for digital excellence.
-          </p>
-        </div>
+      
       </div>
     </footer>
   );
