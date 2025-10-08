@@ -607,7 +607,19 @@ const RubrixPortfolio = () => {
                   fontSize: '0.9rem',
                   padding: '0.75rem',
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  background: 'rgb(120, 110, 204)',
+                  color: '#ffffff',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 15px rgba(120, 110, 204, 0.35)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgb(140, 130, 214)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(120, 110, 204, 0.45)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgb(120, 110, 204)';
+                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(120, 110, 204, 0.35)';
                 }}
               >
                 View Details
