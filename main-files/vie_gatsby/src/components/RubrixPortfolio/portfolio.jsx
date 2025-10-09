@@ -483,7 +483,7 @@ const RubrixPortfolio = () => {
                       key={tech}
                       style={{
                         background: 'var(--bg-600)',
-                        color: 'var(--accent-400)',
+                        color: '#ffffff',
                         padding: '0.25rem 0.75rem',
                         borderRadius: '20px',
                         fontSize: '0.8rem',
