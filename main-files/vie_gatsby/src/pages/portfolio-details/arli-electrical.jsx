@@ -30,23 +30,8 @@ const ArliElectricalPage = () => {
   return (
     <DarkTheme>
       <Navbar nr={navbarRef} lr={logoRef} />
-      <div className="main-content">
-        <div className="container" style={{ paddingTop: '100px' }}>
-          <button 
-            onClick={() => navigate(-1)}
-            type="button"
-            className="btn-secondary"
-            style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '0.5rem',
-              marginBottom: '2rem'
-            }}
-          >
-            ← Back
-          </button>
-          <ArliElectrical />
-        </div>
+      <div className="main-content" style={{ paddingTop: '100px' }}>
+        <ArliElectrical />
         <Footer />
       </div>
     </DarkTheme>
