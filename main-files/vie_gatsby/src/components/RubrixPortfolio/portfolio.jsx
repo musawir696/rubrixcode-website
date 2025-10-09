@@ -1,29 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Import portfolio detail components
-import SwedenRelocators from "./PortfolioDetails/SwedenRelocators";
-import ArliElectrical from "./PortfolioDetails/ArliElectrical";
-import CrossroadsAdventure from "./PortfolioDetails/CrossroadsAdventure";
-import Si3SiHer from "./PortfolioDetails/Si3SiHer";
-import DecimalsRebuilt from "./PortfolioDetails/DecimalsRebuilt";
-import Contiamo from "./PortfolioDetails/Contiamo";
-import AegeanTaxi from "./PortfolioDetails/AegeanTaxi";
-import Growphics from "./PortfolioDetails/Growphics";
-import TheWildGuardians from "./PortfolioDetails/TheWildGuardians";
-import Perplexa from "./PortfolioDetails/Perplexa";
-import Brainwave from "./PortfolioDetails/Brainwave";
-import Zluf from "./PortfolioDetails/Zluf";
-import HoyaKerry from "./PortfolioDetails/HoyaKerry";
-import MiuraProtocol from "./PortfolioDetails/MiuraProtocol";
-import SustainChain from "./PortfolioDetails/SustainChain";
-import BankRollBears from "./PortfolioDetails/BankRollBears";
-import Lumino from "./PortfolioDetails/Lumino";
-import ShariaLandlord from "./PortfolioDetails/ShariaLandlord";
-import Cryptify from "./PortfolioDetails/Cryptify";
-import ProFuturesTrading from "./PortfolioDetails/ProFuturesTrading";
-import NFTracker from "./PortfolioDetails/NFTracker";
+import { navigate } from "gatsby";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +10,6 @@ if (typeof window !== "undefined") {
 const RubrixPortfolio = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
-  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -196,30 +173,6 @@ const RubrixPortfolio = () => {
             ease: "power2.out"
           });
         });
-
-        // Button animation
-        const button = card.querySelector('.btn-primary');
-        if (button) {
-          button.addEventListener('mouseenter', (e) => {
-            e.stopPropagation();
-            gsap.to(button, {
-              scale: 1.05,
-              boxShadow: '0 15px 40px rgba(15, 182, 255, 0.4)',
-              duration: 0.3,
-              ease: "power2.out"
-            });
-          });
-
-          button.addEventListener('mouseleave', (e) => {
-            e.stopPropagation();
-            gsap.to(button, {
-              scale: 1,
-              boxShadow: '0 4px 15px rgba(15, 182, 255, 0.3)',
-              duration: 0.3,
-              ease: "power2.out"
-            });
-          });
-        }
       });
 
     }, sectionRef);
@@ -227,24 +180,6 @@ const RubrixPortfolio = () => {
     return () => ctx.revert();
   }, []);
 
-  // Re-initialize card refs and visibility when returning from a detail view
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (selectedProject === null) {
-      // Ensure new grid items are visible and animated after re-render
-      const id = setTimeout(() => {
-        const cards = cardsRef.current.filter(Boolean);
-        cards.forEach((el) => el.classList && el.classList.add("visible"));
-        if (cards.length) {
-          gsap.fromTo(cards,
-            { opacity: 0, y: 40, scale: 0.95 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.07, ease: "power2.out" }
-          );
-        }
-      }, 0);
-      return () => clearTimeout(id);
-    }
-  }, [selectedProject]);
 
   const projects = [
     {
@@ -254,7 +189,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/SR.jpg",
       category: "web",
       tech: ["Figma", "React", "Tailwind CSS", "Material UI", "Node.js", "Laravel", "Vite JS"],
-      component: SwedenRelocators
+      slug: "/portfolio-details/sweden-relocators"
     },
     {
       id: 2,
@@ -263,7 +198,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Arli.jpg",
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "GoDaddy Hosting"],
-      component: ArliElectrical
+      slug: "/portfolio-details/arli-electrical"
     },
     {
       id: 3,
@@ -272,7 +207,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/crossroad.jpg",
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "GoDaddy Hosting"],
-      component: CrossroadsAdventure
+      slug: "/portfolio-details/crossroads-adventure"
     },
     {
       id: 4,
@@ -281,7 +216,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/sis.jpg",
       category: "web3",
       tech: ["Figma", "HTML", "CSS", "JavaScript", "Wallet Connect", "IPNS", "IPFS", "ENS", "Firebase"],
-      component: Si3SiHer
+      slug: "/portfolio-details/si3-siher"
     },
     {
       id: 5,
@@ -290,7 +225,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Decimal.jpg",
       category: "nft",
       tech: ["Solidity", "ERC-721A", "OpenZeppelin", "Hardhat", "JavaScript", "Polygon", "Ethers.js", "Web3", "React.js"],
-      component: DecimalsRebuilt
+      slug: "/portfolio-details/decimals-rebuilt"
     },
     {
       id: 6,
@@ -299,7 +234,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Contiamo.jpg",
       category: "web",
       tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Next.js", "Canva", "GitHub", "Git", "Webpack", "Node.js"],
-      component: Contiamo
+      slug: "/portfolio-details/contiamo"
     },
     {
       id: 7,
@@ -308,7 +243,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Aegean.jpg",
       category: "web",
       tech: ["Figma", "HTML", "Vanilla CSS", "JavaScript", "Tailwind CSS", "Next.js", "React"],
-      component: AegeanTaxi
+      slug: "/portfolio-details/aegean-taxi"
     },
     {
       id: 8,
@@ -317,7 +252,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Growphics.jpg",
       category: "web",
       tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Next.js", "Node.js", "Git", "GitHub", "Netlify", "FromSpree"],
-      component: Growphics
+      slug: "/portfolio-details/growphics"
     },
     {
       id: 9,
@@ -326,7 +261,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/WildGuardians.jpg",
       category: "nft",
       tech: ["Webflow", "Webflow APIs", "Ethereum", "Solidity", "Wallet Connect", "Metamask", "Metaplex SDK"],
-      component: TheWildGuardians
+      slug: "/portfolio-details/the-wild-guardians"
     },
     {
       id: 10,
@@ -335,7 +270,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Perplexa.jpg",
       category: "web",
       tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "Figma", "Adobe XD", "Adobe Photoshop", "Illustrator", "Firebase", "Google APIs"],
-      component: Perplexa
+      slug: "/portfolio-details/perplexa"
     },
     {
       id: 11,
@@ -344,7 +279,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Brainwave.jpg",
       category: "web",
       tech: ["HTML", "Tailwind CSS", "React", "GSAP"],
-      component: Brainwave
+      slug: "/portfolio-details/brainwave"
     },
     {
       id: 12,
@@ -353,7 +288,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Zulf.jpg",
       category: "nft",
       tech: ["Solidity", "Smart Contracts", "Web3.js", "HTML", "CSS", "JavaScript", "IPFS", "Metamask", "Polygon", "ERC-721", "WalletConnect", "Firebase"],
-      component: Zluf
+      slug: "/portfolio-details/zluf"
     },
     {
       id: 13,
@@ -362,7 +297,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Hoyakerry.jpg",
       category: "web",
       tech: ["Solidity", "ERC-1155", "Ethereum", "IPFS", "Python", "JavaScript", "HTML", "CSS", "OpenSea API"],
-      component: HoyaKerry
+      slug: "/portfolio-details/hoya-kerry"
     },
     {
       id: 14,
@@ -371,7 +306,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Miura.jpg",
       category: "defi",
       tech: ["Figma", "HTML", "CSS", "JavaScript", "Solana", "Solflare", "Wallet Connect", "Blender", "Canva", "Adobe Photoshop", "Next.js", "React", "Firebase", "Metaplex SDK"],
-      component: MiuraProtocol
+      slug: "/portfolio-details/miura-protocol"
     },
     {
       id: 15,
@@ -380,7 +315,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/SustainChain.jpg",
       category: "blockchain",
       tech: ["HTML", "CSS", "JavaScript", "Web3", "Ethereum", "Wallet Connect", "Git", "GitHub", "Firebase", "Metaplex SDK"],
-      component: SustainChain
+      slug: "/portfolio-details/sustainchain"
     },
     {
       id: 16,
@@ -389,7 +324,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/BankRoll.jpg",
       category: "nft",
       tech: ["HTML", "CSS", "JavaScript", "Solidity", "Ethereum", "Web3", "Ebisus Bay", "Firebase", "Metaplex SDK"],
-      component: BankRollBears
+      slug: "/portfolio-details/bankroll-bears"
     },
     {
       id: 17,
@@ -398,7 +333,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Lumino.jpg",
       category: "web",
       tech: ["React", "JavaScript", "HTML", "CSS", "Node.js", "Figma", "Canva", "Firebase", "MongoDB", "Google API"],
-      component: Lumino
+      slug: "/portfolio-details/lumino"
     },
     {
       id: 18,
@@ -407,7 +342,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Sharia.jpg",
       category: "nft",
       tech: ["Polygon", "Solidity", "Python", "OpenSea", "JavaScript", "IPFS", "Metamask", "HTML", "CSS", "Node.js"],
-      component: ShariaLandlord
+      slug: "/portfolio-details/sharia-landlord"
     },
     {
       id: 19,
@@ -416,7 +351,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/Cryptify.jpg",
       category: "web",
       tech: ["Next.js", "Tailwind CSS", "React Hook Form", "Node.js", "ExcelJS", "React Context API", "Vercel"],
-      component: Cryptify
+      slug: "/portfolio-details/cryptify"
     },
     {
       id: 20,
@@ -425,7 +360,7 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/ProFutures.jpg",
       category: "web",
       tech: ["Hostinger Website Builder"],
-      component: ProFuturesTrading
+      slug: "/portfolio-details/pro-futures-trading"
     },
     {
       id: 21,
@@ -434,47 +369,10 @@ const RubrixPortfolio = () => {
       image: "/img/portfolio/NFTracker.jpg",
       category: "web",
       tech: ["React.js", "Auth0 (Google Login Integration)", "CSS", "VS Code", "Hostinger"],
-      component: NFTracker
+      slug: "/portfolio-details/nftracker"
     }
    
   ];
-
-
-  // If a project is selected, show the detail component
-  if (selectedProject) {
-    const ProjectComponent = selectedProject.component;
-    return (
-      <section className="section" ref={sectionRef} id="portfolio">
-        <div className="container">
-          <div style={{ marginBottom: '2rem' }}>
-            <button 
-              onClick={(e) => {
-                e.preventDefault();
-                setSelectedProject(null);
-                // Scroll back to the portfolio grid after state resets
-                setTimeout(() => {
-                  if (sectionRef.current) {
-                    sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }, 0);
-              }}
-              type="button"
-              className="btn-secondary"
-              style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '0.5rem',
-                marginBottom: '2rem'
-              }}
-            >
-              ← Back to Portfolio
-            </button>
-          </div>
-          <ProjectComponent />
-        </div>
-      </section>
-    );
-  }
 
   // Reset refs before rendering grid so new elements are tracked
   cardsRef.current = [];
@@ -511,7 +409,7 @@ const RubrixPortfolio = () => {
               onMouseLeave={(e) => {
                 gsap.to(e.currentTarget, { scale: 1, duration: 0.3 });
               }}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => navigate(project.slug)}
             >
               <div style={{ 
                 height: '200px', 
@@ -574,7 +472,7 @@ const RubrixPortfolio = () => {
                 {project.description}
               </p>
               
-              <div style={{ marginBottom: '1.5rem' }}>
+              <div>
                 <div style={{ 
                   display: 'flex', 
                   flexWrap: 'wrap', 
@@ -597,33 +495,6 @@ const RubrixPortfolio = () => {
                   ))}
                 </div>
               </div>
-              
-              <button 
-                onClick={() => setSelectedProject(project)}
-                className="btn-primary"
-                style={{ 
-                  width: '100%', 
-                  textAlign: 'center',
-                  fontSize: '0.9rem',
-                  padding: '0.75rem',
-                  border: 'none',
-                  cursor: 'pointer',
-                  background: 'rgb(120, 110, 204)',
-                  color: '#ffffff',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 15px rgba(120, 110, 204, 0.35)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgb(140, 130, 214)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(120, 110, 204, 0.45)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgb(120, 110, 204)';
-                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(120, 110, 204, 0.35)';
-                }}
-              >
-                View Details
-              </button>
             </div>
           ))}
         </div>
