@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "components/Navbar/navbar";
+import CallToAction from "components/Call-to-action/call-to-action";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
 
@@ -207,6 +208,7 @@ const AboutPage = () => {
       
       <div className="main-content">
         <AboutSections />
+        <CallToAction />
         <Footer />
       </div>
     </DarkTheme>

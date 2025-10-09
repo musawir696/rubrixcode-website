@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "components/Navbar/navbar";
 import ContactForm from "components/Contact-form/contact-form";
+import CallToAction from "components/Call-to-action/call-to-action";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
 
@@ -42,6 +43,7 @@ const ContactPage = () => {
       <Navbar nr={navbarRef} lr={logoRef} />
       <div className="main-content">
         <ContactForm />
+        <CallToAction />
         <Footer hideBGCOLOR />
             </div>
     </DarkTheme>
