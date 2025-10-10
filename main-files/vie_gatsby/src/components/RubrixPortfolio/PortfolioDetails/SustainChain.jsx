@@ -146,4 +146,4 @@ const SustainChain = () => {
   );
 };
 
-export default MiuraProtocol;
+export default SustainChain;

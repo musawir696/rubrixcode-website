@@ -175,4 +175,4 @@ const MiuraProtocol = () => {
   );
 };
 
-export default HoyaKerry;
+export default MiuraProtocol;
