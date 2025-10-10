@@ -230,6 +230,61 @@ export const AboutSections = () => {
         </div>
       </section>
 
+      {/* 🔹 Vision, Mission, Essence Combined Section */}
+      <section className="about-vision-mission-essence-3d">
+        <div className="container">
+          <div className="vision-mission-essence-grid">
+            
+            {/* Vision */}
+            <div className="vision-mission-essence-item" ref={visionRef}>
+              <div className="item-background vision-bg">
+                <div className="bg-3d-shape vision-shape"></div>
+                <div className="bg-overlay"></div>
+              </div>
+              <div className="item-content">
+                <h2 className="item-title">Our Vision</h2>
+                <p className="item-description">
+                  To create tools and innovative solutions that empower people to express themselves 
+                  uniquely. An opportunity to discover their hidden potential and bring their 
+                  boldest ideas to life.
+                </p>
+              </div>
+            </div>
+
+            {/* Mission */}
+            <div className="vision-mission-essence-item" ref={missionRef}>
+              <div className="item-background mission-bg">
+                <div className="bg-3d-shape mission-shape"></div>
+                <div className="bg-overlay"></div>
+              </div>
+              <div className="item-content">
+                <h2 className="item-title">Our Mission</h2>
+                <p className="item-description">
+                  Our success depends on our team. Together we strive to work hard, creating 
+                  top-notch products and making a real difference in the digital landscape.
+                </p>
+              </div>
+            </div>
+
+            {/* Essence */}
+            <div className="vision-mission-essence-item" ref={essenceRef}>
+              <div className="item-background essence-bg">
+                <div className="bg-3d-shape essence-shape"></div>
+                <div className="bg-overlay"></div>
+              </div>
+              <div className="item-content">
+                <h2 className="item-title">Our Essence</h2>
+                <p className="item-description">
+                  With the right tools and expertise, individuals can unlock extraordinary potential. 
+                  We provide the technology and creativity to make it happen.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* 🔹 What We Do Section */}
       <section className="about-services-3d">
         <div className="container">
@@ -264,64 +319,6 @@ export const AboutSections = () => {
               <div className="service-icon">⚡</div>
               <h3>Consulting</h3>
               <p>Strategic technical consulting to help businesses make informed decisions about their digital transformation.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 🔹 Vision Section */}
-      <section className="about-vision-3d">
-        <div className="container">
-          <div className="vision-card-3d" ref={visionRef}>
-            <div className="card-number">01</div>
-            <h2 className="section-title-3d">Our Vision</h2>
-            <p className="section-content-3d">
-              To create tools and innovative solutions that empower people to express themselves 
-              uniquely. An opportunity to discover their hidden potential and bring their 
-              boldest ideas to life.
-            </p>
-            <div className="vision-icon-3d">
-              <div className="icon-container">
-                <span className="icon-text">🚀</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 🔹 Mission Section */}
-      <section className="about-mission-3d">
-        <div className="container">
-          <div className="mission-card-3d" ref={missionRef}>
-            <div className="card-number">02</div>
-            <h2 className="section-title-3d">Our Mission</h2>
-            <p className="section-content-3d">
-              Our success depends on our team. Together we strive to work hard, creating 
-              top-notch products and making a real difference in the digital landscape.
-            </p>
-            <div className="mission-icon-3d">
-              <div className="icon-container">
-                <span className="icon-text">💎</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 🔹 Essence Section */}
-      <section className="about-essence-3d">
-        <div className="container">
-          <div className="essence-card-3d" ref={essenceRef}>
-            <div className="card-number">03</div>
-            <h2 className="section-title-3d">Our Essence</h2>
-            <p className="section-content-3d">
-              With the right tools and expertise, individuals can unlock extraordinary potential. 
-              We provide the technology and creativity to make it happen.
-            </p>
-            <div className="essence-icon-3d">
-              <div className="icon-container">
-                <span className="icon-text">⚡</span>
-              </div>
             </div>
           </div>
         </div>
