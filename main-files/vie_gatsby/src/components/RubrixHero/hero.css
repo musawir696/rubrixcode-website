@@ -1,5 +1,179 @@
 /* RubrixHero Component Styles */
 
+/* Hero Section - Uses template .slider-st but add enhancements */
+.rubrix-theme .slider-st {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle animated gradient blobs */
+.rubrix-theme .slider-st::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(15, 182, 255, 0.08) 0%, rgba(15, 182, 255, 0) 70%);
+  border-radius: 50%;
+  top: -150px;
+  right: -150px;
+  animation: float-hero 25s ease-in-out infinite;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.rubrix-theme .slider-st::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(13, 165, 230, 0.06) 0%, rgba(13, 165, 230, 0) 70%);
+  border-radius: 50%;
+  bottom: -100px;
+  left: -100px;
+  animation: float-hero 20s ease-in-out infinite reverse;
+  filter: blur(90px);
+  z-index: 0;
+}
+
+@keyframes float-hero {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-50px, 50px) scale(0.9);
+  }
+}
+
+/* Ensure content is above blobs */
+.rubrix-theme .slider-st .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Style the subtitle */
+.rubrix-theme .slider-st .sub-title h6 {
+  color: var(--accent-400) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Hero title - white text with purple highlight */
+.rubrix-theme .slider-st .hero-title {
+  --framer-font-family: inherit;
+  --framer-font-style: normal;
+  --framer-font-weight: 700;
+  --framer-text-color: #fff;
+  --framer-font-size: 72px;
+  --framer-font-size-scale: 1;
+  --framer-letter-spacing: -1px;
+  --framer-text-transform: none;
+  --framer-text-decoration: none;
+  --framer-line-height: 1.2em;
+  --framer-text-alignment: center;
+  
+  font-family: var(--framer-font-family);
+  font-style: var(--framer-font-style, normal);
+  font-weight: var(--framer-font-weight, 400);
+  color: var(--framer-text-color, #fff);
+  font-size: calc(var(--framer-font-size, 16px) * var(--framer-font-size-scale, 1)) !important;
+  letter-spacing: var(--framer-letter-spacing, 0);
+  text-transform: var(--framer-text-transform, none);
+  text-decoration: var(--framer-text-decoration, none);
+  line-height: var(--framer-line-height, 1.2em);
+  text-align: var(--framer-text-alignment, start);
+}
+
+.rubrix-theme .slider-st .hero-title span {
+  color: rgb(120, 110, 204);
+}
+
+@media (max-width: 991px) {
+  .rubrix-theme .slider-st .hero-title {
+    --framer-font-size: 52px;
+  }
+}
+
+@media (max-width: 767px) {
+  .rubrix-theme .slider-st .hero-title {
+    --framer-font-size: 38px;
+  }
+}
+
+/* Hero title custom indentation for second line */
+.rubrix-theme .slider-st .hero-title div:nth-child(2) {
+  padding-left: 150px;
+}
+
+@media (max-width: 991px) {
+  .rubrix-theme .slider-st .hero-title div:nth-child(2) {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .rubrix-theme .slider-st .hero-title div:nth-child(2) {
+    padding-left: 50px;
+  }
+}
+
+/* Hero image - template style */
+.rubrix-theme .slider-st .img img {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Hero buttons - purple theme */
+.rubrix-theme .slider-st .butn.bord {
+  border-color: rgb(120, 110, 204) !important;
+  color: #ffffff !important;
+}
+
+.rubrix-theme .slider-st .butn.bord span {
+  color: #ffffff !important;
+}
+
+.rubrix-theme .slider-st .butn.bord:hover {
+  background: rgb(120, 110, 204) !important;
+  color: #fff !important;
+  border-color: rgb(120, 110, 204) !important;
+  box-shadow: 0 0 20px rgba(120, 110, 204, 0.5) !important;
+}
+
+.rubrix-theme .slider-st .butn.bord:hover span {
+  color: #fff !important;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero title shimmer animation */
+@keyframes shimmer-text {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* 3D Scene Container */
+.spline-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* Component-specific styles */
 .rubrix-hero {
   /* Hero section uses existing slider-st valign position-re classes */
 }

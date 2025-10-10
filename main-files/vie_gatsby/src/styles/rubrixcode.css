@@ -1,4 +1,6 @@
-/* RubrixCode Brand Colors - Matching home2-dark theme */
+/* RubrixCode Global Styles - Brand Colors and Theme */
+
+/* Brand Colors - Matching home2-dark theme */
 :root {
   --bg-900: #0c0c0c;
   --bg-800: #111;
@@ -14,7 +16,7 @@
   --text-muted: #999;
 }
 
-/* Global Styles - Vyro.ai Inspired */
+/* Global Styles */
 body {
   background-color: var(--bg-900);
   color: var(--text-primary);
@@ -75,10 +77,6 @@ body::after {
   visibility: hidden !important;
 }
 
-
-
-
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -97,7 +95,7 @@ body::after {
   background: var(--accent-300);
 }
 
-/* Typography - Template style */
+/* Typography - Global styles */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.3;
@@ -126,7 +124,7 @@ p {
   line-height: 1.8;
 }
 
-/* Buttons - Template style with subtle enhancements */
+/* Buttons - Global button styles */
 .btn-primary {
   background: var(--accent-400);
   border: none;
@@ -150,7 +148,6 @@ p {
   background: var(--accent-300);
 }
 
-/* Secondary button - template border style */
 .btn-secondary {
   background: transparent;
   border: 2px solid var(--accent-400);
@@ -171,7 +168,7 @@ p {
   box-shadow: 0 6px 20px rgba(15, 182, 255, 0.3);
 }
 
-/* Container - Template default */
+/* Container - Global layout */
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -183,7 +180,7 @@ p {
   text-align: center;
 }
 
-/* Section Spacing - Template style */
+/* Section Spacing - Global */
 .section {
   padding: 90px 0;
   position: relative;
@@ -196,7 +193,7 @@ p {
   z-index: 1;
 }
 
-/* Grid */
+/* Grid - Global layout system */
 .grid {
   display: grid;
   gap: 2rem;
@@ -228,7 +225,7 @@ p {
   }
 }
 
-/* Cards - Clean template style with minimal effects */
+/* Cards - Global card styles */
 .card {
   background: rgba(17, 17, 17, 0.4);
   backdrop-filter: blur(5px);
@@ -250,7 +247,7 @@ p {
   background: rgba(17, 17, 17, 0.6);
 }
 
-/* Animations */
+/* Animations - Global */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -284,171 +281,6 @@ p {
   transform: translateX(0);
 }
 
-/* Hero Section - Uses template .slider-st but add vyro.ai enhancements */
-.rubrix-theme .slider-st {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle animated gradient blobs - template-friendly */
-.rubrix-theme .slider-st::before {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(15, 182, 255, 0.08) 0%, rgba(15, 182, 255, 0) 70%);
-  border-radius: 50%;
-  top: -150px;
-  right: -150px;
-  animation: float 25s ease-in-out infinite;
-  filter: blur(80px);
-  z-index: 0;
-}
-
-.rubrix-theme .slider-st::after {
-  content: '';
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(13, 165, 230, 0.06) 0%, rgba(13, 165, 230, 0) 70%);
-  border-radius: 50%;
-  bottom: -100px;
-  left: -100px;
-  animation: float 20s ease-in-out infinite reverse;
-  filter: blur(90px);
-  z-index: 0;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(50px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-50px, 50px) scale(0.9);
-  }
-}
-
-/* Ensure content is above blobs */
-.rubrix-theme .slider-st .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* Style the subtitle */
-.rubrix-theme .slider-st .sub-title h6 {
-  color: var(--accent-400) !important;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-
-/* Hero title - white text with purple highlight */
-.rubrix-theme .slider-st .hero-title {
-  --framer-font-family: inherit;
-  --framer-font-style: normal;
-  --framer-font-weight: 700;
-  --framer-text-color: #fff;
-  --framer-font-size: 72px;
-  --framer-font-size-scale: 1;
-  --framer-letter-spacing: -1px;
-  --framer-text-transform: none;
-  --framer-text-decoration: none;
-  --framer-line-height: 1.2em;
-  --framer-text-alignment: center;
-  
-  font-family: var(--framer-font-family);
-  font-style: var(--framer-font-style, normal);
-  font-weight: var(--framer-font-weight, 400);
-  color: var(--framer-text-color, #fff);
-  font-size: calc(var(--framer-font-size, 16px) * var(--framer-font-size-scale, 1)) !important;
-  letter-spacing: var(--framer-letter-spacing, 0);
-  text-transform: var(--framer-text-transform, none);
-  text-decoration: var(--framer-text-decoration, none);
-  line-height: var(--framer-line-height, 1.2em);
-  text-align: var(--framer-text-alignment, start);
-}
-
-.rubrix-theme .slider-st .hero-title span {
-  color: rgb(120, 110, 204);
-}
-
-@media (max-width: 991px) {
-  .rubrix-theme .slider-st .hero-title {
-    --framer-font-size: 52px;
-  }
-}
-
-@media (max-width: 767px) {
-  .rubrix-theme .slider-st .hero-title {
-    --framer-font-size: 38px;
-  }
-}
-
-/* Hero title custom indentation for second line */
-.rubrix-theme .slider-st .hero-title div:nth-child(2) {
-  padding-left: 150px;
-}
-
-@media (max-width: 991px) {
-  .rubrix-theme .slider-st .hero-title div:nth-child(2) {
-    padding-left: 100px;
-  }
-}
-
-@media (max-width: 767px) {
-  .rubrix-theme .slider-st .hero-title div:nth-child(2) {
-    padding-left: 50px;
-  }
-}
-
-/* Hero image - template style */
-.rubrix-theme .slider-st .img img {
-  border-radius: 0;
-  box-shadow: none;
-}
-
-/* Hero buttons - keep template style, subtle enhancement */
-.rubrix-theme .slider-st .butn.bord {
-  border-color: rgb(120, 110, 204) !important;
-  color: #ffffff !important;
-}
-
-.rubrix-theme .slider-st .butn.bord span {
-  color: #ffffff !important;
-}
-
-.rubrix-theme .slider-st .butn.bord:hover {
-  background: rgb(120, 110, 204) !important;
-  color: #fff !important;
-  border-color: rgb(120, 110, 204) !important;
-  box-shadow: 0 0 20px rgba(120, 110, 204, 0.5) !important;
-}
-
-.rubrix-theme .slider-st .butn.bord:hover span {
-  color: #fff !important;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-/* Hero title shimmer animation */
-@keyframes shimmer-text {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Original template navbar - keep default design */
-/* Only add subtle enhancements that don't break original design */
-
 /* Loading Animation */
 @keyframes pulse {
   0%, 100% {
@@ -463,18 +295,7 @@ p {
   animation: pulse 2s infinite;
 }
 
-/* 3D Scene Container */
-.spline-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0.8;
-}
-
-/* Logo with text styling - works with template design */
+/* Logo with text styling */
 .logo-rubrix {
   display: flex !important;
   align-items: center !important;
@@ -506,35 +327,6 @@ p {
   .logo-text {
     font-size: 1.2rem;
   }
-}
-
-/* Portfolio Image Hover Effects */
-.portfolio-image {
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio-image:hover {
-  transform: scale(1.05);
-}
-
-.portfolio-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(251, 146, 60, 0.85), rgba(249, 115, 22, 0.85));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.portfolio-image:hover .portfolio-overlay {
-  opacity: 1;
 }
 
 /* Team Member Images */
@@ -586,73 +378,13 @@ p {
     height: 30px;
   }
   
-  .portfolio-image {
-    height: 150px;
-  }
-  
   .team-member-img {
     width: 80px;
     height: 80px;
   }
 }
 
-/* Portfolio Detail Styles */
-.portfolio-detail {
-  padding: 2rem 0;
-}
-
-.project-image img {
-  transition: transform 0.3s ease;
-}
-
-.project-image img:hover {
-  transform: scale(1.02);
-}
-
-.project-content h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.project-content h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.project-achievements ul {
-  list-style: none;
-  padding: 0;
-}
-
-.project-achievements li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.8rem;
-}
-
-.project-achievements li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--accent-400);
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.tech-stack span {
-  transition: all 0.3s ease;
-}
-
-.tech-stack span:hover {
-  background: var(--accent-400);
-  color: var(--bg-900);
-  transform: translateY(-2px);
-}
-
-/* Form Styles */
+/* Form Styles - Global */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -684,16 +416,16 @@ textarea.form-control {
 }
 
 /* ============================================
-   TEMPLATE COMPONENT OVERRIDES - VYRO.AI STYLE
+   TEMPLATE COMPONENT OVERRIDES - THEME STYLES
    ============================================ */
 
-/* Ensure template components use vyro.ai colors */
+/* Ensure template components use our colors */
 .rubrix-theme .color-font,
 .rubrix-theme .fw-700.color-font {
   color: var(--accent-400) !important;
 }
 
-/* Template services section - subtle enhancements */
+/* Template services section */
 .rubrix-theme .services .item {
   background: rgba(17, 17, 17, 0.3) !important;
   backdrop-filter: blur(5px);
@@ -737,7 +469,7 @@ textarea.form-control {
   color: var(--text-secondary) !important;
 }
 
-/* Template team section - minimal override */
+/* Template team section */
 .rubrix-theme .team .item {
   border: 1px solid rgba(255, 255, 255, 0.03) !important;
   transition: all 0.3s ease !important;
@@ -766,34 +498,6 @@ textarea.form-control {
 .rubrix-theme .clients .item:hover {
   background: rgba(15, 182, 255, 0.1) !important;
   transform: scale(1.05) !important;
-}
-
-/* Template call to action - template style */
-.rubrix-theme .call-action {
-  background: var(--bg-800) !important;
-  border-radius: 0 !important;
-  border: none !important;
-}
-
-.rubrix-theme .call-action h2,
-.rubrix-theme .call-action h3 {
-  color: var(--text-primary) !important;
-}
-
-.rubrix-theme .call-action p {
-  color: var(--text-secondary) !important;
-}
-
-.rubrix-theme .call-action .butn {
-  background: var(--accent-400) !important;
-  color: #000 !important;
-  transition: all 0.3s ease !important;
-}
-
-.rubrix-theme .call-action .butn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(15, 182, 255, 0.3) !important;
-  background: var(--accent-300) !important;
 }
 
 /* Template footer */
@@ -826,7 +530,7 @@ textarea.form-control {
   transform: translateY(-3px) !important;
 }
 
-/* Template testimonials - keep clean */
+/* Template testimonials */
 .rubrix-theme .testimonials .item {
   background: rgba(17, 17, 17, 0.3) !important;
   backdrop-filter: blur(5px);
@@ -900,7 +604,7 @@ textarea.form-control {
   color: var(--text-primary) !important;
 }
 
-/* Ensure template buttons match home2-dark style */
+/* Ensure template buttons match theme style */
 .rubrix-theme .butn:not(.bord),
 .rubrix-theme .buton {
   background: var(--accent-400) !important;
@@ -915,14 +619,12 @@ textarea.form-control {
   background: var(--accent-300) !important;
 }
 
-/* Minimal navbar enhancements - keep template design */
-/* Center navbar content */
+/* Navbar enhancements */
 .navbar .navbar-nav.mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-/* RubrixNavbar centered styling */
 .navbar .navbar-content {
   display: flex;
   align-items: center;
@@ -994,7 +696,7 @@ textarea.form-control {
   width: 80%;
 }
 
-/* Style dropdown menus with vyro.ai colors */
+/* Style dropdown menus */
 .rubrix-theme .navbar .dropdown-menu {
   background: rgba(7, 24, 34, 0.98) !important;
   backdrop-filter: blur(15px);

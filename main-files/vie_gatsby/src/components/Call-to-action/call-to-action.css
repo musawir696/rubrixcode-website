@@ -29,7 +29,7 @@
   border-radius: 50%;
   filter: blur(60px);
   transform: translate3d(0, 0, 0);
-  animation: float 6s ease-in-out infinite;
+  animation: float-cta 6s ease-in-out infinite;
   z-index: 0;
 }
 
@@ -43,11 +43,11 @@
   border-radius: 50%;
   filter: blur(50px);
   transform: translate3d(0, 0, 0);
-  animation: float 8s ease-in-out infinite reverse;
+  animation: float-cta 8s ease-in-out infinite reverse;
   z-index: 0;
 }
 
-@keyframes float {
+@keyframes float-cta {
   0%, 100% {
     transform: translate3d(0, 0, 0);
   }
@@ -113,5 +113,33 @@
   max-width: 180px;
   width: 100%;
   height: auto;
+}
+
+/* Template call to action overrides */
+.rubrix-theme .call-action {
+  background: var(--bg-800) !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.rubrix-theme .call-action h2,
+.rubrix-theme .call-action h3 {
+  color: var(--text-primary) !important;
+}
+
+.rubrix-theme .call-action p {
+  color: var(--text-secondary) !important;
+}
+
+.rubrix-theme .call-action .butn {
+  background: var(--accent-400) !important;
+  color: #000 !important;
+  transition: all 0.3s ease !important;
+}
+
+.rubrix-theme .call-action .butn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(15, 182, 255, 0.3) !important;
+  background: var(--accent-300) !important;
 }
 

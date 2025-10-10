@@ -411,23 +411,7 @@ const RubrixPortfolio = () => {
                   src={project.image ? project.image : `/img/portfolio/${project.id}.jpg`}
                   alt={project.title}
                   className="portfolio-image"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
                 />
-                <div className="portfolio-overlay"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.opacity = '1';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.opacity = '0';
-                  }}
-                >
-                  🌐
-                </div>
               </div>
               
               <h4 className="portfolio-card-title">
