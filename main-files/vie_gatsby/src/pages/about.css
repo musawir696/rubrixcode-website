@@ -1,0 +1,197 @@
+/* About Page Styles */
+
+/* About Hero Section */
+.about-hero-section {
+  min-height: 60vh;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.about-hero-container {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-hero-title {
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.about-hero-highlight {
+  color: rgb(120, 110, 204);
+}
+
+.about-hero-subtitle {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.8;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* What We Do Section */
+.about-features-section {
+  padding-top: 60px;
+}
+
+.about-features-heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-features-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-features-subtitle {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.about-feature-card {
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.about-feature-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-feature-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.about-feature-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+/* Story Section */
+.about-story-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.about-story-grid {
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-story-title {
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.about-story-paragraph {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.about-story-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.about-story-strong {
+  color: rgb(120, 110, 204);
+}
+
+.about-story-image-container {
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-story-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(120, 110, 204, 0.3), rgba(100, 90, 180, 0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+/* Mission & Vision Section */
+.about-mission-section {
+  background: var(--bg-800);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.about-mission-heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-mission-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-mission-subtitle {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.about-mission-grid {
+  gap: 3rem;
+}
+
+.about-mission-card {
+  padding: 3rem;
+}
+
+.about-mission-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-mission-card-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.about-mission-description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.about-mission-strong {
+  color: rgb(120, 110, 204);
+  font-weight: 600;
+}
+

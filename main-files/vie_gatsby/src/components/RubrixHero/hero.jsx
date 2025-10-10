@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./hero.css";
 // import Spline from '@splinetool/react-spline';
 
 // Register GSAP plugins
@@ -143,25 +144,25 @@ const RubrixHero = () => {
   }, []);
 
   return (
-    <header ref={heroRef} id="hero" className="slider-st valign position-re">
+    <header ref={heroRef} id="hero" className="slider-st valign position-re rubrix-hero">
       <div className="container">
         <div className="row">
           <div className="col-lg-12 valign">
-            <div className="cont md-mb50 text-center" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 15px' }}>
+            <div className="cont md-mb50 text-center rubrix-hero-container">
               
-              <h1 className="mb-10 hero-title" ref={titleRef} style={{ padding: '0', margin: '0 0 20px 0' }}>
-                We Turn <span style={{ color: 'rgb(120, 110, 204)' }}>Bold Ideas</span> Into <br/>Powerful Digital Products
+              <h1 className="mb-10 hero-title rubrix-hero-title" ref={titleRef}>
+                We Turn <span className="rubrix-hero-title-highlight">Bold Ideas</span> Into <br/>Powerful Digital Products
               </h1>
-              <p ref={subtitleRef} style={{ fontWeight: '500', color: '#ffffff' }}>
+              <p ref={subtitleRef} className="rubrix-hero-subtitle">
                 From Web3 platforms to AI-powered apps, we've shipped 50+ high-impact projects 
                 for startups and enterprises worldwide. Your vision deserves world-class execution.
               </p>
-              <div ref={ctaRef} style={{ marginTop: '30px', display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <a href="#portfolio" className="butn bord curve" style={{ color: '#ffffff' }}>
-                  <span style={{ color: '#ffffff' }}>See Our Work</span>
+              <div ref={ctaRef} className="rubrix-hero-cta-container">
+                <a href="#portfolio" className="butn bord curve rubrix-hero-cta-link">
+                  <span className="rubrix-hero-cta-span">See Our Work</span>
                 </a>
-                <a href="#contact" className="butn bord curve" style={{ color: '#ffffff' }}>
-                  <span style={{ color: '#ffffff' }}>Start Your Project</span>
+                <a href="#contact" className="butn bord curve rubrix-hero-cta-link">
+                  <span className="rubrix-hero-cta-span">Start Your Project</span>
                 </a>
               </div>
             </div>

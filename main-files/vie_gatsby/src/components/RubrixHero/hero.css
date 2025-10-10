@@ -1,0 +1,42 @@
+/* RubrixHero Component Styles */
+
+.rubrix-hero {
+  /* Hero section uses existing slider-st valign position-re classes */
+}
+
+.rubrix-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.rubrix-hero-title {
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.rubrix-hero-title-highlight {
+  color: rgb(120, 110, 204);
+}
+
+.rubrix-hero-subtitle {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.rubrix-hero-cta-container {
+  margin-top: 30px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rubrix-hero-cta-link {
+  color: #ffffff !important;
+}
+
+.rubrix-hero-cta-span {
+  color: #ffffff !important;
+}
+

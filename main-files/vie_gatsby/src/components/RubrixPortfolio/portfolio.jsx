@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { navigate } from "gatsby";
+import "./portfolio.css";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -378,12 +379,12 @@ const RubrixPortfolio = () => {
   cardsRef.current = [];
 
   return (
-    <section className="section" ref={sectionRef} id="portfolio">
+    <section className="section portfolio-section" ref={sectionRef} id="portfolio">
       <div className="container">
-        <div className="text-center" style={{ marginBottom: '3rem' }}>
+        <div className="portfolio-heading-container">
           <h2 className="fade-in">Real Projects. Real Results.</h2>
-          <p className="fade-in" style={{ fontSize: '1.15rem', lineHeight: '1.8', maxWidth: '750px', margin: '0 auto' }}>
-            <strong style={{ color: 'var(--accent-400)' }}>21 live products.</strong> From Sweden to Greece, 
+          <p className="fade-in portfolio-subtitle">
+            <strong className="portfolio-subtitle-highlight">21 live products.</strong> From Sweden to Greece, 
             NFT platforms to SaaS apps, blockchain to AI. Each one solving real problems 
             for real businesses. <strong>Click any project to see the full story.</strong>
           </p>
@@ -395,14 +396,8 @@ const RubrixPortfolio = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className="card fade-in"
+              className="card fade-in portfolio-card"
               ref={el => { cardsRef.current[index] = el; }}
-              style={{ 
-                background: 'linear-gradient(135deg, var(--bg-800) 0%, var(--bg-700) 100%)',
-                border: '1px solid var(--bg-600)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease'
-              }}
               onMouseEnter={(e) => {
                 gsap.to(e.currentTarget, { scale: 1.05, duration: 0.3 });
               }}
@@ -411,22 +406,11 @@ const RubrixPortfolio = () => {
               }}
               onClick={() => navigate(project.slug)}
             >
-              <div style={{ 
-                height: '200px', 
-                borderRadius: '10px',
-                marginBottom: '1.5rem',
-                overflow: 'hidden',
-                position: 'relative'
-              }}>
+              <div className="portfolio-image-container">
                 <img 
                   src={project.image ? project.image : `/img/portfolio/${project.id}.jpg`}
                   alt={project.title}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 0.3s ease'
-                  }}
+                  className="portfolio-image"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'scale(1.1)';
                   }}
@@ -434,62 +418,30 @@ const RubrixPortfolio = () => {
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 />
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: 'linear-gradient(45deg, rgba(15, 182, 255, 0.8), rgba(13, 165, 230, 0.8))',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '3rem',
-                  color: 'var(--bg-900)',
-                  opacity: 0,
-                  transition: 'opacity 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.opacity = '1';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.opacity = '0';
-                }}
+                <div className="portfolio-overlay"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = '0';
+                  }}
                 >
                   🌐
                 </div>
               </div>
               
-              <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>
+              <h4 className="portfolio-card-title">
                 {project.title}
               </h4>
               
-              <p style={{ 
-                color: 'var(--text-secondary)', 
-                fontSize: '0.9rem',
-                marginBottom: '1.5rem' 
-              }}>
+              <p className="portfolio-card-description">
                 {project.description}
               </p>
               
               <div>
-                <div style={{ 
-                  display: 'flex', 
-                  flexWrap: 'wrap', 
-                  gap: '0.5rem' 
-                }}>
+                <div className="portfolio-tech-tags">
                   {project.tech.map(tech => (
-                    <span
-                      key={tech}
-                      style={{
-                        background: 'var(--bg-600)',
-                        color: '#ffffff',
-                        padding: '0.25rem 0.75rem',
-                        borderRadius: '20px',
-                        fontSize: '0.8rem',
-                        fontWeight: '500'
-                      }}
-                    >
+                    <span key={tech} className="portfolio-tech-tag">
                       {tech}
                     </span>
                   ))}

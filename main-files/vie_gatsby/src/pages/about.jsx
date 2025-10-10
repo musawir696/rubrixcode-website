@@ -3,35 +3,18 @@ import Navbar from "components/Navbar/navbar";
 import CallToAction from "components/Call-to-action/call-to-action";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
+import "./about.css";
 
 export const AboutSections = () => (
 	<>
-		{/* 🔹 Inline About Hero Section  */}
-		<section className="hero slider-st valign position-re" style={{ minHeight: '60vh', paddingTop: '120px', paddingBottom: '80px' }}>
+		{/* 🔹 About Hero Section  */}
+		<section className="hero slider-st valign position-re about-hero-section">
 			<div className="container">
-				<div className="text-center" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-					<h1 
-						className="hero-title fade-in" 
-						style={{ 
-							fontSize: 'clamp(48px, 6vw, 72px)', 
-							fontWeight: '700', 
-							marginBottom: '30px',
-							lineHeight: '1.2'
-						}}
-					>
-						We Build <span style={{ color: 'rgb(120, 110, 204)' }}>Exceptional</span> Digital Products
+				<div className="about-hero-container">
+					<h1 className="hero-title fade-in about-hero-title">
+						We Build <span className="about-hero-highlight">Exceptional</span> Digital Products
 					</h1>
-					<p
-						className="fade-in"
-						style={{ 
-							maxWidth: '850px', 
-							margin: '0 auto',
-							fontSize: 'clamp(16px, 2vw, 20px)',
-							lineHeight: '1.8',
-							fontWeight: '500',
-							color: '#ffffff'
-						}}
-					>
+					<p className="fade-in about-hero-subtitle">
 						From blockchain platforms handling millions in transactions to AI-powered SaaS used by thousands — 
 						we're passionate developers and designers who don't do mediocre. Every line of code ships with purpose. 
 						Every pixel drives growth.
@@ -41,38 +24,38 @@ export const AboutSections = () => (
 		</section>
 
 		{/* 🔹 What We Do */}
-		<section className="section" style={{ paddingTop: '60px' }}>
+		<section className="section about-features-section">
 			<div className="container">
-				<div className="text-center" style={{ marginBottom: '4rem' }}>
-					<h2 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: '700', marginBottom: '20px' }}>
-						Why <span style={{ color: 'rgb(120, 110, 204)' }}>Choose Us</span>
+				<div className="about-features-heading">
+					<h2 className="about-features-title">
+						Why <span className="about-hero-highlight">Choose Us</span>
 					</h2>
-					<p style={{ fontSize: '18px', lineHeight: '1.8', maxWidth: '700px', margin: '0 auto', color: '#ffffff' }}>
+					<p className="about-features-subtitle">
 						We deliver world-class execution that moves your business forward.
 					</p>
 				</div>
 
 				<div className="grid grid-3">
-					<div className="card fade-in" style={{ padding: '2.5rem', textAlign: 'center' }}>
-						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>⚡</div>
-						<h3 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '15px' }}>Rapid Execution</h3>
-						<p style={{ fontSize: '16px', lineHeight: '1.8', color: '#ffffff' }}>
+					<div className="card fade-in about-feature-card">
+						<div className="about-feature-icon">⚡</div>
+						<h3 className="about-feature-title">Rapid Execution</h3>
+						<p className="about-feature-description">
 							MVP in 4 weeks. Full product in 12. We work in sprints, ship weekly, 
 							and iterate based on real user data. Not endless meetings.
 						</p>
 					</div>
-					<div className="card fade-in" style={{ padding: '2.5rem', textAlign: 'center' }}>
-						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>💎</div>
-						<h3 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '15px' }}>Premium Craft</h3>
-						<p style={{ fontSize: '16px', lineHeight: '1.8', color: '#ffffff' }}>
+					<div className="card fade-in about-feature-card">
+						<div className="about-feature-icon">💎</div>
+						<h3 className="about-feature-title">Premium Craft</h3>
+						<p className="about-feature-description">
 							Every pixel matters. Every interaction delights. We don't ship "good enough" — 
 							we ship experiences that make users say "wow, this is beautiful."
 						</p>
 					</div>
-					<div className="card fade-in" style={{ padding: '2.5rem', textAlign: 'center' }}>
-						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>📈</div>
-						<h3 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '15px' }}>Growth-Focused</h3>
-						<p style={{ fontSize: '16px', lineHeight: '1.8', color: '#ffffff' }}>
+					<div className="card fade-in about-feature-card">
+						<div className="about-feature-icon">📈</div>
+						<h3 className="about-feature-title">Growth-Focused</h3>
+						<p className="about-feature-description">
 							We optimize for metrics that matter: conversions, retention, revenue. 
 							Beautiful code is useless if it doesn't move the business forward.
 						</p>
@@ -82,56 +65,31 @@ export const AboutSections = () => (
 		</section>
 
 		{/* 🔹 Team/Company Short Story */}
-		<section className="section" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+		<section className="section about-story-section">
 			<div className="container">
-				<div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
+				<div className="grid grid-2 about-story-grid">
 					<div className="slide-in-left">
-						<h2 style={{ fontSize: 'clamp(36px, 5vw, 52px)', fontWeight: '700', marginBottom: '25px', lineHeight: '1.2' }}>
-							The <span style={{ color: 'rgb(120, 110, 204)' }}>RubrixCode</span> Story
+						<h2 className="about-story-title">
+							The <span className="about-hero-highlight">RubrixCode</span> Story
 						</h2>
-						<p style={{ fontSize: '18px', lineHeight: '1.8', marginBottom: '20px', color: '#ffffff', fontWeight: '400' }}>
+						<p className="about-story-paragraph">
 							Born in 2020 during the pandemic, we started building Web3 projects when NFTs 
-							were still "weird internet monkey pictures." <strong style={{ color: 'rgb(120, 110, 204)' }}>We saw the future early.</strong>
+							were still "weird internet monkey pictures." <strong className="about-story-strong">We saw the future early.</strong>
 						</p>
-						<p style={{ fontSize: '18px', lineHeight: '1.8', color: '#ffffff', fontWeight: '400' }}>
-							Today, we've shipped everything from <strong style={{ color: 'rgb(120, 110, 204)' }}>AI landing pages</strong> to 
-							<strong style={{ color: 'rgb(120, 110, 204)' }}> $5M NFT collections</strong>. Our clients range from solo founders 
-							to international enterprises. What unites them? They all wanted something <strong style={{ color: 'rgb(120, 110, 204)' }}>exceptional</strong>.
+						<p className="about-story-paragraph">
+							Today, we've shipped everything from <strong className="about-story-strong">AI landing pages</strong> to 
+							<strong className="about-story-strong"> $5M NFT collections</strong>. Our clients range from solo founders 
+							to international enterprises. What unites them? They all wanted something <strong className="about-story-strong">exceptional</strong>.
 						</p>
 					</div>
 					<div className="slide-in-right">
-						<div
-							style={{
-								height: '400px',
-								borderRadius: '20px',
-								overflow: 'hidden',
-								position: 'relative'
-							}}
-						>
+						<div className="about-story-image-container">
 							<img
 								src="/img/slid/about.jpg"
 								alt="RubrixCode Team"
-								style={{
-									width: '100%',
-									height: '100%',
-									objectFit: 'cover'
-								}}
+								className="about-story-image"
 							/>
-							<div
-								style={{
-									position: 'absolute',
-									top: 0,
-									left: 0,
-									right: 0,
-									bottom: 0,
-									background:
-										'linear-gradient(135deg, rgba(120, 110, 204, 0.3), rgba(100, 90, 180, 0.3))',
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-									fontSize: '4rem'
-								}}
-							>
+							<div className="about-story-image-overlay">
 								🚀
 							</div>
 						</div>
@@ -141,32 +99,32 @@ export const AboutSections = () => (
 		</section>
 
 		{/* 🔹 Mission & Vision */}
-		<section className="section" style={{ background: 'var(--bg-800)', paddingTop: '80px', paddingBottom: '80px' }}>
+		<section className="section about-mission-section">
 			<div className="container">
-				<div className="text-center" style={{ marginBottom: '4rem' }}>
-					<h2 style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: '700', marginBottom: '20px' }}>
-						What <span style={{ color: 'rgb(120, 110, 204)' }}>Drives</span> Us
+				<div className="about-mission-heading">
+					<h2 className="about-mission-title">
+						What <span className="about-hero-highlight">Drives</span> Us
 					</h2>
-					<p style={{ fontSize: '18px', lineHeight: '1.8', maxWidth: '700px', margin: '0 auto', color: '#ffffff' }}>
+					<p className="about-mission-subtitle">
 						Beyond the code, beyond the pixels — this is what we're really building.
 					</p>
 				</div>
 
-				<div className="grid grid-2" style={{ gap: '3rem' }}>
-					<div className="card fade-in" style={{ padding: '3rem' }}>
-						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>🔥</div>
-						<h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '15px' }}>Our Mission</h3>
-						<p style={{ fontSize: '17px', lineHeight: '1.8', color: '#ffffff' }}>
-							<strong style={{ color: 'rgb(120, 110, 204)', fontWeight: '600' }}>Make cutting-edge tech accessible.</strong> No jargon, 
+				<div className="grid grid-2 about-mission-grid">
+					<div className="card fade-in about-mission-card">
+						<div className="about-mission-icon">🔥</div>
+						<h3 className="about-mission-card-title">Our Mission</h3>
+						<p className="about-mission-description">
+							<strong className="about-mission-strong">Make cutting-edge tech accessible.</strong> No jargon, 
 							no gatekeeping. Whether you're a solo founder with $10K or an enterprise with millions, 
 							you deserve world-class digital products. We're here to build them.
 						</p>
 					</div>
-					<div className="card fade-in" style={{ padding: '3rem' }}>
-						<div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>🚀</div>
-						<h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '15px' }}>Our Vision</h3>
-						<p style={{ fontSize: '17px', lineHeight: '1.8', color: '#ffffff' }}>
-							<strong style={{ color: 'rgb(120, 110, 204)', fontWeight: '600' }}>Every founder should have a technical co-founder.</strong> We act 
+					<div className="card fade-in about-mission-card">
+						<div className="about-mission-icon">🚀</div>
+						<h3 className="about-mission-card-title">Our Vision</h3>
+						<p className="about-mission-description">
+							<strong className="about-mission-strong">Every founder should have a technical co-founder.</strong> We act 
 							as yours — bringing Silicon Valley-level expertise without the equity dilution. 
 							Your success is our reputation.
 						</p>

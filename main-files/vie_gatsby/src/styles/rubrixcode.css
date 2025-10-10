@@ -412,7 +412,7 @@ p {
 
 /* Hero buttons - keep template style, subtle enhancement */
 .rubrix-theme .slider-st .butn.bord {
-  border-color: var(--accent-400) !important;
+  border-color: rgb(120, 110, 204) !important;
   color: #ffffff !important;
 }
 
@@ -421,13 +421,14 @@ p {
 }
 
 .rubrix-theme .slider-st .butn.bord:hover {
-  background: var(--accent-400) !important;
-  color: #000 !important;
-  border-color: var(--accent-400) !important;
+  background: rgb(120, 110, 204) !important;
+  color: #fff !important;
+  border-color: rgb(120, 110, 204) !important;
+  box-shadow: 0 0 20px rgba(120, 110, 204, 0.5) !important;
 }
 
 .rubrix-theme .slider-st .butn.bord:hover span {
-  color: #000 !important;
+  color: #fff !important;
 }
 
 .hero-content {
@@ -524,7 +525,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(15, 182, 255, 0.8), rgba(13, 165, 230, 0.8));
+  background: linear-gradient(45deg, rgba(251, 146, 60, 0.85), rgba(249, 115, 22, 0.85));
   display: flex;
   align-items: center;
   justify-content: center;
