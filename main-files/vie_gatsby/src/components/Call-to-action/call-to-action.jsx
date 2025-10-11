@@ -1,5 +1,5 @@
 import React from 'react'
-import Split from '../Split'
+
 import { Link } from 'gatsby'
 import './call-to-action.css'
 
