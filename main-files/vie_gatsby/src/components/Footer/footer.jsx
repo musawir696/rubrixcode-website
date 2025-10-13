@@ -16,9 +16,9 @@ const Footer = ({ hideBGCOLOR }) => {
       <div className="container">
         <div className="row" style={{ alignItems: 'flex-start' }}>
           {/* Logo and Tagline */}
-          <div className="col-lg-3 col-md-6">
+          <div className="col-lg-3 col-md-6 text-center text-md-start">
             <div className="footer-logo" style={{ marginBottom: '30px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }} className="justify-content-center justify-content-md-start">
                 <img 
                   src="/img/rubrixCodeLogo.jpg" 
                   alt="RubrixCode" 
@@ -27,6 +27,7 @@ const Footer = ({ hideBGCOLOR }) => {
                     width: 'auto',
                     marginRight: '15px'
                   }} 
+                  loading="lazy"
                 />
                 <div>
                   <h4 style={{ 
@@ -51,7 +52,7 @@ const Footer = ({ hideBGCOLOR }) => {
                   </div>
 
           {/* Company Links */}
-          <div className="col-lg-2 col-md-6">
+          <div className="col-lg-2 col-md-6 text-center text-md-start">
             <div style={{ marginBottom: '30px' }}>
               <h5 style={{ 
                 color: '#ffffff', 
@@ -61,7 +62,7 @@ const Footer = ({ hideBGCOLOR }) => {
               }}>
                 Company
               </h5>
-              <ul style={{ listStyle: 'none', padding: '0', margin: '0' }}>
+              <ul style={{ listStyle: 'none', padding: '0', margin: '0' }} className="text-center text-md-start">
                 <li style={{ marginBottom: '12px' }}>
                   <Link to="/" style={{ 
                     color: '#ffffff', 
@@ -107,7 +108,7 @@ const Footer = ({ hideBGCOLOR }) => {
           </div>
 
           {/* Contact Information */}
-          <div className="col-lg-3 col-md-6">
+          <div className="col-lg-3 col-md-6 text-center text-md-start">
             <div style={{ marginBottom: '30px' }}>
               <h5 style={{ 
                 color: '#ffffff', 
@@ -169,7 +170,7 @@ const Footer = ({ hideBGCOLOR }) => {
           </div>
 
           {/* Social Media */}
-          <div className="col-lg-2 col-md-6">
+          <div className="col-lg-2 col-md-6 text-center text-md-start">
             <div style={{ marginBottom: '30px' }}>
               <h5 style={{ 
                 color: '#ffffff', 
@@ -186,7 +187,7 @@ const Footer = ({ hideBGCOLOR }) => {
               }}>
                 Social Media
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }} className="justify-content-center justify-content-md-start">
                 <a href="#" style={{
                   width: '40px',
                   height: '40px',
@@ -223,12 +224,12 @@ const Footer = ({ hideBGCOLOR }) => {
           </div>
 
           {/* Back To Home Button */}
-          <div className="col-lg-2 col-md-6">
+          <div className="col-lg-2 col-md-6 text-center text-md-start">
             <div style={{ 
               display: 'flex', 
-              justifyContent: 'flex-end',
+              justifyContent: 'center',
               alignItems: 'flex-start'
-            }}>
+            }} className="justify-content-center justify-content-lg-end">
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <button 
                   onClick={scrollToTop}
@@ -264,11 +265,10 @@ const Footer = ({ hideBGCOLOR }) => {
                   <div>Home</div>
                 </div>
               </div>
-              </div>
             </div>
           </div>
+        </div>
 
-      
       </div>
     </footer>
   );
