@@ -42,9 +42,10 @@ const CallToAction = ({img}) => {
             <div className="col-md-4 col-lg-3 valign">
               <div className="cta-logo-container">
                 <img 
-                  src="/img/logo2.jpg" 
+                  src="/img/rubrixCodeLogo.jpg" 
                   alt="RubrixCode Logo" 
                   className="cta-logo"
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -8,6 +8,7 @@ import Cursor from "components/cursor";
 import ScrollToTop from "components/scrollToTop";
 import LoadingScreen from "components/Loading-Screen";
 
+import "styles/critical.css";
 import "styles/main.css";
 import "styles/preloader.css";
 import "styles/rubrixcode.css";  
@@ -21,47 +22,32 @@ const DarkTheme = ({ children, useSkin, mobileappstyle }) => {
   React.useEffect(() => {
     window.theme = "dark";
     
-    // Add custom Inter font for RubrixCode
-    const fontLink = document.createElement('link');
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap';
-    fontLink.rel = 'stylesheet';
-    if (!document.querySelector(`link[href="${fontLink.href}"]`)) {
-      document.head.appendChild(fontLink);
-    }
-    
-    // Load dark theme CSS
-    let lightStyles = document.querySelector('link[href="/css/light.css"]');
-    let darkStyles = document.querySelector('link[href="/css/dark.css"]');
-    if (lightStyles) {
-      if (!darkStyles) {
-        let darkStylesheet = document.createElement('link');
-        darkStylesheet.rel = "stylesheet";
-        darkStylesheet.href = "/css/dark.css";
-        document.head.appendChild(darkStylesheet)
-      }
-      lightStyles.remove();
-    }
-    
     // Ensure rubrixcode.css takes precedence by setting high specificity
     document.body.classList.add('rubrix-theme');
     
+    // Only load additional CSS if needed (lazy load non-critical styles)
     if (useSkin) {
-      let skinCssLink = document.createElement('link');
+      const skinCssLink = document.createElement('link');
       skinCssLink.rel = "stylesheet";
       skinCssLink.href = "/css/arch-skin-dark.css";
-      document.head.appendChild(skinCssLink)
+      skinCssLink.media = "print";
+      skinCssLink.onload = function() { this.media = 'all'; };
+      document.head.appendChild(skinCssLink);
     }
 
     if (mobileappstyle) {
-      let mobileAppCssLink = document.createElement('link');
+      const mobileAppCssLink = document.createElement('link');
       mobileAppCssLink.rel = "stylesheet";
       mobileAppCssLink.href = "/css/mobile-app-dark.css";
-      document.head.appendChild(mobileAppCssLink)
+      mobileAppCssLink.media = "print";
+      mobileAppCssLink.onload = function() { this.media = 'all'; };
+      document.head.appendChild(mobileAppCssLink);
     }
 
-    // Initialize smooth scroll for anchor links with GSAP
+    // Initialize smooth scroll for anchor links with GSAP - debounced
     const initSmoothScroll = () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      const anchors = document.querySelectorAll('a[href^="#"]');
+      anchors.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           const href = this.getAttribute('href');
           
@@ -76,21 +62,25 @@ const DarkTheme = ({ children, useSkin, mobileappstyle }) => {
             e.preventDefault();
             
             gsap.to(window, {
-              duration: 1.2,
+              duration: 0.8,
               scrollTo: {
                 y: target,
-                offsetY: 80, // Account for fixed navbar
+                offsetY: 80,
                 autoKill: true
               },
-              ease: "power3.inOut"
+              ease: "power2.inOut"
             });
           }
         });
       });
     };
 
-    // Initialize smooth scrolling
-    initSmoothScroll();
+    // Delay smooth scroll initialization until page is interactive
+    if (document.readyState === 'complete') {
+      initSmoothScroll();
+    } else {
+      window.addEventListener('load', initSmoothScroll, { once: true });
+    }
     
     // Initialize GSAP scroll animations with IntersectionObserver fallback
     const observerOptions = {
@@ -110,12 +100,16 @@ const DarkTheme = ({ children, useSkin, mobileappstyle }) => {
     const animationElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
     animationElements.forEach(el => observer.observe(el));
 
-    // Refresh ScrollTrigger on window resize
+    // Debounced resize handler for better performance
+    let resizeTimeout;
     const handleResize = () => {
-      ScrollTrigger.refresh();
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 150);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
 
     return () => {
       observer.disconnect();

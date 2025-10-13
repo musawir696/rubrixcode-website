@@ -9,15 +9,17 @@ const LoadingScreen = () => {
 
     if (appData.showLoading) {
       loadingPace();
-      if (bodyEl.classList.contains("hideX")) bodyEl.classList.remove("hideX");
     } else {
-      bodyEl.classList.add("hideX");
+      // Ensure body is scrollable when loading is disabled
+      bodyEl.classList.remove("hideX");
+      bodyEl.style.overflow = "visible";
+      bodyEl.style.overflowX = "hidden";
     }
   }, []);
 
   return (
     <>
-      <div className={`${appData.showLoading === true ? "showX" : "hideX"}`}>
+      <div className={`${appData.showLoading === true ? "showX" : "hideX"}`} style={{ display: 'none' }}>
         <div className="loading">
           <span>L</span>
           <span>o</span>
