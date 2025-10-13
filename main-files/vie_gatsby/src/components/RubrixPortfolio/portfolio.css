@@ -215,8 +215,105 @@
   transform: translateY(-2px);
 }
 
-/* Responsive Portfolio Styles */
-@media (max-width: 768px) {
+/* Responsive Portfolio Styles - Mobile First */
+
+/* Extra Small Mobile Devices (< 400px) */
+@media (max-width: 399.98px) {
+  .portfolio-heading-container {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+  }
+  
+  .portfolio-heading-container h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.3;
+  }
+  
+  .portfolio-subtitle {
+    font-size: 0.95rem !important;
+    line-height: 1.6;
+  }
+  
+  .portfolio-image-container {
+    height: 160px;
+  }
+  
+  .portfolio-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .portfolio-card-title {
+    font-size: 1rem;
+    padding: 1rem 1rem 0 1rem;
+  }
+  
+  .portfolio-card-description {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    -webkit-line-clamp: 2;
+  }
+  
+  .portfolio-tech-tags {
+    padding: 0 1rem 1rem 1rem;
+    gap: 0.4rem;
+  }
+  
+  .portfolio-tech-tag {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+/* Small Mobile Devices (400px - 575px) */
+@media (min-width: 400px) and (max-width: 575.98px) {
+  .portfolio-heading-container {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+  
+  .portfolio-heading-container h2 {
+    font-size: 2rem !important;
+  }
+  
+  .portfolio-subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .portfolio-image-container {
+    height: 180px;
+  }
+  
+  .portfolio-card-title {
+    font-size: 1.05rem;
+    padding: 1.1rem 1.1rem 0 1.1rem;
+  }
+  
+  .portfolio-card-description {
+    font-size: 0.875rem;
+    padding: 0 1.1rem;
+    margin-bottom: 1.1rem;
+  }
+  
+  .portfolio-tech-tags {
+    padding: 0 1.1rem 1.1rem 1.1rem;
+  }
+}
+
+/* Large Mobile / Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .portfolio-heading-container {
+    margin-bottom: 3.5rem;
+  }
+  
+  .portfolio-heading-container h2 {
+    font-size: 2.25rem !important;
+  }
+  
+  .portfolio-subtitle {
+    font-size: 1.05rem !important;
+  }
+  
   .portfolio-image-container {
     height: 200px;
   }
@@ -236,9 +333,198 @@
   }
 }
 
-@media (max-width: 480px) {
+/* Medium Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .portfolio-heading-container h2 {
+    font-size: 2.5rem !important;
+  }
+  
+  .portfolio-subtitle {
+    font-size: 1.1rem !important;
+  }
+  
   .portfolio-image-container {
-    height: 180px;
+    height: 220px;
+  }
+  
+  .portfolio-card-title {
+    font-size: 1.15rem;
+  }
+  
+  .portfolio-card-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large Tablets / Small Desktops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .portfolio-image-container {
+    height: 230px;
+  }
+  
+  .portfolio-card-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .portfolio-image-container {
+    height: 240px;
+  }
+}
+
+/* Portfolio Detail Page Responsive Styles */
+@media (max-width: 991.98px) {
+  .portfolio-detail .project-image img {
+    height: 350px !important;
+  }
+  
+  .portfolio-detail .project-content h2 {
+    font-size: 2rem !important;
+  }
+  
+  .portfolio-detail .project-content h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  .portfolio-detail .project-content p {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .portfolio-detail .project-image {
+    margin-bottom: 2rem !important;
+  }
+  
+  .portfolio-detail .project-image img {
+    height: 280px !important;
+  }
+  
+  .portfolio-detail .project-content h2 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  
+  .portfolio-detail .project-content h3 {
+    font-size: 1.35rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  
+  .portfolio-detail .project-content p {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+  }
+  
+  .portfolio-detail .project-content ul li {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+  }
+  
+  .portfolio-detail .project-achievements,
+  .portfolio-detail .project-links,
+  .portfolio-detail .tech-stack {
+    margin-bottom: 2rem !important;
+  }
+  
+  .portfolio-detail .project-links > div,
+  .portfolio-detail .tech-stack > div {
+    gap: 0.75rem !important;
+  }
+  
+  .portfolio-detail .project-links a {
+    font-size: 0.85rem !important;
+    padding: 0.65rem 1.2rem !important;
+  }
+  
+  .portfolio-detail .tech-stack span {
+    font-size: 0.85rem !important;
+    padding: 0.45rem 0.9rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .portfolio-detail .project-image {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .portfolio-detail .project-image img {
+    height: 220px !important;
+  }
+  
+  .portfolio-detail .project-content h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .portfolio-detail .project-content h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .portfolio-detail .project-content p {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .portfolio-detail .project-content ul {
+    padding-left: 1.2rem !important;
+  }
+  
+  .portfolio-detail .project-content ul li {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .portfolio-detail .project-achievements,
+  .portfolio-detail .project-links,
+  .portfolio-detail .tech-stack {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .portfolio-detail .project-links > div {
+    flex-direction: column;
+  }
+  
+  .portfolio-detail .project-links a {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .portfolio-detail .tech-stack > div {
+    gap: 0.5rem !important;
+  }
+  
+  .portfolio-detail .tech-stack span {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+}
+
+@media (max-width: 399.98px) {
+  .portfolio-detail .project-image img {
+    height: 180px !important;
+  }
+  
+  .portfolio-detail .project-content h2 {
+    font-size: 1.35rem !important;
+  }
+  
+  .portfolio-detail .project-content h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  .portfolio-detail .project-content p,
+  .portfolio-detail .project-content ul li {
+    font-size: 0.85rem !important;
+  }
+  
+  .portfolio-detail .tech-stack span {
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.7rem !important;
   }
 }
 

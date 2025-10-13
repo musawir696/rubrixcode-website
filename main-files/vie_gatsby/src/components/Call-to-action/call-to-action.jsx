@@ -14,14 +14,14 @@ const CallToAction = ({img}) => {
         <div className="cta-shape-2"></div>
         
         <div className="container cta-container">
-          <div className="row">
-            <div className="col-md-8 col-lg-9">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-8 col-lg-9">
               <div className="content sm-mb30">
                 <h6 className="cta-heading">
                   Join Our Team
                 </h6>
                 <h2 className="cta-title">
-                  Become a <br /> Digital Builder!
+                  Become a <br className="d-none d-md-inline" /> Digital Builder!
                 </h2>
               </div>
               
@@ -39,7 +39,7 @@ const CallToAction = ({img}) => {
               </div>
             </div>
 
-            <div className="col-md-4 col-lg-3 valign">
+            <div className="col-12 col-md-4 col-lg-3 valign">
               <div className="cta-logo-container">
                 <img 
                   src="/img/rubrixCodeLogo.jpg" 

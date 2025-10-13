@@ -11,6 +11,7 @@ const ShariaLandlordPage = () => {
 
   React.useEffect(() => {
     var navbar = navbarRef.current;
+    if (!navbar) return;
 
     if (window.pageYOffset > 300) {
       navbar.classList.add("nav-scroll");
@@ -18,13 +19,23 @@ const ShariaLandlordPage = () => {
       navbar.classList.remove("nav-scroll");
     }
     
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        navbar.classList.add("nav-scroll");
-      } else {
-        navbar.classList.remove("nav-scroll");
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.pageYOffset > 300) {
+            navbar.classList.add("nav-scroll");
+          } else {
+            navbar.classList.remove("nav-scroll");
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [navbarRef]);
 
   return (
