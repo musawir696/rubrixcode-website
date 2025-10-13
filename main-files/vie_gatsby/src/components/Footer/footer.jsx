@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'gatsby'
-import appData from "data/app.json";
 
 const Footer = ({ hideBGCOLOR }) => {
   const scrollToTop = () => {
@@ -8,16 +7,135 @@ const Footer = ({ hideBGCOLOR }) => {
   };
 
   return (
-    <footer style={{ 
-      background: '#000000', 
-      padding: '60px 0 40px 0',
-      color: '#ffffff'
-    }}>
+    <>
+      <style jsx>{`
+        .footer-responsive {
+          background: #000000;
+          padding: 60px 0 40px 0;
+          color: #ffffff;
+        }
+        
+        /* Mobile First Approach */
+        @media (max-width: 575.98px) {
+          .footer-responsive {
+            padding: 40px 0 30px 0;
+          }
+          .footer-responsive .container {
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          .footer-responsive .footer-logo {
+            margin-bottom: 25px !important;
+          }
+          .footer-responsive .footer-section {
+            margin-bottom: 25px !important;
+          }
+          .footer-responsive h5 {
+            font-size: 16px !important;
+            margin-bottom: 15px !important;
+          }
+          .footer-responsive ul li {
+            margin-bottom: 8px !important;
+          }
+          .footer-responsive ul li a {
+            font-size: 14px !important;
+          }
+        }
+        
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+          .footer-responsive {
+            padding: 50px 0 35px 0;
+          }
+          
+          /* Better spacing for 576-768px range */
+          .footer-responsive .footer-section {
+            margin-bottom: 35px !important;
+          }
+          
+          .footer-responsive h5 {
+            font-size: 17px !important;
+            margin-bottom: 18px !important;
+          }
+          
+          .footer-responsive ul li a,
+          .footer-responsive div[style*="fontSize"] {
+            font-size: 15px !important;
+          }
+        }
+        
+        /* Specific fix for 582-780px range */
+        @media (min-width: 582px) and (max-width: 780px) {
+          .footer-responsive .col-sm-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+          
+          .footer-responsive .row {
+            margin-left: -10px;
+            margin-right: -10px;
+          }
+          
+          .footer-responsive [class*="col-"] {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+          
+          /* Better alignment */
+          .footer-responsive .text-center {
+            text-align: left !important;
+          }
+          
+          .footer-responsive .justify-content-center {
+            justify-content: flex-start !important;
+          }
+          
+          /* Adjust logo section */
+          .footer-responsive .footer-logo img {
+            height: 45px !important;
+          }
+          
+          /* Social media icons spacing */
+          .footer-responsive [class*="col-"] > div > div[style*="gap"] {
+            gap: 8px !important;
+          }
+          
+          /* Back button positioning */
+          .footer-responsive .col-md-12.col-sm-6 {
+            margin-top: 10px;
+          }
+        }
+        
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+          .footer-responsive {
+            padding: 55px 0 35px 0;
+          }
+        }
+        
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+          .footer-responsive {
+            padding: 60px 0 40px 0;
+          }
+        }
+        
+        /* Ensure proper spacing on very small screens */
+        @media (max-width: 400px) {
+          .footer-responsive .col-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+      `}</style>
+      
+      <footer className="footer-responsive">
       <div className="container">
         <div className="row" style={{ alignItems: 'flex-start' }}>
           {/* Logo and Tagline */}
-          <div className="col-lg-3 col-md-6 text-center text-md-start">
-            <div className="footer-logo" style={{ marginBottom: '30px' }}>
+          <div className="col-lg-3 col-md-4 col-sm-6 col-12 text-center text-md-start">
+            <div className="footer-logo footer-section" style={{ marginBottom: '30px' }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }} className="justify-content-center justify-content-md-start">
                 <img 
                   src="/img/rubrixCodeLogo.jpg" 
@@ -52,8 +170,8 @@ const Footer = ({ hideBGCOLOR }) => {
                   </div>
 
           {/* Company Links */}
-          <div className="col-lg-2 col-md-6 text-center text-md-start">
-            <div style={{ marginBottom: '30px' }}>
+          <div className="col-lg-2 col-md-2 col-sm-6 col-6 text-center text-md-start">
+            <div className="footer-section" style={{ marginBottom: '30px' }}>
               <h5 style={{ 
                 color: '#ffffff', 
                 fontSize: '18px',
@@ -108,8 +226,8 @@ const Footer = ({ hideBGCOLOR }) => {
           </div>
 
           {/* Contact Information */}
-          <div className="col-lg-3 col-md-6 text-center text-md-start">
-            <div style={{ marginBottom: '30px' }}>
+          <div className="col-lg-3 col-md-3 col-sm-6 col-6 text-center text-md-start">
+            <div className="footer-section" style={{ marginBottom: '30px' }}>
               <h5 style={{ 
                 color: '#ffffff', 
                 fontSize: '18px',
@@ -170,8 +288,8 @@ const Footer = ({ hideBGCOLOR }) => {
           </div>
 
           {/* Social Media */}
-          <div className="col-lg-2 col-md-6 text-center text-md-start">
-            <div style={{ marginBottom: '30px' }}>
+          <div className="col-lg-2 col-md-3 col-sm-6 col-6 text-center text-md-start">
+            <div className="footer-section" style={{ marginBottom: '30px' }}>
               <h5 style={{ 
                 color: '#ffffff', 
                 fontSize: '18px',
@@ -224,7 +342,7 @@ const Footer = ({ hideBGCOLOR }) => {
           </div>
 
           {/* Back To Home Button */}
-          <div className="col-lg-2 col-md-6 text-center text-md-start">
+          <div className="col-lg-2 col-md-12 col-sm-6 col-6 text-center text-lg-end">
             <div style={{ 
               display: 'flex', 
               justifyContent: 'center',
@@ -269,8 +387,17 @@ const Footer = ({ hideBGCOLOR }) => {
           </div>
         </div>
 
+        {/* Copyright Section */}
+        <div className="row" style={{ marginTop: '40px', paddingTop: '30px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+          <div className="col-12 text-center">
+            <p style={{ margin: '0', color: '#ffffff', fontSize: '14px' }}>
+              © {new Date().getFullYear()} RubrixCode. All rights reserved.
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
+    </>
   );
 };
 
