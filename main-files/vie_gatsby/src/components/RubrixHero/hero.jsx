@@ -100,11 +100,11 @@ const RubrixHero = () => {
     <header ref={heroRef} id="hero" className="slider-st valign position-re rubrix-hero">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 valign">
+          <div className="col-12 col-lg-12 valign">
             <div className="cont md-mb50 text-center rubrix-hero-container">
               
               <h1 className="mb-10 hero-title rubrix-hero-title" ref={titleRef}>
-                We Turn <span className="rubrix-hero-title-highlight">Bold Ideas</span> Into <br/>Powerful Digital Products
+                We Turn <span className="rubrix-hero-title-highlight">Bold Ideas</span> Into <br className="d-none d-sm-inline" />Powerful Digital Products
               </h1>
               <p ref={subtitleRef} className="rubrix-hero-subtitle">
                 From Web3 platforms to AI-powered apps, we've shipped 50+ high-impact projects 

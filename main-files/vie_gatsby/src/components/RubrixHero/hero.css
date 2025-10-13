@@ -214,3 +214,321 @@
   color: #ffffff !important;
 }
 
+/* Responsive Hero Styles - Mobile First */
+
+/* Extra Small Mobile Devices (< 400px) */
+@media (max-width: 399.98px) {
+  .rubrix-hero {
+    min-height: 80vh !important;
+    padding: 3rem 0 !important;
+  }
+  
+  .rubrix-hero-container {
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+  }
+  
+  .rubrix-hero-title {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .rubrix-hero-subtitle {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 0.5rem;
+  }
+  
+  .rubrix-hero-cta-container {
+    flex-direction: column;
+    gap: 0.75rem !important;
+    margin-top: 2rem !important;
+    padding: 0 1rem;
+  }
+  
+  .rubrix-hero-cta-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Background blobs - smaller on mobile */
+  .rubrix-theme .slider-st::before {
+    width: 300px !important;
+    height: 300px !important;
+    top: -100px !important;
+    right: -100px !important;
+    filter: blur(60px) !important;
+    opacity: 0.5;
+  }
+  
+  .rubrix-theme .slider-st::after {
+    width: 250px !important;
+    height: 250px !important;
+    bottom: -80px !important;
+    left: -80px !important;
+    filter: blur(70px) !important;
+    opacity: 0.5;
+  }
+  
+  /* Disable animations on very small screens */
+  @keyframes float-hero {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+  }
+}
+
+/* Small Mobile Devices (400px - 575px) */
+@media (min-width: 400px) and (max-width: 575.98px) {
+  .rubrix-hero {
+    min-height: 85vh !important;
+    padding: 3.5rem 0 !important;
+  }
+  
+  .rubrix-hero-container {
+    padding: 0 1.25rem !important;
+  }
+  
+  .rubrix-hero-title {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1.75rem !important;
+  }
+  
+  .rubrix-hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 1.75rem !important;
+  }
+  
+  .rubrix-hero-cta-container {
+    flex-direction: column;
+    gap: 0.85rem !important;
+    margin-top: 2.25rem !important;
+  }
+  
+  .rubrix-hero-cta-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1.75rem !important;
+    font-size: 0.95rem !important;
+  }
+  
+  .rubrix-theme .slider-st::before {
+    width: 350px !important;
+    height: 350px !important;
+    filter: blur(65px) !important;
+  }
+  
+  .rubrix-theme .slider-st::after {
+    width: 280px !important;
+    height: 280px !important;
+    filter: blur(75px) !important;
+  }
+}
+
+/* Large Mobile / Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .rubrix-hero {
+    min-height: 90vh !important;
+    padding: 4rem 0 !important;
+  }
+  
+  .rubrix-hero-container {
+    padding: 0 1.5rem !important;
+  }
+  
+  .rubrix-hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .rubrix-hero-subtitle {
+    font-size: 1.1rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .rubrix-hero-cta-container {
+    flex-direction: row;
+    gap: 1rem !important;
+    margin-top: 2.5rem !important;
+    justify-content: center;
+  }
+  
+  .rubrix-hero-cta-link {
+    flex: 1;
+    max-width: 220px;
+    padding: 0.875rem 2rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .rubrix-theme .slider-st::before {
+    width: 400px !important;
+    height: 400px !important;
+  }
+  
+  .rubrix-theme .slider-st::after {
+    width: 320px !important;
+    height: 320px !important;
+  }
+}
+
+/* Medium Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .rubrix-hero {
+    min-height: 95vh !important;
+    padding: 4.5rem 0 !important;
+  }
+  
+  .rubrix-hero-title {
+    font-size: 3.25rem !important;
+    margin-bottom: 2.25rem !important;
+  }
+  
+  .rubrix-hero-subtitle {
+    font-size: 1.15rem !important;
+    line-height: 1.75 !important;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .rubrix-hero-cta-container {
+    gap: 1.25rem !important;
+    margin-top: 2.75rem !important;
+  }
+  
+  .rubrix-hero-cta-link {
+    padding: 1rem 2.25rem !important;
+    font-size: 1.05rem !important;
+  }
+  
+  .rubrix-theme .slider-st::before {
+    width: 450px !important;
+    height: 450px !important;
+  }
+  
+  .rubrix-theme .slider-st::after {
+    width: 360px !important;
+    height: 360px !important;
+  }
+}
+
+/* Large Tablets / Small Desktops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .rubrix-hero {
+    min-height: 100vh;
+  }
+  
+  .rubrix-hero-title {
+    font-size: 3.75rem !important;
+  }
+  
+  .rubrix-hero-subtitle {
+    font-size: 1.2rem !important;
+    max-width: 750px;
+  }
+  
+  .rubrix-hero-cta-link {
+    padding: 1.125rem 2.5rem !important;
+  }
+  
+  .rubrix-theme .slider-st::before {
+    width: 480px !important;
+    height: 480px !important;
+  }
+  
+  .rubrix-theme .slider-st::after {
+    width: 380px !important;
+    height: 380px !important;
+  }
+}
+
+/* Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .rubrix-hero {
+    min-height: 100vh;
+  }
+  
+  .rubrix-hero-title {
+    font-size: 4.5rem !important;
+  }
+  
+  .rubrix-hero-subtitle {
+    font-size: 1.25rem !important;
+    max-width: 800px;
+  }
+  
+  .rubrix-hero-cta-link {
+    padding: 1.25rem 2.75rem !important;
+  }
+}
+
+/* Disable heavy animations on mobile for better performance */
+@media (max-width: 767.98px) {
+  @keyframes float-hero {
+    0%, 100% { 
+      transform: translate(0, 0) scale(1); 
+    }
+    50% { 
+      transform: translate(10px, -10px) scale(1.05); 
+    }
+  }
+  
+  .rubrix-theme .slider-st::before,
+  .rubrix-theme .slider-st::after {
+    animation-duration: 30s !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .rubrix-hero-cta-link:hover {
+    transform: none;
+  }
+  
+  .rubrix-hero-cta-link:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .rubrix-hero {
+    min-height: 100vh !important;
+    padding: 2rem 0 !important;
+  }
+  
+  .rubrix-hero-title {
+    margin-bottom: 1rem !important;
+  }
+  
+  .rubrix-hero-subtitle {
+    margin-bottom: 1rem !important;
+  }
+  
+  .rubrix-hero-cta-container {
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* Very large screens (1440px+) */
+@media (min-width: 1440px) {
+  .rubrix-hero-container {
+    max-width: 1000px;
+  }
+  
+  .rubrix-hero-title {
+    font-size: 5rem !important;
+  }
+  
+  .rubrix-hero-subtitle {
+    font-size: 1.35rem !important;
+    max-width: 900px;
+  }
+}
+

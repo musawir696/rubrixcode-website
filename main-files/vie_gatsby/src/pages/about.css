@@ -763,42 +763,321 @@ body {
   text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Design - Mobile First Approach */
+
+/* Extra Small Mobile Devices (< 400px) */
+@media (max-width: 399.98px) {
+  .about-hero-3d {
+    min-height: 70vh;
+    padding: 2rem 0;
+  }
+  
+  .about-hero-content {
+    padding: 2rem 0;
+  }
+  
+  .hero-3d-container {
+    padding: 0 1rem;
+  }
+  
+  .hero-title-3d {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero-subtitle-3d {
+    font-size: 0.95rem !important;
+    margin-bottom: 2rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .hero-stats-3d {
+    grid-template-columns: 1fr;
+    gap: 0.75rem !important;
+    margin-top: 2rem !important;
+  }
+  
+  .stat-item {
+    padding: 1rem !important;
+  }
+  
+  .stat-number {
+    font-size: 1.75rem !important;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem !important;
+  }
+  
+  /* Vision/Mission/Essence */
+  .about-vision-mission-essence-3d {
+    padding: 3rem 0 !important;
+  }
+  
+  .vision-mission-essence-grid {
+    gap: 1.5rem !important;
+    padding: 0 1rem;
+  }
+  
+  .vision-mission-essence-item {
+    height: 320px !important;
+  }
+  
+  .vision-mission-essence-item:hover {
+    transform: translateY(-5px) !important;
+  }
+  
+  .item-content {
+    padding: 1.5rem !important;
+  }
+  
+  .item-title {
+    font-size: 1.5rem !important;
+    padding-top: 1rem !important;
+  }
+  
+  .item-description {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .bg-3d-shape {
+    width: 150px !important;
+    height: 150px !important;
+    top: 25% !important;
+    opacity: 0.3 !important;
+  }
+  
+  /* Services */
+  .about-services-3d {
+    padding: 3rem 0 !important;
+  }
+  
+  .section-title-3d {
+    font-size: 1.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+    padding: 0 1rem;
+  }
+  
+  .service-card-3d {
+    padding: 1.5rem !important;
+  }
+  
+  .service-card-3d:hover {
+    transform: translateY(-5px) !important;
+  }
+  
+  .service-icon {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .service-card-3d h3 {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .service-card-3d p {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Story */
+  .about-story-3d {
+    padding: 3rem 0 !important;
+  }
+  
+  .story-text-3d {
+    margin-top: 2rem !important;
+    padding: 1.5rem !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .story-text-3d:hover {
+    transform: translateY(-5px) !important;
+  }
+  
+  .story-paragraph-3d {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Values */
+  .about-values-3d {
+    padding: 3rem 0 !important;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+    padding: 0 1rem;
+  }
+  
+  .value-card-3d {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .value-card-3d:hover {
+    transform: translateY(-5px) !important;
+  }
+  
+  .value-icon {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .value-card-3d h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .value-card-3d p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Floating shapes */
+  .floating-shape {
+    opacity: 0.05 !important;
+  }
+  
+  .shape-1 {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .shape-2 {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .shape-3 {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  /* Disable 3D animations on mobile */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(60deg); }
+  }
+}
+
+/* Small Mobile Devices (400px - 575px) */
+@media (min-width: 400px) and (max-width: 575.98px) {
+  .about-hero-3d {
+    min-height: 75vh;
+    padding: 2.5rem 0;
+  }
+  
+  .hero-title-3d {
+    font-size: 2rem !important;
+  }
+  
+  .hero-subtitle-3d {
+    font-size: 1rem !important;
+  }
+  
   .hero-stats-3d {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  .vision-mission-essence-grid {
-    gap: 2rem;
+  .stat-item {
+    padding: 1.25rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem !important;
   }
   
   .vision-mission-essence-item {
-    height: 400px;
-  }
-  
-  .item-content {
-    padding: 2rem;
+    height: 350px !important;
   }
   
   .item-title {
-    font-size: 2rem;
+    font-size: 1.75rem !important;
+  }
+  
+  .item-description {
+    font-size: 0.95rem !important;
   }
   
   .bg-3d-shape {
-    width: 220px;
-    height: 220px;
-    top: 30%;
+    width: 170px !important;
+    height: 170px !important;
   }
   
   .section-title-3d {
-    font-size: 2rem;
+    font-size: 1.75rem !important;
   }
   
-  .story-text-3d {
-    padding: 2rem;
-    margin: 0 1rem;
+  .service-icon,
+  .value-icon {
+    font-size: 2.75rem !important;
+  }
+  
+  .service-card-3d h3,
+  .value-card-3d h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .about-services-3d,
+  .about-story-3d,
+  .about-values-3d {
+    padding: 3.5rem 0 !important;
+  }
+}
+
+/* Large Mobile / Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .about-hero-3d {
+    min-height: 80vh;
+  }
+  
+  .hero-title-3d {
+    font-size: 2.25rem !important;
+  }
+  
+  .hero-subtitle-3d {
+    font-size: 1.1rem !important;
+  }
+  
+  .hero-stats-3d {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .vision-mission-essence-item {
+    height: 380px !important;
+  }
+  
+  .item-title {
+    font-size: 2rem !important;
+  }
+  
+  .item-description {
+    font-size: 1rem !important;
+  }
+  
+  .bg-3d-shape {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .section-title-3d {
+    font-size: 2rem !important;
   }
   
   .services-grid {
@@ -806,46 +1085,180 @@ body {
     gap: 1.5rem;
   }
   
-  .service-card-3d {
-    padding: 2rem;
-  }
-  
   .values-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+  
+  .about-services-3d,
+  .about-story-3d,
+  .about-values-3d,
+  .about-vision-mission-essence-3d {
+    padding: 4rem 0 !important;
+  }
 }
 
-@media (max-width: 480px) {
+/* Medium Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .about-hero-3d {
+    min-height: 90vh;
+  }
+  
   .hero-title-3d {
-    font-size: 2rem;
+    font-size: 3rem !important;
   }
   
   .hero-subtitle-3d {
-    font-size: 1rem;
+    font-size: 1.15rem !important;
+  }
+  
+  .hero-stats-3d {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
   
   .vision-mission-essence-item {
-    height: 350px;
+    height: 420px !important;
+  }
+  
+  .item-content {
+    padding: 2.5rem;
   }
   
   .item-title {
-    font-size: 1.8rem;
+    font-size: 2.25rem !important;
   }
   
   .item-description {
-    font-size: 1rem;
+    font-size: 1.05rem !important;
   }
   
   .bg-3d-shape {
-    width: 180px;
-    height: 180px;
-    top: 28%;
-    opacity: 0.4;
+    width: 230px !important;
+    height: 230px !important;
   }
   
   .section-title-3d {
-    font-size: 1.8rem;
+    font-size: 2.25rem !important;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+  
+  .story-text-3d {
+    padding: 2.5rem;
+  }
+  
+  .about-services-3d,
+  .about-story-3d,
+  .about-values-3d,
+  .about-vision-mission-essence-3d {
+    padding: 5rem 0 !important;
+  }
+}
+
+/* Large Tablets / Small Desktops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-title-3d {
+    font-size: 3.5rem !important;
+  }
+  
+  .vision-mission-essence-item {
+    height: 460px !important;
+  }
+  
+  .item-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .bg-3d-shape {
+    width: 260px !important;
+    height: 260px !important;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Disable heavy animations on mobile */
+@media (max-width: 767.98px) {
+  .vision-mission-essence-item:hover {
+    transform: translateY(-10px) !important;
+  }
+  
+  .service-card-3d:hover {
+    transform: translateY(-10px) !important;
+  }
+  
+  .value-card-3d:hover {
+    transform: translateY(-10px) !important;
+  }
+  
+  .story-text-3d:hover {
+    transform: translateY(-5px) !important;
+  }
+  
+  .stat-item:hover {
+    transform: translateY(-5px) !important;
+  }
+  
+  /* Simplify animations */
+  @keyframes float3D {
+    0%, 100% {
+      transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
+    }
+  }
+  
+  @keyframes rotateVision,
+  @keyframes rotateMission,
+  @keyframes rotateEssence {
+    0%, 100% {
+      transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .service-card-3d::before,
+  .value-card-3d::before {
+    display: none;
+  }
+  
+  .vision-mission-essence-item .item-background {
+    transform: scale(1.1);
+  }
+  
+  .vision-mission-essence-item:hover .item-background {
+    transform: scale(1.1);
   }
 }
 

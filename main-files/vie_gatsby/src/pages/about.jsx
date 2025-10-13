@@ -23,22 +23,25 @@ export const AboutSections = () => {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
     const ctx = gsap.context(() => {
-      // Hero section 3D animation
+      // Hero section 3D animation (simplified for mobile)
       if (heroRef.current) {
         gsap.fromTo(heroRef.current,
           { 
             opacity: 0, 
-            y: 100, 
-            rotationX: -15,
-            scale: 0.9
+            y: isMobile ? 50 : 100, 
+            rotationX: isMobile ? 0 : -15,
+            scale: isMobile ? 1 : 0.9
           },
           {
             opacity: 1,
             y: 0,
             rotationX: 0,
             scale: 1,
-            duration: 1.5,
+            duration: isMobile ? 0.8 : 1.5,
             ease: "power4.out",
             scrollTrigger: {
               trigger: heroRef.current,
@@ -48,18 +51,20 @@ export const AboutSections = () => {
         );
       }
 
-      // Vision section with 3D flip
+      // Vision section with 3D flip (simplified for mobile)
       if (visionRef.current) {
         gsap.fromTo(visionRef.current,
           { 
             opacity: 0, 
-            rotationY: -90,
+            rotationY: isMobile ? 0 : -90,
+            y: isMobile ? 30 : 0,
             transformOrigin: "center center"
           },
           {
             opacity: 1,
             rotationY: 0,
-            duration: 1.2,
+            y: 0,
+            duration: isMobile ? 0.8 : 1.2,
             ease: "power3.out",
             scrollTrigger: {
               trigger: visionRef.current,
@@ -69,18 +74,20 @@ export const AboutSections = () => {
         );
       }
 
-      // Mission section with 3D flip (opposite direction)
+      // Mission section with 3D flip (simplified for mobile)
       if (missionRef.current) {
         gsap.fromTo(missionRef.current,
           { 
             opacity: 0, 
-            rotationY: 90,
+            rotationY: isMobile ? 0 : 90,
+            y: isMobile ? 30 : 0,
             transformOrigin: "center center"
           },
           {
             opacity: 1,
             rotationY: 0,
-            duration: 1.2,
+            y: 0,
+            duration: isMobile ? 0.8 : 1.2,
             ease: "power3.out",
             scrollTrigger: {
               trigger: missionRef.current,
@@ -90,20 +97,22 @@ export const AboutSections = () => {
         );
       }
 
-      // Essence section with 3D zoom
+      // Essence section with 3D zoom (simplified for mobile)
       if (essenceRef.current) {
         gsap.fromTo(essenceRef.current,
           { 
             opacity: 0, 
-            scale: 0.5,
-            rotationZ: 5
+            scale: isMobile ? 1 : 0.5,
+            rotationZ: isMobile ? 0 : 5,
+            y: isMobile ? 30 : 0
           },
           {
             opacity: 1,
             scale: 1,
             rotationZ: 0,
-            duration: 1.4,
-            ease: "elastic.out(1, 0.3)",
+            y: 0,
+            duration: isMobile ? 0.8 : 1.4,
+            ease: isMobile ? "power2.out" : "elastic.out(1, 0.3)",
             scrollTrigger: {
               trigger: essenceRef.current,
               start: "top 75%"
@@ -112,19 +121,21 @@ export const AboutSections = () => {
         );
       }
 
-      // Story section with timeline
+      // Story section with timeline (simplified for mobile)
       if (storyRef.current) {
         gsap.fromTo(storyRef.current,
           { 
             opacity: 0, 
-            x: -100,
-            rotationY: -15
+            x: isMobile ? 0 : -100,
+            y: isMobile ? 30 : 0,
+            rotationY: isMobile ? 0 : -15
           },
           {
             opacity: 1,
             x: 0,
+            y: 0,
             rotationY: 0,
-            duration: 1.6,
+            duration: isMobile ? 0.8 : 1.6,
             ease: "power3.out",
             scrollTrigger: {
               trigger: storyRef.current,
@@ -134,24 +145,24 @@ export const AboutSections = () => {
         );
       }
 
-      // Services cards animation
+      // Services cards animation (simplified for mobile)
       const serviceCards = cardsRef.current.slice(3, 9); // Services cards (index 3-8)
       const validServiceCards = serviceCards.filter(card => card !== null);
       if (validServiceCards.length > 0) {
         gsap.fromTo(validServiceCards,
           { 
             opacity: 0, 
-            y: 50,
-            rotationX: -30,
+            y: isMobile ? 30 : 50,
+            rotationX: isMobile ? 0 : -30,
             transformOrigin: "bottom center"
           },
           {
             opacity: 1,
             y: 0,
             rotationX: 0,
-            duration: 1,
+            duration: isMobile ? 0.6 : 1,
             ease: "power2.out",
-            stagger: 0.15,
+            stagger: isMobile ? 0.1 : 0.15,
             scrollTrigger: {
               trigger: validServiceCards[0],
               start: "top 80%"
@@ -160,24 +171,24 @@ export const AboutSections = () => {
         );
       }
 
-      // Values cards animation
+      // Values cards animation (simplified for mobile)
       const valueCards = cardsRef.current.slice(0, 3); // Values cards (index 0-2)
       const validValueCards = valueCards.filter(card => card !== null);
       if (validValueCards.length > 0) {
         gsap.fromTo(validValueCards,
           { 
             opacity: 0, 
-            y: 50,
-            rotationX: -30,
+            y: isMobile ? 30 : 50,
+            rotationX: isMobile ? 0 : -30,
             transformOrigin: "bottom center"
           },
           {
             opacity: 1,
             y: 0,
             rotationX: 0,
-            duration: 1,
+            duration: isMobile ? 0.6 : 1,
             ease: "power2.out",
-            stagger: 0.2,
+            stagger: isMobile ? 0.1 : 0.2,
             scrollTrigger: {
               trigger: validValueCards[0],
               start: "top 80%"
@@ -385,20 +396,36 @@ const AboutPage = () => {
 
   React.useEffect(() => {
     var navbar = navbarRef.current;
+    if (!navbar) return;
 
+    // Check initial scroll position
     if (window.pageYOffset > 300) {
       navbar.classList.add("nav-scroll");
     } else {
       navbar.classList.remove("nav-scroll");
     }
     
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        navbar.classList.add("nav-scroll");
-      } else {
-        navbar.classList.remove("nav-scroll");
+    // Throttled scroll handler for better performance
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.pageYOffset > 300) {
+            navbar.classList.add("nav-scroll");
+          } else {
+            navbar.classList.remove("nav-scroll");
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [navbarRef]);
 
   return (
