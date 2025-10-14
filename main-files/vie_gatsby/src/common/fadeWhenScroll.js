@@ -1,4 +1,5 @@
 const fadeWhenScroll = (element) => {
+  if (typeof window === "undefined") return;
   window.addEventListener("scroll", () => {
     var scrolled = window.pageYOffset;
     if (element) {

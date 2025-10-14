@@ -7,11 +7,10 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
-SwiperCore.use([Navigation]);
-
 const Works2 = ({ sliderRef }) => {
   const [load, setLoad] = React.useState(true);
   React.useEffect(() => {
+    SwiperCore.use([Navigation]);
     setTimeout(() => {
       setLoad(false);
     });

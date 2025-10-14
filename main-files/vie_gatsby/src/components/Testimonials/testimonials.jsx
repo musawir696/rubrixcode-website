@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Parallax } from "swiper";
-
-import "swiper/css";
-import "swiper/css/pagination";
-
-SwiperCore.use([Pagination, Parallax]);
 
 const Testimonials = () => {
   const [load, setLoad] = useState(false);
+  const [SwiperComponents, setSwiperComponents] = useState(null);
   const paginationRef = React.useRef(null);
 
   useEffect(() => {
-    setLoad(true);
-  }, [load]);
+    if (typeof window !== "undefined") {
+      Promise.all([
+        import("swiper/react"),
+        import("swiper")
+      ]).then(([swiperReact, swiperCore]) => {
+        const { Swiper, SwiperSlide } = swiperReact;
+        swiperCore.default.use([swiperCore.Pagination, swiperCore.Parallax]);
+        setSwiperComponents({ Swiper, SwiperSlide });
+        setLoad(true);
+      });
+    }
+  }, []);
+
+  if (!SwiperComponents || !load) {
+    return null;
+  }
+
+  const { Swiper, SwiperSlide } = SwiperComponents;
 
   return (
     <section className="app-testim section-padding bg-gray">
@@ -32,9 +42,7 @@ const Testimonials = () => {
         <div className="row">
           <div className="col-12">
             <div className="swiper-container">
-              {
-                load ? (
-                  <Swiper
+              <Swiper
                     slidesPerView={3}
                     spaceBetween={30}
                     speed={1000}
@@ -158,9 +166,7 @@ const Testimonials = () => {
                         </div>
                       </div>
                     </SwiperSlide>
-                  </Swiper>
-                ) : ("")
-              }
+              </Swiper>
               <div ref={paginationRef} className="swiper-pagination"></div>
             </div>
           </div>

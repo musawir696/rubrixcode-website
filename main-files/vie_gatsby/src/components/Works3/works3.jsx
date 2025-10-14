@@ -7,11 +7,15 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Works3 = () => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
+
+  React.useEffect(() => {
+    SwiperCore.use([Autoplay, Pagination, Navigation]);
+  }, []);
+
   return (
     <>
       <section className="work-carousel2 metro section-padding">

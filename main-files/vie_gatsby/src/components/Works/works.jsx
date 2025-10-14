@@ -1,21 +1,32 @@
 import React from "react";
 import worksData from "data/sections/works.json";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import { Link } from "gatsby";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Works = () => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
   const [pageLoaded, setPageLoaded] = React.useState(false);
+  const [SwiperComponents, setSwiperComponents] = React.useState(null);
 
   React.useEffect(() => {
-    setPageLoaded(true);
-  }, [pageLoaded]);
+    if (typeof window !== "undefined") {
+      Promise.all([
+        import("swiper/react"),
+        import("swiper")
+      ]).then(([swiperReact, swiperCore]) => {
+        const { Swiper, SwiperSlide } = swiperReact;
+        swiperCore.default.use([swiperCore.Autoplay, swiperCore.Pagination, swiperCore.Navigation]);
+        setSwiperComponents({ Swiper, SwiperSlide });
+        setPageLoaded(true);
+      });
+    }
+  }, []);
+
+  if (!SwiperComponents || !pageLoaded) {
+    return null;
+  }
+
+  const { Swiper, SwiperSlide } = SwiperComponents;
 
   return (
     <section className="work-carousel metro position-re">
@@ -69,32 +80,31 @@ const Works = () => {
                   },
                 }}
               >
-                {pageLoaded &&
-                  worksData.map((item, index) => (
-                    <SwiperSlide className="swiper-slide" key={item.id}>
+                {worksData.map((item, index) => (
+                  <SwiperSlide className="swiper-slide" key={item.id}>
+                    <div
+                      className="content wow noraidus fadeInUp"
+                      data-wow-delay=".3s"
+                    >
                       <div
-                        className="content wow noraidus fadeInUp"
-                        data-wow-delay=".3s"
-                      >
-                        <div
-                          className="item-img bg-img wow imago"
-                          style={{
-                            backgroundImage: `url(${item.image})`,
-                          }}
-                        />
-                        <div className="cont">
-                          <h6 className="color-font">
-                            <a href="#0">{item.title}</a>
-                          </h6>
-                          <h4>
-                            <Link to={`/project-details2/project-details2-dark`}>
-                              {item.secTex}
-                            </Link>
-                          </h4>
-                        </div>
+                        className="item-img bg-img wow imago"
+                        style={{
+                          backgroundImage: `url(${item.image})`,
+                        }}
+                      />
+                      <div className="cont">
+                        <h6 className="color-font">
+                          <a href="#0">{item.title}</a>
+                        </h6>
+                        <h4>
+                          <Link to={`/project-details2/project-details2-dark`}>
+                            {item.secTex}
+                          </Link>
+                        </h4>
                       </div>
-                    </SwiperSlide>
-                  ))}
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
 
               <div

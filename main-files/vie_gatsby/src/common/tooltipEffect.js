@@ -1,6 +1,7 @@
 import { fadeIn, fadeOut } from "./fadeInFadeOut";
 
 const tooltipEffect = () => {
+  if (typeof window === "undefined") return;
   let template1 = document.createElement("div");
   template1.classList.add("div-tooltip-tit");
   document.body.appendChild(template1);

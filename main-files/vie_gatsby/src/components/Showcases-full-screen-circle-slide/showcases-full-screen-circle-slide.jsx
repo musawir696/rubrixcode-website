@@ -8,11 +8,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/mousewheel";
 
-SwiperCore.use([Navigation, Parallax, Mousewheel]);
-
 const ShowcasesFullScreenCircleSlide = () => {
   const [load, setLoad] = React.useState(true);
   React.useEffect(() => {
+    SwiperCore.use([Navigation, Parallax, Mousewheel]);
     setTimeout(() => {
       setLoad(false);
     });

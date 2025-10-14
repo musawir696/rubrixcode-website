@@ -1,4 +1,7 @@
 const mouseEffect = () => {
+  // SSR check - only run in browser
+  if (typeof window === "undefined") return;
+  
   // Only enable custom cursor on desktop devices
   const isDesktop = window.matchMedia('(min-width: 1024px) and (pointer: fine)').matches;
   

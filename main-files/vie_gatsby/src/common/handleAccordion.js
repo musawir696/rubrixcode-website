@@ -1,4 +1,5 @@
 const handleAccordion = (container) => {
+  if (typeof window === "undefined") return;
   document.querySelectorAll(".accordion .item").forEach((item) => {
     item.classList.remove("active");
   });

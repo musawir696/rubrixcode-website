@@ -1,20 +1,37 @@
-import React, { useEffect, useCallback } from "react";
-import particlesConfig from "config/particle-config";
-import particlesBlackConfig from "config/pr-s-black";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import React from "react";
+import ClientOnly from "components/ClientOnly";
 
 const Intro4 = ({ sliderRef, blackStar }) => {
-  useEffect(() => {
-    setTimeout(() => {
-      document.querySelector('#particles-js canvas')?.style.removeProperty('position');
-    }, 500);
-  }, []);
+  const ParticlesComponent = React.lazy(() => {
+    if (typeof window === "undefined") {
+      return Promise.resolve({ default: () => null });
+    }
+    // Use dynamic import with webpack magic comment to prevent SSR analysis
+    return import(/* webpackIgnore: true */ "react-tsparticles").then(({ default: Particles }) => {
+      const { loadFull } = require("tsparticles");
+      const particlesConfig = require("config/particle-config").default;
+      const particlesBlackConfig = require("config/pr-s-black").default;
 
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-    document.querySelector('#particles-js canvas')?.style.removeProperty('position');
-  }, []);
+      return {
+        default: () => {
+          const particlesInit = async (engine) => {
+            await loadFull(engine);
+            setTimeout(() => {
+              document.querySelector('#particles-js canvas')?.style.removeProperty('position');
+            }, 500);
+          };
+
+          return (
+            <Particles
+              id="particles-js"
+              init={particlesInit}
+              options={blackStar ? particlesBlackConfig : particlesConfig}
+            />
+          );
+        }
+      };
+    });
+  });
 
   return (
     <header ref={sliderRef} className="particles circle-bg valign">
@@ -30,11 +47,11 @@ const Intro4 = ({ sliderRef, blackStar }) => {
           </div>
         </div>
       </div>
-      <Particles
-        id="particles-js"
-        init={particlesInit}
-        options={blackStar ? particlesBlackConfig : particlesConfig}
-      />
+      <ClientOnly>
+        <React.Suspense fallback={null}>
+          <ParticlesComponent />
+        </React.Suspense>
+      </ClientOnly>
       <div className="gradient-circle"></div>
       <div className="gradient-circle two"></div>
       <div className="line bottom left"></div>

@@ -8,11 +8,10 @@ import SwiperCore, { Navigation, Pagination, Parallax } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
-SwiperCore.use([Navigation, Pagination, Parallax]);
-
 const Intro5 = () => {
   const [load, setLoad] = React.useState(true);
   React.useEffect(() => {
+    SwiperCore.use([Navigation, Pagination, Parallax]);
     removeSlashFromPagination()
     setTimeout(() => {
       setLoad(false);

@@ -10,8 +10,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/mousewheel";
 
-SwiperCore.use([Navigation, Pagination, Parallax, Mousewheel]);
-
 const ShowcasesGrid = () => {
   const [load, setLoad] = useState(true);
 
@@ -20,6 +18,7 @@ const ShowcasesGrid = () => {
   const paginationRef = useRef(null);
 
   useEffect(() => {
+    SwiperCore.use([Navigation, Pagination, Parallax, Mousewheel]);
     setTimeout(() => {
       setLoad(false);
       tooltipEffect();

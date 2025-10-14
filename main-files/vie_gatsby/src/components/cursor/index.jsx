@@ -1,10 +1,22 @@
 import React from "react";
-import mouseEffect from "common/mouseEffect";
 
 const Cursor = () => {
+  // Skip rendering during SSR
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   React.useEffect(() => {
-    mouseEffect();
+    // Dynamically import and execute mouseEffect only on client
+    import("common/mouseEffect").then((module) => {
+      if (module.default) {
+        module.default();
+      }
+    }).catch(() => {
+      // Silently fail if mouseEffect can't load
+    });
   }, []);
+
   return (
     <>
       <div className="mouse-cursor cursor-outer"></div>

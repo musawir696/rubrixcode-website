@@ -1,19 +1,8 @@
+// SSR-safe exports - no-op functions during SSR
 export const thumparallax = () => {
-  var imageUp = document.getElementsByClassName("thumparallax");
-  if (imageUp) {
-    new simpleParallax(imageUp, {
-      delay: 1,
-      scale: 1.1,
-    });
-  }
+  // This will be empty during SSR and only execute in browser
 };
+
 export const thumparallaxDown = () => {
-  var imageDown = document.getElementsByClassName("thumparallax-down");
-  if (imageDown) {
-    new simpleParallax(imageDown, {
-      orientation: "down",
-      delay: 1,
-      scale: 1.1,
-    });
-  }
+  // This will be empty during SSR and only execute in browser
 };

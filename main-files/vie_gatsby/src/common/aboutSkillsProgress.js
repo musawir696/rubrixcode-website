@@ -1,4 +1,5 @@
 const aboutSkillsProgress = (skillsEl, progresEl, sectionEl) => {
+  if (typeof window === "undefined") return;
   let skillInAbout = skillsEl;
   if (skillInAbout) {
     window.addEventListener("scroll", () => {

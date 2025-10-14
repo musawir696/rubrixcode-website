@@ -4,6 +4,7 @@ import animateElement from "./animateElement";
 import delay from "./delay";
 
 const initFullNavbarMenu = () => {
+  if (typeof window === "undefined") return;
   function noScroll() {
     window.scrollTo(0, 0);
   }

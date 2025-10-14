@@ -9,8 +9,6 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
-SwiperCore.use([Navigation, Pagination, EffectFade]);
-
 const CaseStudy = () => {
   const [load, setLoad] = React.useState(true);
   const navigationPrevRef = React.useRef(null);
@@ -18,6 +16,7 @@ const CaseStudy = () => {
   const paginationRef = React.useRef(null);
 
   React.useEffect(() => {
+    SwiperCore.use([Navigation, Pagination, EffectFade]);
     setTimeout(() => {
       setLoad(false);
       removeSlashFromPagination();

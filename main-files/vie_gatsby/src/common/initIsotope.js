@@ -1,4 +1,15 @@
 const initIsotope = () => {
+  if (typeof window === "undefined") return;
+  
+  // Check if Isotope is available (it's loaded via external script)
+  if (typeof window.Isotope === "undefined") {
+    console.warn("Isotope is not loaded");
+    return;
+  }
+  
+  const Isotope = window.Isotope;
+  const matchesSelector = window.matchesSelector || window.Element.prototype.matches || window.Element.prototype.matchesSelector;
+  
   var grid = document.querySelectorAll(".gallery");
   var iso;
   if (grid.length >= 1) {
@@ -24,11 +35,11 @@ const initIsotope = () => {
   var filtersElem = document.querySelector(".filtering");
   if (filtersElem) {
     filtersElem.addEventListener("click", function (event) {
-      if (!matchesSelector(event.target, "span")) {
+      if (!event.target.matches || !event.target.matches("span")) {
         return;
       }
       var filterValue = event.target.getAttribute("data-filter");
-      iso.arrange({ filter: filterValue });
+      if (iso) iso.arrange({ filter: filterValue });
     });
     var buttonGroups = document.querySelectorAll(".filtering");
     for (var i = 0, len = buttonGroups.length; i < len; i++) {
@@ -37,7 +48,7 @@ const initIsotope = () => {
     }
     function radioButtonGroup(buttonGroup) {
       buttonGroup.addEventListener("click", function (event) {
-        if (!matchesSelector(event.target, "span")) {
+        if (!event.target.matches || !event.target.matches("span")) {
           return;
         }
         buttonGroup.querySelector(".active").classList.remove("active");

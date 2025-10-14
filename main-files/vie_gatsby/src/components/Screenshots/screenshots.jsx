@@ -5,13 +5,12 @@ import SwiperCore, { Pagination, Parallax } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
-SwiperCore.use([Pagination, Parallax]);
-
 const Screenshots = () => {
   const [load, setLoad] = useState(false);
   const paginationRef = React.useRef(null);
 
   useEffect(() => {
+    SwiperCore.use([Pagination, Parallax]);
     setLoad(true);
   }, [load]);
 

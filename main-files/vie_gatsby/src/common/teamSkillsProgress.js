@@ -1,4 +1,5 @@
 const teamSkillsProgress = () => {
+  if (typeof window === "undefined") return;
   let teamSection = document.querySelector(".team-crv");
   if (teamSection) {
     window.addEventListener("scroll", () => {

@@ -10,8 +10,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/mousewheel";
 
-SwiperCore.use([Navigation, Pagination, Parallax, Mousewheel]);
-
 const ShowcasesFullScreen = () => {
   const [load, setLoad] = React.useState(true);
   const navigationPrevRef = React.useRef(null);
@@ -19,6 +17,7 @@ const ShowcasesFullScreen = () => {
   const paginationRef = React.useRef(null);
 
   React.useEffect(() => {
+    SwiperCore.use([Navigation, Pagination, Parallax, Mousewheel]);
     removeSlashFromPagination()
     setTimeout(() => {
       setLoad(false);

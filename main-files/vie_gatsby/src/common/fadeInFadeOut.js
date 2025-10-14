@@ -1,26 +1,30 @@
 var opacity = 0;
 var intervalID = 0;
+
 export const fadeIn = (el, time) => {
-  setInterval(show(el), time);
+  if (typeof window === "undefined" || !el) return;
+  
+  intervalID = setInterval(() => {
+    opacity = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
+    if (opacity < 1) {
+      opacity = opacity + 0.1;
+      el.style.opacity = opacity;
+    } else {
+      clearInterval(intervalID);
+    }
+  }, time);
 };
-function show(el) {
-  opacity = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
-  if (opacity < 1) {
-    opacity = opacity + 1;
-    el.style.opacity = opacity;
-  } else {
-    clearInterval(intervalID);
-  }
-}
+
 export const fadeOut = (el, time) => {
-  setInterval(hide(el), time);
+  if (typeof window === "undefined" || !el) return;
+  
+  intervalID = setInterval(() => {
+    opacity = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
+    if (opacity > 0) {
+      opacity = opacity - 0.1;
+      el.style.opacity = opacity;
+    } else {
+      clearInterval(intervalID);
+    }
+  }, time);
 };
-function hide(el) {
-  opacity = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
-  if (opacity > 0) {
-    opacity = 0;
-    el.style.opacity = opacity;
-  } else {
-    clearInterval(intervalID);
-  }
-}

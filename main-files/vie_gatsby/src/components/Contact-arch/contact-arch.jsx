@@ -1,19 +1,90 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
-import axios from "axios";
 
 const ContactArch = () => {
   const messageRef = React.useRef(null);
-  function validateEmail(value) {
-    let error;
-    if (!value) {
-      error = "Required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = "Invalid email address";
+  const [formData, setFormData] = React.useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = React.useState({});
+
+  const validateEmail = (email) => {
+    if (!email) {
+      return "Required";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+      return "Invalid email address";
     }
-    return error;
-  }
-  const sendMessage = (ms) => new Promise((r) => setTimeout(r, ms));
+    return "";
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const emailError = validateEmail(formData.email);
+    if (emailError) {
+      setErrors({ email: emailError });
+      return;
+    }
+
+    try {
+      await new Promise((r) => setTimeout(r, 500));
+      
+      if (typeof window !== "undefined") {
+        const formValues = new FormData();
+        formValues.append('name', formData.name);
+        formValues.append('email', formData.email);
+        formValues.append('message', formData.message);
+        
+        try {
+          const response = await fetch('/contact.php', {
+            method: 'POST',
+            body: formValues,
+          });
+          
+          if (response.ok) {
+            console.log('Form submitted successfully');
+          }
+        } catch (err) {
+          console.error('Error sending message:', err.message);
+        }
+      }
+
+      if (messageRef.current) {
+        messageRef.current.innerText =
+          "Your Message has been successfully sent. I will contact you soon.";
+      }
+      
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      
+      setTimeout(() => {
+        if (messageRef.current) {
+          messageRef.current.innerText = "";
+        }
+      }, 2000);
+    } catch (err) {
+      console.error('Error:', err);
+    }
+  };
 
   return (
     <section
@@ -34,101 +105,70 @@ const ContactArch = () => {
         <div className="row justify-content-center">
           <div className="col-lg-10">
             <div className="form wow fadeInUp" data-wow-delay=".5s">
-              <Formik
-                initialValues={{
-                  name: "",
-                  email: "",
-                  message: "",
-                }}
-                onSubmit={async (values) => {
-                  await sendMessage(500);
-                  const formValues = new FormData();
+              <form id="contact-form" onSubmit={handleSubmit}>
+                <div className="messages" ref={messageRef}></div>
+                <br />
 
-                  formValues.append('name', values.name);
-                  formValues.append('email', values.email);
-                  formValues.append('message', values.message);
-                  
-                  const res = await axios.post('/contact.php', formValues)
-                    .catch(err => alert(err.message));
-
-                  if (!res) return;
-                  
-                  alert(JSON.stringify(values, null, 2));
-                  // show message
-
-                  messageRef.current.innerText =
-                    "Your Message has been successfully sent. I will contact you soon.";
-                  // Reset the values
-                  values.name = "";
-                  values.email = "";
-                  values.message = "";
-                  // clear message
-                  setTimeout(() => {
-                    messageRef.current.innerText = "";
-                  }, 2000);
-                }}
-              >
-                {({ errors, touched }) => (
-                  <Form id="contact-form">
-                    <div className="messages" ref={messageRef}></div>
-                    <br />
-
-                    <div className="controls">
-                      <div className="row">
-                        <div className="col-lg-6">
-                          <div className="form-group">
-                            <Field
-                              id="form_name"
-                              type="text"
-                              name="name"
-                              placeholder="Name"
-                              required="required"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-lg-6">
-                          <div className="form-group">
-                            <Field
-                              validate={validateEmail}
-                              id="form_email"
-                              type="email"
-                              name="email"
-                              placeholder="Email"
-                              required="required"
-                            />
-                            {errors.email && touched.email && (
-                              <div>{errors.email}</div>
-                            )}
-                          </div>
-                        </div>
-
-                        <div className="col-12">
-                          <div className="form-group">
-                            <Field
-                              as="textarea"
-                              id="form_message"
-                              name="message"
-                              placeholder="Message"
-                              rows="4"
-                              required="required"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-12">
-                          <div className="text-center">
-                            <button
-                              type="submit"
-                              className="nb butn light mt-30 full-width"
-                            >
-                              <span className="ls3 text-u">Send Massege</span>
-                            </button>
-                          </div>
-                        </div>
+                <div className="controls">
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <input
+                          id="form_name"
+                          type="text"
+                          name="name"
+                          placeholder="Name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                        />
                       </div>
                     </div>
-                  </Form>
-                )}
-              </Formik>
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <input
+                          id="form_email"
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                        />
+                        {errors.email && (
+                          <div style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
+                            {errors.email}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="col-12">
+                      <div className="form-group">
+                        <textarea
+                          id="form_message"
+                          name="message"
+                          placeholder="Message"
+                          rows="4"
+                          value={formData.message}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="col-12">
+                      <div className="text-center">
+                        <button
+                          type="submit"
+                          className="nb butn light mt-30 full-width"
+                        >
+                          <span className="ls3 text-u">Send Massege</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>

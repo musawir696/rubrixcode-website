@@ -15,12 +15,11 @@ import "swiper/css/effect-fade";
 import { thumparallax } from "common/thumparallax";
 import removeSlashFromPagination from "common/removeSlashpagination";
 
-SwiperCore.use([Navigation, Pagination, Parallax, EffectFade]);
-
 const Blogs4 = () => {
   const [load, setLoad] = React.useState(true);
 
   React.useEffect(() => {
+    SwiperCore.use([Navigation, Pagination, Parallax, EffectFade]);
     setTimeout(() => {
       setLoad(false);
       removeSlashFromPagination();

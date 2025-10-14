@@ -1,4 +1,5 @@
 const scrollToTop = () => {
+  if (typeof window === "undefined") return;
   // Check if progress-wrap element exists before proceeding
   const progressWrap = document.querySelector(".progress-wrap");
   if (!progressWrap) {

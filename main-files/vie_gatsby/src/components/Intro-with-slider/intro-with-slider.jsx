@@ -11,11 +11,10 @@ import "swiper/css/navigation";
 import removeSlashFromPagination from "common/removeSlashpagination";
 import fadeWhenScroll from "common/fadeWhenScroll";
 
-SwiperCore.use([Navigation, Pagination, Parallax]);
-
 const IntroWithSlider = ({ sliderRef }) => {
   const [load, setLoad] = React.useState(true);
   React.useEffect(() => {
+    SwiperCore.use([Navigation, Pagination, Parallax]);
     fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
     setTimeout(() => {
       removeSlashFromPagination();

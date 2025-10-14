@@ -1,21 +1,56 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Formik, Form, Field } from "formik";
 import { Link as ScrollLink } from "react-scroll";
 
 const BlogDetails = ({ theme }) => {
-  // const messageRef = React.useRef(null);
+  const [formData, setFormData] = React.useState({
+    name: "",
+    email: "",
+    comment: "",
+  });
+  const [errors, setErrors] = React.useState({});
 
-  function validateEmail(value) {
-    let error;
-    if (!value) {
-      error = "Required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = "Invalid email address";
+  const validateEmail = (email) => {
+    if (!email) {
+      return "Required";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+      return "Invalid email address";
     }
-    return error;
-  }
-  const sendMessage = (ms) => new Promise((r) => setTimeout(r, ms));
+    return "";
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const emailError = validateEmail(formData.email);
+    if (emailError) {
+      setErrors({ email: emailError });
+      return;
+    }
+
+    await new Promise((r) => setTimeout(r, 500));
+    
+    setFormData({
+      name: "",
+      email: "",
+      comment: "",
+    });
+  };
 
   return (
     <section className="blog-pg single section-padding pt-0">
@@ -262,69 +297,57 @@ const BlogDetails = ({ theme }) => {
               <div className="comment-form" id="comment-form">
                 <h5>Add Comment :</h5>
                 <div className="form">
-                  <Formik
-                    initialValues={{
-                      name: "",
-                      email: "",
-                      comment: "",
-                    }}
-                    onSubmit={async (values) => {
-                      await sendMessage(500);
-                      alert(JSON.stringify(values, null, 2));
-                      // Reset the values
-                      values.name = "";
-                      values.email = "";
-                      values.comment = "";
-                    }}
-                  >
-                    {({ errors, touched }) => (
-                      <Form>
-                        <div className="row">
-                          <div className="col-12">
-                            <div className="form-group">
-                              <Field
-                                as="textarea"
-                                placeholder="Your Comment"
-                                name="comment"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-group">
-                              <Field
-                                type="text"
-                                placeholder="Your Name"
-                                name="name"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-group">
-                              <Field
-                                type="email"
-                                validate={validateEmail}
-                                placeholder="Your Email"
-                                name="email"
-                              />
-                              {errors.email && touched.email && (
-                                <div>{errors.email}</div>
-                              )}
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="form-group text-center">
-                              <button
-                                type="submit"
-                                className={`nb butn ${theme ? theme === "light" ? "dark" : "" : "light"} curve full-width`}
-                              >
-                                Comment
-                              </button>
-                            </div>
-                          </div>
+                  <form onSubmit={handleSubmit}>
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="form-group">
+                          <textarea
+                            placeholder="Your Comment"
+                            name="comment"
+                            value={formData.comment}
+                            onChange={handleChange}
+                          />
                         </div>
-                      </Form>
-                    )}
-                  </Formik>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            placeholder="Your Name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input
+                            type="email"
+                            placeholder="Your Email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && (
+                            <div style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
+                              {errors.email}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="form-group text-center">
+                          <button
+                            type="submit"
+                            className={`nb butn ${theme ? theme === "light" ? "dark" : "" : "light"} curve full-width`}
+                          >
+                            Comment
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>

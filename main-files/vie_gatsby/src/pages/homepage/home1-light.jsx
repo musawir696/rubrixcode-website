@@ -21,6 +21,8 @@ const Homepage1 = () => {
   const logoRef = React.useRef(null);
 
   React.useEffect(() => {
+    if (typeof window === "undefined") return;
+
     setInterval(() => {
       if (fixedSlider.current) {
         var slidHeight = fixedSlider.current.offsetHeight;
@@ -33,6 +35,8 @@ const Homepage1 = () => {
     
     var navbar = navbarRef.current,
       logo = logoRef.current;
+    
+    if (!navbar) return;
 
     if (window.pageYOffset > 300) {
       navbar.classList.add("nav-scroll");
@@ -40,15 +44,21 @@ const Homepage1 = () => {
       navbar.classList.remove("nav-scroll");
     }
 
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.pageYOffset > 300) {
         navbar.classList.add("nav-scroll");
-        logo.setAttribute("src", appData.darkLogo);
+        if (logo) logo.setAttribute("src", appData.darkLogo);
       } else {
         navbar.classList.remove("nav-scroll");
-        logo.setAttribute("src", appData.lightLogo);
+        if (logo) logo.setAttribute("src", appData.lightLogo);
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [fixedSlider, MainContent, navbarRef]);
 
   return (

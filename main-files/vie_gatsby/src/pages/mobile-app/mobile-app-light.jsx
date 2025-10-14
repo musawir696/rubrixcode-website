@@ -18,7 +18,10 @@ const MobileAppLight = () => {
   const navbarRef = React.useRef(null);
 
   React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     var navbar = navbarRef.current;
+    if (!navbar) return;
 
     if (window.pageYOffset > 300) {
       navbar.classList.add("nav-scroll");
@@ -26,13 +29,19 @@ const MobileAppLight = () => {
       navbar.classList.remove("nav-scroll");
     }
 
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.pageYOffset > 300) {
         navbar.classList.add("nav-scroll");
       } else {
         navbar.classList.remove("nav-scroll");
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [navbarRef]);
 
   return (
