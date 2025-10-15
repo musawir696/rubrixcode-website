@@ -30,8 +30,8 @@ const Footer = ({ hideBGCOLOR }) => {
           .footer-responsive .footer-section {
             margin-bottom: 25px !important;
           }
-          .footer-responsive h5 {
-            font-size: 16px !important;
+          .footer-responsive .footer-section > div:first-child {
+            font-size: 14px !important;
             margin-bottom: 15px !important;
           }
           .footer-responsive ul li {
@@ -53,8 +53,8 @@ const Footer = ({ hideBGCOLOR }) => {
             margin-bottom: 35px !important;
           }
           
-          .footer-responsive h5 {
-            font-size: 17px !important;
+          .footer-responsive .footer-section > div:first-child {
+            font-size: 14px !important;
             margin-bottom: 18px !important;
           }
           
@@ -64,7 +64,7 @@ const Footer = ({ hideBGCOLOR }) => {
           }
         }
         
-        /* Specific fix for 582-780px range */
+          /* Specific fix for 582-780px range */
         @media (min-width: 582px) and (max-width: 780px) {
           .footer-responsive .col-sm-6 {
             flex: 0 0 50%;
@@ -79,15 +79,6 @@ const Footer = ({ hideBGCOLOR }) => {
           .footer-responsive [class*="col-"] {
             padding-left: 10px;
             padding-right: 10px;
-          }
-          
-          /* Better alignment */
-          .footer-responsive .text-center {
-            text-align: left !important;
-          }
-          
-          .footer-responsive .justify-content-center {
-            justify-content: flex-start !important;
           }
           
           /* Adjust logo section */
@@ -106,10 +97,22 @@ const Footer = ({ hideBGCOLOR }) => {
           }
         }
         
+        
         /* Medium devices (tablets, 768px and up) */
         @media (min-width: 768px) and (max-width: 991.98px) {
           .footer-responsive {
             padding: 55px 0 35px 0;
+          }
+          
+          /* Force left alignment on medium screens */
+          .footer-responsive .text-md-start,
+          .footer-responsive .text-md-start ul,
+          .footer-responsive .text-md-start > div > div {
+            text-align: left !important;
+          }
+          
+          .footer-responsive .justify-content-md-start {
+            justify-content: flex-start !important;
           }
         }
         
@@ -117,6 +120,19 @@ const Footer = ({ hideBGCOLOR }) => {
         @media (min-width: 992px) {
           .footer-responsive {
             padding: 60px 0 40px 0;
+          }
+          
+          /* Force left alignment on large screens */
+          .footer-responsive .text-md-start,
+          .footer-responsive .text-md-start ul,
+          .footer-responsive .text-md-start > div > div,
+          .footer-responsive .text-center.text-md-start {
+            text-align: left !important;
+          }
+          
+          .footer-responsive .justify-content-md-start,
+          .footer-responsive .justify-content-center.justify-content-md-start {
+            justify-content: flex-start !important;
           }
         }
         
@@ -172,14 +188,14 @@ const Footer = ({ hideBGCOLOR }) => {
           {/* Company Links */}
           <div className="col-lg-2 col-md-2 col-sm-6 col-6 text-center text-md-start">
             <div className="footer-section" style={{ marginBottom: '30px' }}>
-              <h5 style={{ 
-                color: '#ffffff', 
-                fontSize: '18px',
-                fontWeight: '600',
+              <div style={{ 
+                color: 'rgb(161, 161, 161)', 
+                fontSize: '14px',
+                fontWeight: '400',
                 marginBottom: '20px'
               }}>
                 Company
-              </h5>
+              </div>
               <ul style={{ listStyle: 'none', padding: '0', margin: '0' }} className="text-center text-md-start">
                 <li style={{ marginBottom: '12px' }}>
                   <Link to="/" style={{ 
@@ -228,15 +244,15 @@ const Footer = ({ hideBGCOLOR }) => {
           {/* Contact Information */}
           <div className="col-lg-3 col-md-3 col-sm-6 col-6 text-center text-md-start">
             <div className="footer-section" style={{ marginBottom: '30px' }}>
-              <h5 style={{ 
-                color: '#ffffff', 
-                fontSize: '18px',
-                fontWeight: '600',
+              <div style={{ 
+                color: 'rgb(161, 161, 161)', 
+                fontSize: '14px',
+                fontWeight: '400',
                 marginBottom: '20px'
               }}>
                 Reach us out
-              </h5>
-              <div style={{ marginBottom: '15px' }}>
+              </div>
+              <div style={{ marginBottom: '15px' }} className="text-center text-md-start">
                 <div style={{ 
                   fontWeight: '600',
                   color: '#ffffff',
@@ -252,7 +268,7 @@ const Footer = ({ hideBGCOLOR }) => {
                   hello@rubrixcode.com
                 </div>
               </div>
-              <div style={{ marginBottom: '15px' }}>
+              <div style={{ marginBottom: '15px' }} className="text-center text-md-start">
                 <div style={{ 
                   fontWeight: '600',
                   color: '#ffffff',
@@ -268,7 +284,7 @@ const Footer = ({ hideBGCOLOR }) => {
                   careers@rubrixcode.com
                   </div>
                   </div>
-              <div>
+              <div className="text-center text-md-start">
                 <div style={{ 
                   fontWeight: '600',
                   color: '#ffffff',
@@ -290,19 +306,20 @@ const Footer = ({ hideBGCOLOR }) => {
           {/* Social Media */}
           <div className="col-lg-2 col-md-3 col-sm-6 col-6 text-center text-md-start">
             <div className="footer-section" style={{ marginBottom: '30px' }}>
-              <h5 style={{ 
-                color: '#ffffff', 
-                fontSize: '18px',
-                fontWeight: '600',
+              <div style={{ 
+                color: 'rgb(161, 161, 161)', 
+                fontSize: '14px',
+                fontWeight: '400',
                 marginBottom: '5px'
               }}>
                 Follow us on
-              </h5>
+              </div>
               <div style={{ 
-                color: '#ffffff',
-                fontSize: '16px',
+                color: 'rgb(161, 161, 161)',
+                fontSize: '14px',
+                fontWeight: '400',
                 marginBottom: '20px'
-              }}>
+              }} className="text-center text-md-start">
                 Social Media
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }} className="justify-content-center justify-content-md-start">
@@ -387,14 +404,7 @@ const Footer = ({ hideBGCOLOR }) => {
           </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="row" style={{ marginTop: '40px', paddingTop: '30px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-          <div className="col-12 text-center">
-            <p style={{ margin: '0', color: '#ffffff', fontSize: '14px' }}>
-              © {new Date().getFullYear()} RubrixCode. All rights reserved.
-            </p>
-          </div>
-        </div>
+      
       </div>
     </footer>
     </>
