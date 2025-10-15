@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import Cryptify from "components/RubrixPortfolio/PortfolioDetails/Cryptify";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const CryptifyPage = () => {
   const navbarRef = React.useRef(null);

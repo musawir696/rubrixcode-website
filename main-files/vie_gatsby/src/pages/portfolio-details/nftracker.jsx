@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import NFTracker from "components/RubrixPortfolio/PortfolioDetails/NFTracker";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const NFTrackerPage = () => {
   const navbarRef = React.useRef(null);

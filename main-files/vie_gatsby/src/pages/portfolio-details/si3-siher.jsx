@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import Si3SiHer from "components/RubrixPortfolio/PortfolioDetails/Si3SiHer";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const Si3SiHerPage = () => {
   const navbarRef = React.useRef(null);

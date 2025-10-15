@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { Link } from 'gatsby'
-import './call-to-action.css'
 
 const CallToAction = ({img}) => {
     return (

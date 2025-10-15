@@ -6,12 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Cursor from "components/cursor";
 import ScrollToTop from "components/scrollToTop";
-import LoadingScreen from "components/Loading-Screen";
-
-import "styles/critical.css";
-import "styles/main.css";
-import "styles/preloader.css";
-import "styles/rubrixcode.css";  
+import LoadingScreen from "components/Loading-Screen";  
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {

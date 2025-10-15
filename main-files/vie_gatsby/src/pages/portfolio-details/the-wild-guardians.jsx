@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import TheWildGuardians from "components/RubrixPortfolio/PortfolioDetails/TheWildGuardians";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const TheWildGuardiansPage = () => {
   const navbarRef = React.useRef(null);

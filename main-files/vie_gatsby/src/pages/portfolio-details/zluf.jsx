@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import Zluf from "components/RubrixPortfolio/PortfolioDetails/Zluf";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const ZlufPage = () => {
   const navbarRef = React.useRef(null);

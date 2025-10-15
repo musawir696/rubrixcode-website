@@ -4,8 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import SwiperCore, { Navigation } from "swiper";
 
-import "swiper/css";
-import "swiper/css/navigation";
 
 SwiperCore.use([Navigation]);
 

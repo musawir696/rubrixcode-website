@@ -5,10 +5,6 @@ import ShowcassesFullScreenData from "data/showcases-full-screen-slider.json";
 import tooltipEffect from "common/tooltipEffect";
 import SwiperCore, { Navigation, Pagination, Parallax, Mousewheel } from "swiper";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/mousewheel";
 
 SwiperCore.use([Navigation, Pagination, Parallax, Mousewheel]);
 

@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import ShariaLandlord from "components/RubrixPortfolio/PortfolioDetails/ShariaLandlord";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const ShariaLandlordPage = () => {
   const navbarRef = React.useRef(null);

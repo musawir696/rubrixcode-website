@@ -1,6 +1,5 @@
 import React from 'react'
 import ModalVideo from "react-modal-video";
-import "react-modal-video/css/modal-video.css";
 
 const AboutUs4 = () => {
   const [isOpen, setOpen] = React.useState(false);

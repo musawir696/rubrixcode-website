@@ -1,9 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import ModalVideo from "react-modal-video";
-import "react-modal-video/css/modal-video.css";
 
 const VideoWithTestimonials = () => {
   const [isOpen, setOpen] = React.useState(false);

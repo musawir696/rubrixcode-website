@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import SwedenRelocators from "components/RubrixPortfolio/PortfolioDetails/SwedenRelocators";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const SwedenRelocatorsPage = () => {
   const navbarRef = React.useRef(null);

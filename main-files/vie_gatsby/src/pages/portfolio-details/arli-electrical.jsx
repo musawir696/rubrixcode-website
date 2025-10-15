@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import ArliElectrical from "components/RubrixPortfolio/PortfolioDetails/ArliElectrical";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const ArliElectricalPage = () => {
   const navbarRef = React.useRef(null);

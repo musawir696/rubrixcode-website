@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, EffectFade } from "swiper";
 
 import "swiper/css";
-import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
 SwiperCore.use([Navigation, Pagination, EffectFade]);

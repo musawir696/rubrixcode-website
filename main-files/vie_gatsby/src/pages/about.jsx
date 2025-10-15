@@ -24,7 +24,6 @@ export const AboutSections = () => {
     if (typeof window === "undefined") return;
 
     const isMobile = window.matchMedia('(max-width: 767px)').matches;
-    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
 
     const ctx = gsap.context(() => {
       // Hero section 3D animation (simplified for mobile)

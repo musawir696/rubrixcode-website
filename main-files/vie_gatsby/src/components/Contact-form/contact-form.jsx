@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import ContactFromDate from "data/sections/form-info.json";
-import "./contact-form.css";
 
 const ContactForm = () => {
   const messageRef = React.useRef(null);

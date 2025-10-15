@@ -5,8 +5,6 @@ import removeSlashFromPagination from "common/removeSlashpagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Parallax } from "swiper";
 
-import "swiper/css";
-import "swiper/css/navigation";
 
 SwiperCore.use([Navigation, Pagination, Parallax]);
 

@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import Brainwave from "components/RubrixPortfolio/PortfolioDetails/Brainwave";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const BrainwavePage = () => {
   const navbarRef = React.useRef(null);

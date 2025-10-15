@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import ProFuturesTrading from "components/RubrixPortfolio/PortfolioDetails/ProFuturesTrading";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const ProFuturesTradingPage = () => {
   const navbarRef = React.useRef(null);

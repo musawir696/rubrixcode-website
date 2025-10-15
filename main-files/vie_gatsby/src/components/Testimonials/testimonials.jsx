@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Parallax } from "swiper";
 
-import "swiper/css";
-import "swiper/css/pagination";
 
 SwiperCore.use([Pagination, Parallax]);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import appData from "data/app.json";
-import { handleDropdown, handleMobileDropdown } from "common/navbar";
+import { handleMobileDropdown } from "common/navbar";
 
 const Navbar = ({ lr, nr, theme }) => {
   return (

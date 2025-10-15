@@ -11,7 +11,6 @@ import SwiperCore, {
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/effect-fade";
 import { thumparallax } from "common/thumparallax";
 import removeSlashFromPagination from "common/removeSlashpagination";
 

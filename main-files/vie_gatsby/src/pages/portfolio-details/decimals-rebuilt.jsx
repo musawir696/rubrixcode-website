@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import DecimalsRebuilt from "components/RubrixPortfolio/PortfolioDetails/DecimalsRebuilt";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const DecimalsRebuiltPage = () => {
   const navbarRef = React.useRef(null);

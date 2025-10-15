@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { navigate } from "gatsby";
-import "./portfolio.css";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);

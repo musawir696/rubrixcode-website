@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import HoyaKerry from "components/RubrixPortfolio/PortfolioDetails/HoyaKerry";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const HoyaKerryPage = () => {
   const navbarRef = React.useRef(null);

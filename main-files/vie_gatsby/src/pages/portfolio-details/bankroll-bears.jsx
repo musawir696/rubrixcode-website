@@ -3,7 +3,6 @@ import Navbar from "components/Navbar/navbar";
 import BankRollBears from "components/RubrixPortfolio/PortfolioDetails/BankRollBears";
 import Footer from "components/Footer/footer";
 import DarkTheme from "layouts/Dark";
-import { navigate } from "gatsby";
 
 const BankRollBearsPage = () => {
   const navbarRef = React.useRef(null);
