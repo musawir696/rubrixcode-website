@@ -8,10 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "set GATSBY_TELEMETRY_DISABLED=1&& gatsby develop",
-    "start": "set GATSBY_TELEMETRY_DISABLED=1&& gatsby develop",
-    "build": "set GATSBY_TELEMETRY_DISABLED=1&& set GENERATE_SOURCEMAP=false&& gatsby build",
-    "build:analyze": "set GATSBY_TELEMETRY_DISABLED=1&& gatsby build --log-pages",
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "build:analyze": "gatsby build --log-pages",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
