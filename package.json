@@ -1,0 +1,15 @@
+{
+  "name": "rubrixcode-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RubrixCode Portfolio Site",
+  "scripts": {
+    "build": "cd main-files/vie_gatsby && npm install && npm run build",
+    "dev": "cd main-files/vie_gatsby && npm run develop",
+    "clean": "cd main-files/vie_gatsby && npm run clean"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
