@@ -40,7 +40,7 @@ const Navbar = ({ lr, nr, theme }) => {
           </span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{ position: 'relative' }}>
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
               <Link to="/" className="nav-link">
@@ -63,6 +63,28 @@ const Navbar = ({ lr, nr, theme }) => {
               </Link>
             </li>
           </ul>
+          <div style={{ position: 'absolute', right: '-30px', top: '50%', transform: 'translateY(-50%)' }}>
+            <Link 
+              to="/join-us" 
+              className="nav-link"
+              style={{
+                backgroundColor: '#000',
+                color: '#fff',
+                padding: '10px 25px',
+                borderRadius: '5px',
+                border: '2px solid #808080',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.borderColor = '#0000ff';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.borderColor = '#808080';
+              }}
+            >
+              Join Us
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
