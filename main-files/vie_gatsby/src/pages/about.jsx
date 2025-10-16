@@ -120,28 +120,51 @@ export const AboutSections = () => {
         );
       }
 
-      // Story section with timeline (simplified for mobile)
+      // Story section with bottom-to-top animation
       if (storyRef.current) {
-        gsap.fromTo(storyRef.current,
-          { 
-            opacity: 0, 
-            x: isMobile ? 0 : -100,
-            y: isMobile ? 30 : 0,
-            rotationY: isMobile ? 0 : -15
-          },
-          {
-            opacity: 1,
-            x: 0,
-            y: 0,
-            rotationY: 0,
-            duration: isMobile ? 0.8 : 1.6,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: storyRef.current,
-              start: "top 70%"
+        const storyTitle = storyRef.current.querySelector('.section-title-3d');
+        const storyElements = storyRef.current.querySelectorAll('.story-paragraph-3d');
+        
+        if (storyTitle) {
+          gsap.fromTo(storyTitle,
+            { 
+              opacity: 0, 
+              y: 60
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: isMobile ? 0.8 : 1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: storyRef.current,
+                start: "top 75%",
+                toggleActions: "play none none none"
+              }
             }
-          }
-        );
+          );
+        }
+        
+        if (storyElements.length > 0) {
+          gsap.fromTo(storyElements,
+            { 
+              opacity: 0, 
+              y: isMobile ? 50 : 80
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: isMobile ? 0.8 : 1.2,
+              ease: "power3.out",
+              stagger: isMobile ? 0.1 : 0.15,
+              scrollTrigger: {
+                trigger: storyRef.current,
+                start: "top 75%",
+                toggleActions: "play none none none"
+              }
+            }
+          );
+        }
       }
 
       // Services cards animation (simplified for mobile)
@@ -240,8 +263,8 @@ export const AboutSections = () => {
         </div>
       </section>
 
-      {/* 🔹 Vision, Mission, Essence Combined Section */}
-      <section className="about-vision-mission-essence-3d">
+      {/* 🔹 Vision, Mission, Essence Combined Section - DARK BACKGROUND */}
+      <section className="about-vision-mission-essence-3d section-dark">
         <div className="container">
           <div className="vision-mission-essence-grid">
             
@@ -295,8 +318,8 @@ export const AboutSections = () => {
         </div>
       </section>
 
-      {/* 🔹 What We Do Section */}
-      <section className="about-services-3d">
+      {/* 🔹 What We Do Section - WHITE BACKGROUND */}
+      <section className="about-services-3d section-light">
         <div className="container">
           <h2 className="section-title-3d text-center">What We Do</h2>
           <div className="services-grid">
@@ -334,33 +357,29 @@ export const AboutSections = () => {
         </div>
       </section>
 
-      {/* 🔹 Story Section */}
-      <section className="about-story-3d">
-        <div className="container">
-          <div className="story-content-3d" ref={storyRef}>
-            <h2 className="section-title-3d">Our Story</h2>
-            <div className="story-text-3d">
-              <p className="story-paragraph-3d">
-                Born during the pandemic, we started building Web3 projects when NFTs 
-                were still "weird internet monkey pictures." <strong className="story-strong-3d">We saw the future early.</strong>
-              </p>
-              <p className="story-paragraph-3d">
-                Today, we've shipped everything from <strong className="story-strong-3d">AI landing pages</strong> to 
-                <strong className="story-strong-3d"> $5M NFT collections</strong>. Our clients range from solo founders 
-                to international enterprises. What unites them? They all wanted something <strong className="story-strong-3d">exceptional</strong>.
-              </p>
-              <p className="story-paragraph-3d">
-                Founded with a deep understanding of the power of creativity and technology, 
-                we recognized the need for innovative solutions that help businesses thrive 
-                in a rapidly evolving digital world.
-              </p>
-            </div>
-          </div>
+      {/* 🔹 Story Section - WHITE BACKGROUND */}
+      <section className="about-story-3d section-light">
+        <div className="story-content-3d" ref={storyRef}>
+          <h2 className="section-title-3d">Our Story</h2>
+          <p className="story-paragraph-3d">
+            Born during the pandemic, we started building Web3 projects when NFTs 
+            were still "weird internet monkey pictures." <strong className="story-strong-3d">We saw the future early.</strong>
+          </p>
+          <p className="story-paragraph-3d">
+            Today, we've shipped everything from <strong className="story-strong-3d">AI landing pages</strong> to 
+            <strong className="story-strong-3d"> $5M NFT collections</strong>. Our clients range from solo founders 
+            to international enterprises. What unites them? They all wanted something <strong className="story-strong-3d">exceptional</strong>.
+          </p>
+          <p className="story-paragraph-3d">
+            Founded with a deep understanding of the power of creativity and technology, 
+            we recognized the need for innovative solutions that help businesses thrive 
+            in a rapidly evolving digital world.
+          </p>
         </div>
       </section>
 
-      {/* 🔹 Values Cards */}
-      <section className="about-values-3d">
+      {/* 🔹 Values Cards - DARK BACKGROUND */}
+      <section className="about-values-3d section-dark">
         <div className="container">
           <h2 className="section-title-3d text-center">What Drives Us</h2>
           <div className="values-grid">
