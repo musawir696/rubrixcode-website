@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
+import "./footer.css";
 
 const Footer = ({ hideBGCOLOR }) => {
   const scrollToTop = () => {
@@ -8,178 +9,26 @@ const Footer = ({ hideBGCOLOR }) => {
 
   return (
     <>
-      <style jsx>{`
-        .footer-responsive {
-          background: #000000;
-          padding: 60px 0 40px 0;
-          color: #ffffff;
-        }
-        
-        /* Mobile First Approach */
-        @media (max-width: 575.98px) {
-          .footer-responsive {
-            padding: 40px 0 30px 0;
-          }
-          .footer-responsive .container {
-            padding-left: 15px;
-            padding-right: 15px;
-          }
-          .footer-responsive .footer-logo {
-            margin-bottom: 25px !important;
-          }
-          .footer-responsive .footer-section {
-            margin-bottom: 25px !important;
-          }
-          .footer-responsive .footer-section > div:first-child {
-            font-size: 14px !important;
-            margin-bottom: 15px !important;
-          }
-          .footer-responsive ul li {
-            margin-bottom: 8px !important;
-          }
-          .footer-responsive ul li a {
-            font-size: 14px !important;
-          }
-        }
-        
-        /* Small devices (landscape phones, 576px and up) */
-        @media (min-width: 576px) and (max-width: 767.98px) {
-          .footer-responsive {
-            padding: 50px 0 35px 0;
-          }
-          
-          /* Better spacing for 576-768px range */
-          .footer-responsive .footer-section {
-            margin-bottom: 35px !important;
-          }
-          
-          .footer-responsive .footer-section > div:first-child {
-            font-size: 14px !important;
-            margin-bottom: 18px !important;
-          }
-          
-          .footer-responsive ul li a,
-          .footer-responsive div[style*="fontSize"] {
-            font-size: 15px !important;
-          }
-        }
-        
-          /* Specific fix for 582-780px range */
-        @media (min-width: 582px) and (max-width: 780px) {
-          .footer-responsive .col-sm-6 {
-            flex: 0 0 50%;
-            max-width: 50%;
-          }
-          
-          .footer-responsive .row {
-            margin-left: -10px;
-            margin-right: -10px;
-          }
-          
-          .footer-responsive [class*="col-"] {
-            padding-left: 10px;
-            padding-right: 10px;
-          }
-          
-          /* Adjust logo section */
-          .footer-responsive .footer-logo img {
-            height: 45px !important;
-          }
-          
-          /* Social media icons spacing */
-          .footer-responsive [class*="col-"] > div > div[style*="gap"] {
-            gap: 8px !important;
-          }
-          
-          /* Back button positioning */
-          .footer-responsive .col-md-12.col-sm-6 {
-            margin-top: 10px;
-          }
-        }
-        
-        
-        /* Medium devices (tablets, 768px and up) */
-        @media (min-width: 768px) and (max-width: 991.98px) {
-          .footer-responsive {
-            padding: 55px 0 35px 0;
-          }
-          
-          /* Force left alignment on medium screens */
-          .footer-responsive .text-md-start,
-          .footer-responsive .text-md-start ul,
-          .footer-responsive .text-md-start > div > div {
-            text-align: left !important;
-          }
-          
-          .footer-responsive .justify-content-md-start {
-            justify-content: flex-start !important;
-          }
-        }
-        
-        /* Large devices (desktops, 992px and up) */
-        @media (min-width: 992px) {
-          .footer-responsive {
-            padding: 60px 0 40px 0;
-          }
-          
-          /* Force left alignment on large screens */
-          .footer-responsive .text-md-start,
-          .footer-responsive .text-md-start ul,
-          .footer-responsive .text-md-start > div > div,
-          .footer-responsive .text-center.text-md-start {
-            text-align: left !important;
-          }
-          
-          .footer-responsive .justify-content-md-start,
-          .footer-responsive .justify-content-center.justify-content-md-start {
-            justify-content: flex-start !important;
-          }
-        }
-        
-        /* Ensure proper spacing on very small screens */
-        @media (max-width: 400px) {
-          .footer-responsive .col-6 {
-            flex: 0 0 100%;
-            max-width: 100%;
-            margin-bottom: 20px;
-          }
-        }
-      `}</style>
       
       <footer className="footer-responsive">
       <div className="container">
-        <div className="row" style={{ alignItems: 'flex-start' }}>
+        <div className="row">
           {/* Logo and Tagline */}
           <div className="col-lg-3 col-md-4 col-sm-6 col-12 text-center text-md-start">
-            <div className="footer-logo footer-section" style={{ marginBottom: '30px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }} className="justify-content-center justify-content-md-start">
+            <div className="footer-logo footer-section">
+              <div className="footer-logo-wrapper justify-content-center justify-content-md-start">
                 <img 
                   src="/img/rubrixCodeLogo.jpg" 
                   alt="RubrixCode" 
-                  style={{ 
-                    height: '50px', 
-                    width: 'auto',
-                    marginRight: '15px'
-                  }} 
                   loading="lazy"
                 />
                 <div>
-                  <h4 style={{ 
-                    color: '#ffffff', 
-                    margin: '0', 
-                    fontSize: '16px',
-                    fontWeight: '400'
-                  }}>
+                  <h4 className="footer-logo-title">
                     RubrixCode
                   </h4>
                 </div>
               </div>
-              <div style={{ 
-                color: '#ffffff', 
-                fontSize: '16px',
-                lineHeight: '1.6',
-                fontStyle: 'italic'
-              }}>
+              <div className="footer-tagline">
             
               </div>
               </div>
@@ -187,53 +36,28 @@ const Footer = ({ hideBGCOLOR }) => {
 
           {/* Company Links */}
           <div className="col-lg-2 col-md-2 col-sm-6 col-6 text-center text-md-start">
-            <div className="footer-section" style={{ marginBottom: '30px' }}>
-              <div style={{ 
-                color: 'rgb(161, 161, 161)', 
-                fontSize: '14px',
-                fontWeight: '400',
-                marginBottom: '20px'
-              }}>
+            <div className="footer-section">
+              <div className="footer-section-title">
                 Company
               </div>
-              <ul style={{ listStyle: 'none', padding: '0', margin: '0' }} className="text-center text-md-start">
-                <li style={{ marginBottom: '12px' }}>
-                  <Link to="/" style={{ 
-                    color: '#ffffff', 
-                    textDecoration: 'none',
-                    fontSize: '16px',
-                    transition: 'color 0.3s ease'
-                  }}>
+              <ul className="footer-links text-center text-md-start">
+                <li>
+                  <Link to="/">
                     Home
                   </Link>
                 </li>
-                <li style={{ marginBottom: '12px' }}>
-                  <Link to="/about" style={{ 
-                    color: '#ffffff', 
-                    textDecoration: 'none',
-                    fontSize: '16px',
-                    transition: 'color 0.3s ease'
-                  }}>
+                <li>
+                  <Link to="/about">
                     About
                   </Link>
                 </li>
-                <li style={{ marginBottom: '12px' }}>
-                  <Link to="/portfolio" style={{ 
-                    color: '#ffffff', 
-                    textDecoration: 'none',
-                    fontSize: '16px',
-                    transition: 'color 0.3s ease'
-                  }}>
+                <li>
+                  <Link to="/portfolio">
                     Portfolio
                   </Link>
                 </li>
-                <li style={{ marginBottom: '12px' }}>
-                  <Link to="/contact" style={{ 
-                    color: '#ffffff', 
-                    textDecoration: 'none',
-                    fontSize: '16px',
-                    transition: 'color 0.3s ease'
-                  }}>
+                <li>
+                  <Link to="/contact">
                     Contact Us
                   </Link>
                 </li>
@@ -243,60 +67,31 @@ const Footer = ({ hideBGCOLOR }) => {
 
           {/* Contact Information */}
           <div className="col-lg-3 col-md-3 col-sm-6 col-6 text-center text-md-start">
-            <div className="footer-section" style={{ marginBottom: '30px' }}>
-              <div style={{ 
-                color: 'rgb(161, 161, 161)', 
-                fontSize: '14px',
-                fontWeight: '400',
-                marginBottom: '20px'
-              }}>
+            <div className="footer-section">
+              <div className="footer-section-title">
                 Reach us out
               </div>
-              <div style={{ marginBottom: '15px' }} className="text-center text-md-start">
-                <div style={{ 
-                  fontWeight: '600',
-                  color: '#ffffff',
-                  marginBottom: '5px',
-                  fontSize: '14px'
-                }}>
+              <div className="footer-contact-item text-center text-md-start">
+                <div className="footer-contact-label">
                   For General Queries
                 </div>
-                <div style={{ 
-                  color: '#ffffff',
-                  fontSize: '16px'
-                }}>
+                <div className="footer-contact-value">
                   hello@rubrixcode.com
                 </div>
               </div>
-              <div style={{ marginBottom: '15px' }} className="text-center text-md-start">
-                <div style={{ 
-                  fontWeight: '600',
-                  color: '#ffffff',
-                  marginBottom: '5px',
-                  fontSize: '14px'
-                }}>
+              <div className="footer-contact-item text-center text-md-start">
+                <div className="footer-contact-label">
                   For Job Related Queries
               </div>
-                <div style={{ 
-                  color: '#ffffff',
-                  fontSize: '16px'
-                }}>
+                <div className="footer-contact-value">
                   careers@rubrixcode.com
                   </div>
                   </div>
-              <div className="text-center text-md-start">
-                <div style={{ 
-                  fontWeight: '600',
-                  color: '#ffffff',
-                  marginBottom: '5px',
-                  fontSize: '14px'
-                }}>
+              <div className="footer-contact-item text-center text-md-start">
+                <div className="footer-contact-label">
                   For Support
                   </div>
-                <div style={{ 
-                  color: '#ffffff',
-                  fontSize: '16px'
-                }}>
+                <div className="footer-contact-value">
                   support@rubrixcode.com
                   </div>
                   </div>
@@ -305,51 +100,19 @@ const Footer = ({ hideBGCOLOR }) => {
 
           {/* Social Media */}
           <div className="col-lg-2 col-md-3 col-sm-6 col-6 text-center text-md-start">
-            <div className="footer-section" style={{ marginBottom: '30px' }}>
-              <div style={{ 
-                color: 'rgb(161, 161, 161)', 
-                fontSize: '14px',
-                fontWeight: '400',
-                marginBottom: '5px'
-              }}>
+            <div className="footer-section">
+              <div className="footer-section-title">
                 Follow us on
               </div>
-              <div style={{ 
-                color: 'rgb(161, 161, 161)',
-                fontSize: '14px',
-                fontWeight: '400',
-                marginBottom: '20px'
-              }} className="text-center text-md-start">
+              <div className="footer-section-subtitle text-center text-md-start">
                 Social Media
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }} className="justify-content-center justify-content-md-start">
-                <a href="#" style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  border: '1px solid #ffffff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#ffffff',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease'
-                }}>
+              <div className="footer-social-icons justify-content-center justify-content-md-start">
+                <a href="#" className="footer-social-icon">
                   <i className="fab fa-linkedin-in"></i>
                 </a>
                
-                <a href="#" style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  border: '1px solid #ffffff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#ffffff',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease'
-                }}>
+                <a href="#" className="footer-social-icon">
                   <i className="fab fa-instagram"></i>
                 </a>
                 
@@ -360,42 +123,15 @@ const Footer = ({ hideBGCOLOR }) => {
 
           {/* Back To Home Button */}
           <div className="col-lg-2 col-md-12 col-sm-6 col-6 text-center text-lg-end">
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'center',
-              alignItems: 'flex-start'
-            }} className="justify-content-center justify-content-lg-end">
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="footer-back-to-home-wrapper justify-content-center justify-content-lg-end">
+              <div className="footer-back-to-home-content">
                 <button 
                   onClick={scrollToTop}
-                  style={{
-                  background: 'transparent',
-                  border: '1px solid #ffffff',
-                  borderRadius: '20px',
-                  padding: '25px 0px',
-                  color: '#ffffff',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  transition: 'all 0.3s ease',
-                  minWidth: '55px',
-                  marginBottom: '10px' 
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.background = '#ffffff';
-                    e.target.style.color = '#000000';
-                    e.target.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.4)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.background = 'transparent';
-                    e.target.style.color = '#ffffff';
-                    e.target.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.2)';
-                  }}
+                  className="footer-back-button"
                 >
-                  <i className="fas fa-home" style={{ fontSize: '16px' }}></i>
+                  <i className="fas fa-home"></i>
                 </button>
-                <div style={{ fontSize: '13px', textAlign: 'center', color: '#ffffff' }}>
+                <div className="footer-back-text">
                   <div>Back To</div>
                   <div>Home</div>
                 </div>

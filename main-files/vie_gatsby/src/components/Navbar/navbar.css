@@ -1,0 +1,90 @@
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-collapse-wrapper {
+  position: relative;
+}
+
+.logo-rubrix {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-rubrix img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Join Us Button Container */
+.join-us-button-container {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Join Us Button Styles */
+.join-us-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 2px solid #808080;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.join-us-button:hover {
+  border-color: #0000ff;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+  .join-us-button-container {
+    position: static;
+    transform: none;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .join-us-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .logo-rubrix img {
+    height: 35px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .join-us-button {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
